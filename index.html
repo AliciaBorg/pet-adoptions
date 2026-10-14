@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Australian Pet Welfare & Adoption Portfolio</title>
+  <title>Pet Adoptions in Australia</title>
   
-  <!-- Pure.css for clean layout & responsive grids -->
+  <!-- Pure.css for clean grid alignment -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css">
 
@@ -15,157 +15,266 @@
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 
   <style>
+    /* Light grey outer background */
     body {
-      background-color: #fefce8; /* Warm cream backdrop */
+      background-color: #dcfaff;
       color: #1e293b;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      line-height: 1.5;
+      line-height: 1.6;
       margin: 0;
       padding: 0;
     }
-    .container {
-      max-width: 1200px;
+
+    /* Central white wrapper starting at the top */
+    .page-wrapper {
+      max-width: 1000px;
       margin: 0 auto;
-      padding: 40px 20px;
+      background-color: #f2fdff;
+      padding: 50px;
+      box-sizing: border-box;
+      min-height: 100vh;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     }
+
     header {
       text-align: center;
-      margin-bottom: 40px;
+      margin-bottom: 50px;
     }
+
     h1 {
-      font-size: 2.2rem;
+      font-size: 2.5rem;
       color: #0f172a;
-      margin-bottom: 10px;
+      margin: 0 0 10px 0;
+      font-weight: 700;
     }
+
     .subtitle {
       font-size: 1.1rem;
       color: #475569;
+      margin: 0;
       font-style: italic;
     }
-    .card {
-      background: #ffffff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-      margin-bottom: 20px;
-      height: 100%;
+
+    /* Strict 2-column row layout containers aligned to TOP */
+    .card-row {
+      margin-bottom: 50px;
+      padding: 0;
+      align-items: flex-start; /* Aligns columns to top edge */
+    }
+
+    /* Column padding to enforce exact 2-column sightlines */
+    .col-left {
+      padding-right: 25px;
       box-sizing: border-box;
     }
-    .pure-u-md-1-2 {
-      padding: 10px;
+
+    .col-right {
+      padding-left: 25px;
       box-sizing: border-box;
     }
-    .card h3 {
-      font-size: 1.1rem;
-      margin-top: 0;
-      color: #1e3a8a;
+
+    /* Standardized typography for text blocks */
+    .chart-text {
+      font-size: 0.98rem;
+      color: #334155;
     }
-    .card p {
-      font-size: 0.9rem;
-      color: #475569;
+
+    .chart-text h2 {
+      font-size: 1.3rem;
+      color: #0f172a;
+      margin-top: 0; /* Ensures heading starts flush with top of chart */
+      margin-bottom: 12px;
     }
+
     .chart-container {
       width: 100%;
       display: flex;
-      justify-content: center;
-      margin-top: 10px;
+      align-items: flex-start; /* Keeps SVG anchored to top */
+    }
+
+    .align-left {
+      justify-content: flex-start;
+    }
+
+    .align-right {
+      justify-content: flex-end;
+    }
+
+    .chart-container svg, .chart-container canvas {
+      max-width: 100% !important;
+      height: auto !important;
+    }
+
+    /* Uniform max-height caps across side-by-side charts */
+    .map-chart svg, .map-chart canvas,
+    .left-chart svg, .left-chart canvas,
+    .right-chart svg, .right-chart canvas {
+      max-height: 320px !important;
+      width: auto !important;
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
+  <!-- White Central Container -->
+  <div class="page-wrapper">
 
-    <!-- Header Section -->
     <header>
-      <h1>Australian Pet Welfare & Adoption Portfolio</h1>
-      <p class="subtitle">An overview of acquisition habits, regional capacity, and rehoming trends.</p>
+      <h1>Pet Adoptions in Australia</h1>
+      <p class="subtitle">Explore the patterns, challenges and changing landscape of pet adoption across Australia.</p>
     </header>
 
-    <!-- ROW 1 -->
-    <div class="pure-g">
-      <div class="pure-u-1 pure-u-md-1-2">
-        <div class="card">
-          <h3>Most Australian Pets Don’t Come from Adoption</h3>
-          <p>Formal adoptions account for only 36.3% of pet acquisitions nationwide.</p>
-          <div id="vis1" class="chart-container"></div>
+    <!-- SECTION 1: Acquisition Reality (Text Left, Waffle Right) -->
+    <div class="pure-g card-row">
+      <div class="pure-u-1 pure-u-md-1-2 col-left">
+        <div class="chart-text">
+          <h2>What Does 'Adoption' Really Mean?</h2>
+          <p>
+            Many people use “adopting a pet” to describe bringing any new furry friend home. But there’s a difference between owning a pet and adopting one through a shelter or rescue organisation.
+          </p>
+          <p>
+            The vast majority of pets are purchased directly through private breeders or commercial pet stores, with formal shelter adoptions accounting for just <strong>36.3%</strong> of acquisitions nationwide.
+          </p>
+          <p>
+            So where across the country are formal adoptions actually thriving?
+          </p>
         </div>
       </div>
-      <div class="pure-u-1 pure-u-md-1-2">
-        <div class="card">
-          <h3>Where Adoption Thrives: Per-Capita Density</h3>
-          <p>Normalizing adoptions against population size highlights regional density leaders.</p>
-          <div id="vis2" class="chart-container"></div>
+
+      <div class="pure-u-1 pure-u-md-1-2 col-right">
+        <div id="vis1" class="chart-container align-right"></div>
+      </div>
+    </div>
+
+    <!-- MAP 1: Choropleth (Map Left, Text Right) -->
+    <div class="pure-g card-row">
+      <div class="pure-u-1 pure-u-md-1-2 col-left">
+        <div id="vis2" class="chart-container align-left map-chart"></div>
+      </div>
+      <div class="pure-u-1 pure-u-md-1-2 col-right">
+        <div class="chart-text">
+          <h2>Where Are Adoptions Most Common?</h2>
+          <p>
+            To make a fair comparison, adoption numbers are measured against each state's resident population, rather than just looking at the total number of adoptions, giving a more accurate picture of regional differences across Australia.
+          </p>
+          <p>
+            Victoria leads the country in adoption rates relative to its population, followed by Queensland and New South Wales.
+          </p>
+          <p>
+            But where are the rescue organisations that help make these adoptions possible?
+          </p>
         </div>
       </div>
     </div>
 
-    <!-- ROW 2 -->
-    <div class="pure-g">
-      <div class="pure-u-1 pure-u-md-1-2">
-        <div class="card">
-          <h3>The Infrastructure Gap: Rescue Organization Capacity</h3>
-          <p>Proportional distribution of rescue organizations and listing capacity across regions.</p>
-          <div id="vis3" class="chart-container"></div>
-        </div>
+    <!-- MAP 2: Proportional Symbol (Map Left, Text Right) -->
+    <div class="pure-g card-row">
+      <div class="pure-u-1 pure-u-md-1-2 col-left">
+        <div id="vis3" class="chart-container align-left map-chart"></div>
       </div>
-      <div class="pure-u-1 pure-u-md-1-2">
-        <div class="card">
-          <h3>Dogs and Cats Dominate the Adoption Picture</h3>
-          <p>Species breakdown of shelter activity and overall rehoming volume.</p>
-          <div id="vis4" class="chart-container"></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ROW 3 -->
-    <div class="pure-g">
-      <div class="pure-u-1 pure-u-md-1-2">
-        <div class="card">
-          <h3>Selected Reasons for Pet Adoption by Age</h3>
-          <p>Companionship remains the universal driver across all age groups.</p>
-          <div id="vis5" class="chart-container"></div>
-        </div>
-      </div>
-      <div class="pure-u-1 pure-u-md-1-2">
-        <div class="card">
-          <h3>Finding Forever: Final Shelter Outcomes</h3>
-          <p>Comparing care pathways, reclaims, and placement success by species.</p>
-          <div id="vis6" class="chart-container"></div>
+      <div class="pure-u-1 pure-u-md-1-2 col-right">
+        <div class="chart-text">
+          <h2>Mapping Australia's Rescue Network</h2>
+          <p>
+            The numbers reveal how rescue organisations are spread across Australia, with some states having far more active organisations than others. These organisations play an important role in connecting pets in need with people looking to adopt.
+          </p>
+          <p>
+            New South Wales has the highest number of active rescue organisations, followed by Victoria and Queensland. These are the same three states with the highest adoption rates relative to population, highlighting a potential link between rescue networks and adoption activity.
+          </p>
         </div>
       </div>
     </div>
 
-    <!-- ROW 4 -->
-    <div class="pure-g">
-      <div class="pure-u-1 pure-u-md-1-2">
-        <div class="card">
-          <h3>Reasons for Not Considering Adopting a Rescue Pet</h3>
-          <p>Breed preference and young animal preference compared across dogs and cats.</p>
-          <div id="vis7" class="chart-container"></div>
+    <!-- CHART 4: Donut (Text Left, Chart Right) -->
+    <div class="pure-g card-row">
+      <div class="pure-u-1 pure-u-md-1-2 col-left">
+        <div class="chart-text">
+          <h2>Which Pets Are Adopted Most?</h2>
+          <p>
+            Cats and dogs make up the largest share of pet adoptions, with other animals, including birds and guinea pigs, make up a much smaller proportion of adoptions, but how do their stories unfold once they enter the rehoming process?
+          </p>
         </div>
       </div>
-      <div class="pure-u-1 pure-u-md-1-2">
-        <div class="card">
-          <h3>Pet Listings Over Time</h3>
-          <p>Multi-year listing trends show shifts in active rehoming velocity.</p>
-          <div id="vis8" class="chart-container"></div>
+      <div class="pure-u-1 pure-u-md-1-2 col-right">
+        <div id="vis4" class="chart-container align-right right-chart"></div>
+      </div>
+    </div>
+
+    <!-- CHART 5: Heatmap Outcomes (Text Left, Chart Right) -->
+    <div class="pure-g card-row">
+      <div class="pure-u-1 pure-u-md-1-2 col-left">
+        <div class="chart-text">
+          <h2>Shelter Outcome Trends</h2>
+          <p>
+            The data offers encouraging news: <strong>rehoming is the most common outcome</strong> for shelter animals, with <strong>64% of cats</strong> finding new homes and low return rates overall (1–5%). Additionally, <strong>20% of dogs are successfully reunited</strong> with their original owners.
+          </p>
         </div>
+      </div>
+      <div class="pure-u-1 pure-u-md-1-2 col-right">
+        <div id="vis5" class="chart-container align-right right-chart"></div>
+      </div>
+    </div>
+
+    <!-- CHART 6: Age Motivations Heatmap (Chart Left, Text Right) -->
+    <div class="pure-g card-row">
+      <div class="pure-u-1 pure-u-md-1-2 col-left">
+        <div id="vis6" class="chart-container align-left left-chart"></div>
+      </div>
+      <div class="pure-u-1 pure-u-md-1-2 col-right">
+        <div class="chart-text">
+          <h2>Why Do People Adopt Pets?</h2>
+          <p>
+            Regardless of age, companionship remains the single overwhelmingly dominant reason Australians seek pet adoption, holding consistently near <strong>70%</strong> across all age brackets.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CHART 7: Barriers Dumbbell Chart (Chart Left, Text Right) -->
+    <div class="pure-g card-row">
+      <div class="pure-u-1 pure-u-md-1-2 col-left">
+        <div id="vis7" class="chart-container align-left left-chart"></div>
+      </div>
+      <div class="pure-u-1 pure-u-md-1-2 col-right">
+        <div class="chart-text">
+          <h2>Barriers to Adoption Consideration</h2>
+          <p>
+            A desire for specific breeds or young puppies/kittens remains the primary hesitation preventing prospective pet owners from choosing shelter adoptions.
+          </p>
+          <p>
+            Concerns about potential behavioural issues are more common among those considering dogs, while negative past experiences with cats are a more prominent barrier for cat adoption.
+        </div>
+      </div>
+    </div>
+
+    <!-- CHART 8: Multi-line Chart (Text Left, Chart Right) -->
+    <div class="pure-g card-row">
+      <div class="pure-u-1 pure-u-md-1-2 col-left">
+        <div class="chart-text">
+          <h2>Addressing the Adoption Decline</h2>
+          <p>
+            Following years of remarkably high successful adoption rates—hovering around 95%—data from 2025 reveals a sharp downturn in shelter placements across all pets.
+          </p>
+        </div>
+      </div>
+      <div class="pure-u-1 pure-u-md-1-2 col-right">
+        <div id="vis8" class="chart-container align-right right-chart"></div>
       </div>
     </div>
 
   </div>
 
-  <!-- JavaScript to Load Vega-Lite Specs matching actual filenames -->
   <script type="text/javascript">
-    vegaEmbed('#vis1', 'charts/chart1_waffle.json', {actions: false}).catch(console.error);
-    vegaEmbed('#vis2', 'charts/chart2_choropleth.json', {actions: false}).catch(console.error);
-    vegaEmbed('#vis3', 'charts/chart3_prop_symbol.json', {actions: false}).catch(console.error);
-    vegaEmbed('#vis4', 'charts/chart4_donut.json', {actions: false}).catch(console.error);
-    vegaEmbed('#vis5', 'charts/chart5_heatmap.json', {actions: false}).catch(console.error);
-    vegaEmbed('#vis6', 'charts/chart6_heatmap.json', {actions: false}).catch(console.error);
-    vegaEmbed('#vis7', 'charts/chart7_dumbell.json', {actions: false}).catch(console.error);
-    vegaEmbed('#vis8', 'charts/chart8_multiline.json', {actions: false}).catch(console.error);
+    const embedOpts = { renderer: "svg", actions: false };
+
+    vegaEmbed('#vis1', 'charts/chart1_waffle.json', embedOpts).catch(console.error);
+    vegaEmbed('#vis2', 'charts/chart2_choropleth.json', embedOpts).catch(console.error);
+    vegaEmbed('#vis3', 'charts/chart3_prop_symbol.json', embedOpts).catch(console.error);
+    vegaEmbed('#vis4', 'charts/chart4_donut.json', embedOpts).catch(console.error);
+    vegaEmbed('#vis5', 'charts/chart5_heatmap.json', embedOpts).catch(console.error);
+    vegaEmbed('#vis6', 'charts/chart6_heatmap.json', embedOpts).catch(console.error);
+    vegaEmbed('#vis7', 'charts/chart7_dumbell.json', embedOpts).catch(console.error);
+    vegaEmbed('#vis8', 'charts/chart8_multiline.json', embedOpts).catch(console.error);
   </script>
 
 </body>

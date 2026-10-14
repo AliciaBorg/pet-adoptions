@@ -93,7 +93,7 @@
       "field": "adoption_rate",
       "type": "quantitative",
       "title": "% of Listings Adopted",
-      "scale": {"domain": [50, 100]}
+      "scale": {"domain": [0, 100]}
     },
     "color": {
       "field": "species",

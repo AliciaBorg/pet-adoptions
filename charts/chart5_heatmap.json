@@ -3,7 +3,7 @@
   "width": 400,
   "height": 280,
   "title": {
-    "text": "Rehoming is the Likely Outcome",
+    "text": "A Second Chance at Home",
     "subtitle": "Adoption Outcomes for Dogs and Cats, 2024",
     "fontSize": 16,
     "offset": 15
@@ -64,17 +64,17 @@
           ]
         },
         "color": {
-          "field": "percentage",
-          "type": "quantitative",
-          "scale": {
-            "scheme": "oranges",
+        "field": "percentage",
+        "type": "quantitative",
+        "scale": {
+            "scheme": "greens",
             "domain": [0, 70]
-          },
-          "legend": {
-            "title": "Outcome Liklihood (%)",
+        },
+        "legend": {
+            "title": "Outcome (%)",
             "format": ".0f",
             "values": [0, 10, 20, 30, 40, 50, 60, 70]
-          }
+        }
         },
         "tooltip": [
           {"field": "category", "type": "nominal", "title": "Pet Species:"},
