@@ -1,0 +1,95 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 650,
+  "height": 550,
+  "title": {
+    "text": "Victoria Leads the Nation in Pet Adoptions",
+    "subtitle": "Pet Adoptions per 100,000 Resident Population by State & Territory, 2025",
+    "fontSize": 16,
+    "offset": 15
+  },
+  "data": {
+    "values": [
+      {"state": "Western Australia", "adoptions": 3882, "population": 3076500, "lat": -25.0, "lon": 122.0},
+      {"state": "Northern Territory", "adoptions": 200, "population": 267500, "lat": -19.5, "lon": 133.5},
+      {"state": "Queensland", "adoptions": 15399, "population": 5712100, "lat": -22.5, "lon": 144.5},
+      {"state": "South Australia", "adoptions": 1032, "population": 1910600, "lat": -30.0, "lon": 135.5},
+      {"state": "New South Wales", "adoptions": 17661, "population": 8641100, "lat": -32.0, "lon": 147.0},
+      {"state": "Victoria", "adoptions": 27793, "population": 7121900, "lat": -36.8, "lon": 144.0},
+      {"state": "Australian Capital Territory", "adoptions": 68, "population": 487200, "lat": -35.3, "lon": 149.1},
+      {"state": "Tasmania", "adoptions": 1057, "population": 579100, "lat": -42.0, "lon": 146.5}
+    ]
+  },
+  "transform": [
+    {
+      "calculate": "round((datum.adoptions / datum.population) * 100000)",
+      "as": "adoptions_per_100k"
+    }
+  ],
+  "layer": [
+    {
+      "transform": [
+        {
+          "lookup": "state",
+          "from": {
+            "data": {
+              "url": "https://raw.githubusercontent.com/rowanhogan/australian-states/master/states.geojson",
+              "format": {"type": "json", "property": "features"}
+            },
+            "key": "properties.STATE_NAME"
+          },
+          "as": "geo"
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "stroke": "#ffffff",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "shape": {
+          "field": "geo",
+          "type": "geojson"
+        },
+        "color": {
+          "field": "adoptions_per_100k",
+          "type": "quantitative",
+          "scale": {
+            "scheme": "greens",
+            "domain": [0, 400]
+          },
+          "legend": {
+            "title": "Adoptions / 100k Pop.",
+            "format": ",d",
+            "values": [0, 100, 200, 300, 400]
+          }
+        },
+        "tooltip": [
+          {"field": "state", "type": "nominal", "title": "State/Territory:"},
+          {"field": "adoptions_per_100k", "type": "quantitative", "title": "Adoptions per 100k:", "format": ","},
+          {"field": "adoptions", "type": "quantitative", "title": "Total Adoptions:", "format": ","},
+          {"field": "population", "type": "quantitative", "title": "Dec 2025 Population:", "format": ","}
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "fontWeight": "bold",
+        "fontSize": 11
+      },
+      "encoding": {
+        "longitude": {"field": "lon", "type": "quantitative"},
+        "latitude": {"field": "lat", "type": "quantitative"},
+        "text": {"field": "adoptions_per_100k", "type": "quantitative", "format": ","},
+        "color": {
+          "condition": {
+            "test": "datum.adoptions_per_100k > 250",
+            "value": "#ffffff"
+          },
+          "value": "#111827"
+        }
+      }
+    }
+  ]
+}

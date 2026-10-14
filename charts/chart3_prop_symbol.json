@@ -1,0 +1,178 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 650,
+  "height": 550,
+  "title": {
+    "text": "Where the Rescues Are",
+    "subtitle": "Breakdown of Active Adoption Organisations by State, 2025",
+    "fontSize": 16,
+    "subtitleFontSize": 11,
+    "subtitleColor": "#4b5563",
+    "offset": 15
+  },
+  "data": {
+    "values": [
+      {
+        "state": "New South Wales",
+        "total_orgs": 240,
+        "councils": 25,
+        "rescues": 174,
+        "shelters": 15,
+        "vets": 26,
+        "lat": -32.0,
+        "lon": 147.0
+      },
+      {
+        "state": "Victoria",
+        "total_orgs": 163,
+        "councils": 14,
+        "rescues": 128,
+        "shelters": 17,
+        "vets": 4,
+        "lat": -36.8,
+        "lon": 144.0
+      },
+      {
+        "state": "Queensland",
+        "total_orgs": 113,
+        "councils": 1,
+        "rescues": 89,
+        "shelters": 15,
+        "vets": 8,
+        "lat": -22.5,
+        "lon": 144.5
+      },
+      {
+        "state": "Western Australia",
+        "total_orgs": 38,
+        "councils": 0,
+        "rescues": 34,
+        "shelters": 4,
+        "vets": 0,
+        "lat": -25.0,
+        "lon": 122.0
+      },
+      {
+        "state": "South Australia",
+        "total_orgs": 26,
+        "councils": 1,
+        "rescues": 22,
+        "shelters": 1,
+        "vets": 2,
+        "lat": -30.0,
+        "lon": 135.5
+      },
+      {
+        "state": "Australian Capital Territory",
+        "total_orgs": 4,
+        "councils": 0,
+        "rescues": 2,
+        "shelters": 1,
+        "vets": 1,
+        "lat": -35.3,
+        "lon": 149.1
+      },
+      {
+        "state": "Tasmania",
+        "total_orgs": 3,
+        "councils": 0,
+        "rescues": 1,
+        "shelters": 2,
+        "vets": 0,
+        "lat": -42.0,
+        "lon": 146.5
+      },
+      {
+        "state": "Northern Territory",
+        "total_orgs": 2,
+        "councils": 0,
+        "rescues": 1,
+        "shelters": 1,
+        "vets": 0,
+        "lat": -19.5,
+        "lon": 133.5
+      }
+    ]
+  },
+  "transform": [
+    {
+      "calculate": "max(14, datum.total_orgs * 1.4)",
+      "as": "h"
+    },
+    {
+      "calculate": "'M -8 0 L 8 0 L 0 -' + datum.h + ' Z'",
+      "as": "spike_shape"
+    }
+  ],
+  "layer": [
+    {
+      "transform": [
+        {
+          "lookup": "state",
+          "from": {
+            "data": {
+              "url": "https://raw.githubusercontent.com/rowanhogan/australian-states/master/states.geojson",
+              "format": {"type": "json", "property": "features"}
+            },
+            "key": "properties.STATE_NAME"
+          },
+          "as": "geo"
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "fill": "#edebe0",
+        "stroke": "#cfcdc2",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "shape": {
+          "field": "geo",
+          "type": "geojson"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "fill": "#4a4b4d",
+        "stroke": "#020202",
+        "strokeWidth": 1,
+        "opacity": 0.9,
+        "size": 1
+      },
+      "encoding": {
+        "longitude": {"field": "lon", "type": "quantitative"},
+        "latitude": {"field": "lat", "type": "quantitative"},
+        "shape": {
+          "field": "spike_shape",
+          "type": "nominal",
+          "scale": null
+        },
+        "tooltip": [
+          {"field": "state", "type": "nominal", "title": "State/Territory:"},
+          {"field": "total_orgs", "type": "quantitative", "title": "Total Listing Orgs:", "format": ","},
+          {"field": "rescues", "type": "quantitative", "title": "Rescue Groups:"},
+          {"field": "shelters", "type": "quantitative", "title": "Shelters:"},
+          {"field": "councils", "type": "quantitative", "title": "Councils:"},
+          {"field": "vets", "type": "quantitative", "title": "Vet Clinics:"}
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "fontWeight": "bold",
+        "fontSize": 10,
+        "dy": 12,
+        "color": "#1e293b"
+      },
+      "encoding": {
+        "longitude": {"field": "lon", "type": "quantitative"},
+        "latitude": {"field": "lat", "type": "quantitative"},
+        "text": {"field": "total_orgs", "type": "quantitative", "format": ","}
+      }
+    }
+  ]
+}

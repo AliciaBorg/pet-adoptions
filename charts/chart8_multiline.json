@@ -1,0 +1,113 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 700,
+  "height": 400,
+  "title": {
+    "text": "Pet Adoptions on the Decline",
+    "subtitle": "Percentage of PetRescue Listings Adopted (2021–2025)",
+    "fontSize": 16,
+    "offset": 15
+  },
+  "data": {
+    "values": [
+      {"date": "2021-01-01", "species": "All pets", "adoption_rate": 94.5},
+      {"date": "2021-04-01", "species": "All pets", "adoption_rate": 93.0},
+      {"date": "2021-07-01", "species": "All pets", "adoption_rate": 94.0},
+      {"date": "2021-10-01", "species": "All pets", "adoption_rate": 92.0},
+      {"date": "2022-01-01", "species": "All pets", "adoption_rate": 94.0},
+      {"date": "2022-04-01", "species": "All pets", "adoption_rate": 93.0},
+      {"date": "2022-07-01", "species": "All pets", "adoption_rate": 94.0},
+      {"date": "2022-10-01", "species": "All pets", "adoption_rate": 93.0},
+      {"date": "2023-01-01", "species": "All pets", "adoption_rate": 93.5},
+      {"date": "2023-04-01", "species": "All pets", "adoption_rate": 94.0},
+      {"date": "2023-07-01", "species": "All pets", "adoption_rate": 94.0},
+      {"date": "2023-10-01", "species": "All pets", "adoption_rate": 93.0},
+      {"date": "2024-01-01", "species": "All pets", "adoption_rate": 93.0},
+      {"date": "2024-04-01", "species": "All pets", "adoption_rate": 94.0},
+      {"date": "2024-07-01", "species": "All pets", "adoption_rate": 93.5},
+      {"date": "2024-10-01", "species": "All pets", "adoption_rate": 92.0},
+      {"date": "2025-01-01", "species": "All pets", "adoption_rate": 92.0},
+      {"date": "2025-04-01", "species": "All pets", "adoption_rate": 90.5},
+      {"date": "2025-07-01", "species": "All pets", "adoption_rate": 87.0},
+      {"date": "2025-10-01", "species": "All pets", "adoption_rate": 73.0},
+      {"date": "2025-12-01", "species": "All pets", "adoption_rate": 60.0},
+
+      {"date": "2021-01-01", "species": "Cats", "adoption_rate": 95.5},
+      {"date": "2021-04-01", "species": "Cats", "adoption_rate": 94.0},
+      {"date": "2021-07-01", "species": "Cats", "adoption_rate": 96.0},
+      {"date": "2021-10-01", "species": "Cats", "adoption_rate": 93.0},
+      {"date": "2022-01-01", "species": "Cats", "adoption_rate": 95.0},
+      {"date": "2022-04-01", "species": "Cats", "adoption_rate": 95.0},
+      {"date": "2022-07-01", "species": "Cats", "adoption_rate": 96.5},
+      {"date": "2022-10-01", "species": "Cats", "adoption_rate": 95.5},
+      {"date": "2023-01-01", "species": "Cats", "adoption_rate": 95.5},
+      {"date": "2023-04-01", "species": "Cats", "adoption_rate": 95.0},
+      {"date": "2023-07-01", "species": "Cats", "adoption_rate": 96.0},
+      {"date": "2023-10-01", "species": "Cats", "adoption_rate": 95.0},
+      {"date": "2024-01-01", "species": "Cats", "adoption_rate": 94.8},
+      {"date": "2024-04-01", "species": "Cats", "adoption_rate": 95.2},
+      {"date": "2024-07-01", "species": "Cats", "adoption_rate": 95.8},
+      {"date": "2024-10-01", "species": "Cats", "adoption_rate": 93.0},
+      {"date": "2025-01-01", "species": "Cats", "adoption_rate": 93.5},
+      {"date": "2025-04-01", "species": "Cats", "adoption_rate": 92.0},
+      {"date": "2025-07-01", "species": "Cats", "adoption_rate": 89.5},
+      {"date": "2025-10-01", "species": "Cats", "adoption_rate": 75.0},
+      {"date": "2025-12-01", "species": "Cats", "adoption_rate": 62.0},
+
+      {"date": "2021-01-01", "species": "Dogs", "adoption_rate": 94.0},
+      {"date": "2021-04-01", "species": "Dogs", "adoption_rate": 92.0},
+      {"date": "2021-07-01", "species": "Dogs", "adoption_rate": 92.0},
+      {"date": "2021-10-01", "species": "Dogs", "adoption_rate": 91.0},
+      {"date": "2022-01-01", "species": "Dogs", "adoption_rate": 91.0},
+      {"date": "2022-04-01", "species": "Dogs", "adoption_rate": 92.0},
+      {"date": "2022-07-01", "species": "Dogs", "adoption_rate": 92.5},
+      {"date": "2022-10-01", "species": "Dogs", "adoption_rate": 92.0},
+      {"date": "2023-01-01", "species": "Dogs", "adoption_rate": 93.0},
+      {"date": "2023-04-01", "species": "Dogs", "adoption_rate": 94.0},
+      {"date": "2023-07-01", "species": "Dogs", "adoption_rate": 91.5},
+      {"date": "2023-10-01", "species": "Dogs", "adoption_rate": 91.0},
+      {"date": "2024-01-01", "species": "Dogs", "adoption_rate": 92.0},
+      {"date": "2024-04-01", "species": "Dogs", "adoption_rate": 92.5},
+      {"date": "2024-07-01", "species": "Dogs", "adoption_rate": 91.5},
+      {"date": "2024-10-01", "species": "Dogs", "adoption_rate": 92.0},
+      {"date": "2025-01-01", "species": "Dogs", "adoption_rate": 92.0},
+      {"date": "2025-04-01", "species": "Dogs", "adoption_rate": 89.0},
+      {"date": "2025-07-01", "species": "Dogs", "adoption_rate": 85.0},
+      {"date": "2025-10-01", "species": "Dogs", "adoption_rate": 72.0},
+      {"date": "2025-12-01", "species": "Dogs", "adoption_rate": 54.0}
+    ]
+  },
+  "mark": {
+    "type": "line",
+    "strokeWidth": 2.5,
+    "point": true
+  },
+  "encoding": {
+    "x": {
+      "field": "date",
+      "type": "temporal",
+      "title": "Date",
+      "axis": {"format": "%b %Y"}
+    },
+    "y": {
+      "field": "adoption_rate",
+      "type": "quantitative",
+      "title": "% of Listings Adopted",
+      "scale": {"domain": [50, 100]}
+    },
+    "color": {
+      "field": "species",
+      "type": "nominal",
+      "title": "Category",
+      "scale": {
+        "domain": ["Dogs", "Cats", "All pets"],
+        "range": ["#2563eb", "#16a34a", "#f97316"]
+      }
+    },
+    "tooltip": [
+      {"field": "date", "type": "temporal", "title": "Month", "format": "%B %Y"},
+      {"field": "species", "type": "nominal", "title": "Category"},
+      {"field": "adoption_rate", "type": "quantitative", "title": "Adoption Rate (%)", "format": ".1f"}
+    ]
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 500,
+  "height": 380,
+  "title": {
+    "text": "Dogs and Cats Dominate the Adoption Picture",
+    "subtitle": "Proportion of Pet Adoptions by Species, 2025",
+    "fontSize": 16,
+    "offset": 15
+  },
+  "data": {
+    "values": [
+      {"species": "Dogs", "count": 24015},
+      {"species": "Cats", "count": 43407},
+      {"species": "Other pets", "count": 2281}
+    ]
+  },
+  "mark": {
+    "type": "arc",
+    "innerRadius": 100,
+    "stroke": "#ffffff",
+    "strokeWidth": 2
+  },
+  "encoding": {
+    "theta": {
+      "field": "count",
+      "type": "quantitative"
+    },
+    "color": {
+      "field": "species",
+      "type": "nominal",
+      "title": "Species",
+      "scale": {
+        "domain": ["Dogs", "Cats", "Other pets"],
+        "range": ["#2563eb", "#ea580c", "#16a34a"]
+      }
+    },
+    "tooltip": [
+      {"field": "species", "type": "nominal", "title": "Species"},
+      {"field": "count", "type": "quantitative", "title": "Adoptions", "format": ","}
+    ]
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 380,
+  "height": 380,
+  "title": {
+    "text": "Reasons for Not Considering Adopting a Rescue Pet",
+    "subtitle": "Comparison between Dogs and Cats",
+    "fontSize": 15,
+    "offset": 15
+  },
+  "data": {
+    "values": [
+      {"reason": "I was looking for a particular breed", "animal": "Dogs", "percentage": 38},
+      {"reason": "I was looking for a particular breed", "animal": "Cats", "percentage": 38},
+      {"reason": "I would prefer a young kitten/puppy", "animal": "Dogs", "percentage": 39},
+      {"reason": "I would prefer a young kitten/puppy", "animal": "Cats", "percentage": 32},
+      {"reason": "I just didn't think to do so", "animal": "Dogs", "percentage": 20},
+      {"reason": "I just didn't think to do so", "animal": "Cats", "percentage": 23},
+      {"reason": "Concerns about potential behavioural issues", "animal": "Dogs", "percentage": 17},
+      {"reason": "Concerns about potential behavioural issues", "animal": "Cats", "percentage": 12},
+      {"reason": "Concerns about potential health issues", "animal": "Dogs", "percentage": 9},
+      {"reason": "Concerns about potential health issues", "animal": "Cats", "percentage": 11},
+      {"reason": "I've had negative experiences with rescue pets", "animal": "Dogs", "percentage": 4},
+      {"reason": "I've had negative experiences with rescue pets", "animal": "Cats", "percentage": 8},
+      {"reason": "There are no rescue shelters near me", "animal": "Dogs", "percentage": 10},
+      {"reason": "There are no rescue shelters near me", "animal": "Cats", "percentage": 7},
+      {"reason": "Another reason", "animal": "Dogs", "percentage": 7},
+      {"reason": "Another reason", "animal": "Cats", "percentage": 4},
+      {"reason": "No particular reason", "animal": "Dogs", "percentage": 12},
+      {"reason": "No particular reason", "animal": "Cats", "percentage": 17}
+    ]
+  },
+  "encoding": {
+    "y": {
+      "field": "reason",
+      "type": "nominal",
+      "title": null,
+      "sort": [
+        "I was looking for a particular breed",
+        "I would prefer a young kitten/puppy",
+        "I just didn't think to do so",
+        "Concerns about potential behavioural issues",
+        "No particular reason",
+        "Concerns about potential health issues",
+        "There are no rescue shelters near me",
+        "I've had negative experiences with rescue pets",
+        "Another reason"
+      ],
+      "axis": {
+        "labelLimit": 350,
+        "labelPadding": 10
+      }
+    }
+  },
+  "layer": [
+    {
+      "transform": [
+        {
+          "pivot": "animal",
+          "value": "percentage",
+          "groupby": ["reason"]
+        }
+      ],
+      "mark": {"type": "rule", "color": "#cbd5e1", "strokeWidth": 2},
+      "encoding": {
+        "x": {"field": "Cats", "type": "quantitative"},
+        "x2": {"field": "Dogs"}
+      }
+    },
+    {
+      "mark": {"type": "point", "filled": true, "size": 120, "opacity": 1},
+      "encoding": {
+        "x": {
+          "field": "percentage",
+          "type": "quantitative",
+          "title": "Share of Respondents (%)",
+          "scale": {"domain": [0, 45]}
+        },
+        "color": {
+          "field": "animal",
+          "type": "nominal",
+          "scale": {
+            "domain": ["Dogs", "Cats"],
+            "range": ["#2b5c8f", "#d95f02"]
+          },
+          "legend": {"title": "Pet Type", "orient": "bottom"}
+        },
+        "tooltip": [
+          {"field": "reason", "type": "nominal", "title": "Reason:"},
+          {"field": "animal", "type": "nominal", "title": "Pet Type:"},
+          {"field": "percentage", "type": "quantitative", "title": "Share (%):"}
+        ]
+      }
+    }
+  ]
+}
