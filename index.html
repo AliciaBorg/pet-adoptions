@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Australian Pet Welfare & Adoption Portfolio</title>
+  
+  <!-- Pure.css for clean layout & responsive grids -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css">
+
+  <!-- Vega & Vega-Lite JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+  <style>
+    body {
+      background-color: #fefce8; /* Warm cream backdrop */
+      color: #1e293b;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.5;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    h1 {
+      font-size: 2.2rem;
+      color: #0f172a;
+      margin-bottom: 10px;
+    }
+    .subtitle {
+      font-size: 1.1rem;
+      color: #475569;
+      font-style: italic;
+    }
+    .card {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+      margin-bottom: 20px;
+      height: 100%;
+      box-sizing: border-box;
+    }
+    .pure-u-md-1-2 {
+      padding: 10px;
+      box-sizing: border-box;
+    }
+    .card h3 {
+      font-size: 1.1rem;
+      margin-top: 0;
+      color: #1e3a8a;
+    }
+    .card p {
+      font-size: 0.9rem;
+      color: #475569;
+    }
+    .chart-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Header Section -->
+    <header>
+      <h1>Australian Pet Welfare & Adoption Portfolio</h1>
+      <p class="subtitle">An overview of acquisition habits, regional capacity, and rehoming trends.</p>
+    </header>
+
+    <!-- ROW 1 -->
+    <div class="pure-g">
+      <div class="pure-u-1 pure-u-md-1-2">
+        <div class="card">
+          <h3>Most Australian Pets Don’t Come from Adoption</h3>
+          <p>Formal adoptions account for only 36.3% of pet acquisitions nationwide.</p>
+          <div id="vis1" class="chart-container"></div>
+        </div>
+      </div>
+      <div class="pure-u-1 pure-u-md-1-2">
+        <div class="card">
+          <h3>Where Adoption Thrives: Per-Capita Density</h3>
+          <p>Normalizing adoptions against population size highlights regional density leaders.</p>
+          <div id="vis2" class="chart-container"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ROW 2 -->
+    <div class="pure-g">
+      <div class="pure-u-1 pure-u-md-1-2">
+        <div class="card">
+          <h3>The Infrastructure Gap: Rescue Organization Capacity</h3>
+          <p>Proportional distribution of rescue organizations and listing capacity across regions.</p>
+          <div id="vis3" class="chart-container"></div>
+        </div>
+      </div>
+      <div class="pure-u-1 pure-u-md-1-2">
+        <div class="card">
+          <h3>Dogs and Cats Dominate the Adoption Picture</h3>
+          <p>Species breakdown of shelter activity and overall rehoming volume.</p>
+          <div id="vis4" class="chart-container"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ROW 3 -->
+    <div class="pure-g">
+      <div class="pure-u-1 pure-u-md-1-2">
+        <div class="card">
+          <h3>Selected Reasons for Pet Adoption by Age</h3>
+          <p>Companionship remains the universal driver across all age groups.</p>
+          <div id="vis5" class="chart-container"></div>
+        </div>
+      </div>
+      <div class="pure-u-1 pure-u-md-1-2">
+        <div class="card">
+          <h3>Finding Forever: Final Shelter Outcomes</h3>
+          <p>Comparing care pathways, reclaims, and placement success by species.</p>
+          <div id="vis6" class="chart-container"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ROW 4 -->
+    <div class="pure-g">
+      <div class="pure-u-1 pure-u-md-1-2">
+        <div class="card">
+          <h3>Reasons for Not Considering Adopting a Rescue Pet</h3>
+          <p>Breed preference and young animal preference compared across dogs and cats.</p>
+          <div id="vis7" class="chart-container"></div>
+        </div>
+      </div>
+      <div class="pure-u-1 pure-u-md-1-2">
+        <div class="card">
+          <h3>Pet Listings Over Time</h3>
+          <p>Multi-year listing trends show shifts in active rehoming velocity.</p>
+          <div id="vis8" class="chart-container"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- JavaScript to Load Vega-Lite Specs matching actual filenames -->
+  <script type="text/javascript">
+    vegaEmbed('#vis1', 'charts/chart1_waffle.json', {actions: false}).catch(console.error);
+    vegaEmbed('#vis2', 'charts/chart2_choropleth.json', {actions: false}).catch(console.error);
+    vegaEmbed('#vis3', 'charts/chart3_prop_symbol.json', {actions: false}).catch(console.error);
+    vegaEmbed('#vis4', 'charts/chart4_donut.json', {actions: false}).catch(console.error);
+    vegaEmbed('#vis5', 'charts/chart5_heatmap.json', {actions: false}).catch(console.error);
+    vegaEmbed('#vis6', 'charts/chart6_heatmap.json', {actions: false}).catch(console.error);
+    vegaEmbed('#vis7', 'charts/chart7_dumbell.json', {actions: false}).catch(console.error);
+    vegaEmbed('#vis8', 'charts/chart8_multiline.json', {actions: false}).catch(console.error);
+  </script>
+
+</body>
+</html>
