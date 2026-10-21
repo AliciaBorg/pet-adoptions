@@ -26,19 +26,26 @@
   },
   "transform": [
     {
+      "_comment": "Create a sequence of numbers from 1 up to the category count.",
       "calculate": "sequence(1, datum.Count + 1)",
       "as": "sq"
     },
-    {"flatten": ["sq"]},
     {
+      "_comment": "Turn each number in the sequence into its own data row.",
+      "flatten": ["sq"]
+    },
+    {
+      "_comment": "Give every waffle square a unique number, grouped by category order.",
       "window": [{"op": "row_number", "as": "id"}],
       "sort": [{"field": "order", "order": "ascending"}]
     },
     {
+      "_comment": "Divide the square number by 10 to determine its row.",
       "calculate": "ceil(datum.id / 10)",
       "as": "row"
     },
     {
+      "_comment": "Use the remainder after dividing by 10 to determine its column.",
       "calculate": "((datum.id - 1) % 10) + 1",
       "as": "col"
     }

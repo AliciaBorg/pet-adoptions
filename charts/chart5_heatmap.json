@@ -29,12 +29,14 @@
   },
   "transform": [
     {
+      "_comment": "Calculate the total count for each pet category.",
       "joinaggregate": [
         {"op": "sum", "field": "count", "as": "total_category_count"}
       ],
       "groupby": ["category"]
     },
     {
+      "_comment": "Normalises the data by calculating each outcome as a percentage of its pet category total.",
       "calculate": "(datum.count / datum.total_category_count) * 100",
       "as": "percentage"
     }
