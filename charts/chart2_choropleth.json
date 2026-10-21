@@ -10,11 +10,11 @@
   },
   "data": {
     "values": [
-      {"state": "Western Australia", "adoptions": 3882, "population": 3076500, "lat": -25.0, "lon": 122.0},
-      {"state": "Northern Territory", "adoptions": 200, "population": 267500, "lat": -19.5, "lon": 133.5},
-      {"state": "Queensland", "adoptions": 15399, "population": 5712100, "lat": -22.5, "lon": 144.5},
-      {"state": "South Australia", "adoptions": 1032, "population": 1910600, "lat": -30.0, "lon": 135.5},
-      {"state": "New South Wales", "adoptions": 17661, "population": 8641100, "lat": -32.0, "lon": 147.0},
+      {"state": "Western Australia", "adoptions": 3882, "population": 3076500, "lat": -26.0, "lon": 122.0},
+      {"state": "Northern Territory", "adoptions": 200, "population": 267500, "lat": -21.0, "lon": 133.5},
+      {"state": "Queensland", "adoptions": 15399, "population": 5712100, "lat": -23.5, "lon": 144.5},
+      {"state": "South Australia", "adoptions": 1032, "population": 1910600, "lat": -30.0, "lon": 135.0},
+      {"state": "New South Wales", "adoptions": 17661, "population": 8641100, "lat": -32.5, "lon": 147.0},
       {"state": "Victoria", "adoptions": 27793, "population": 7121900, "lat": -36.8, "lon": 144.0},
       {"state": "Australian Capital Territory", "adoptions": 68, "population": 487200, "lat": -35.3, "lon": 149.1},
       {"state": "Tasmania", "adoptions": 1057, "population": 579100, "lat": -42.0, "lon": 146.5}

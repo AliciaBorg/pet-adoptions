@@ -1,0 +1,97 @@
+/* Light grey outer background */
+body {
+    background-color: #dcfaff;
+    color: #1e293b;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Central white wrapper starting at the top */
+.page-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #f2fdff;
+    padding: 50px;
+    box-sizing: border-box;
+    min-height: 100vh;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #0f172a;
+    margin: 0 0 10px 0;
+    font-weight: 700;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: #475569;
+    margin: 0;
+    font-style: italic;
+}
+
+/* Strict 2-column row layout containers aligned to TOP */
+.card-row {
+    margin-bottom: 50px;
+    padding: 0;
+    align-items: flex-start; /* Aligns columns to top edge */
+}
+
+/* Column padding to enforce exact 2-column sightlines */
+.col-left {
+    padding-right: 25px;
+    box-sizing: border-box;
+}
+
+.col-right {
+    padding-left: 25px;
+    box-sizing: border-box;
+}
+
+/* Standardized typography for text blocks */
+.chart-text {
+    font-size: 0.98rem;
+    color: #334155;
+}
+
+.chart-text h2 {
+    font-size: 1.3rem;
+    color: #0f172a;
+    margin-top: 0; /* Ensures heading starts flush with top of chart */
+    margin-bottom: 12px;
+}
+
+.chart-container {
+    width: 100%;
+    display: flex;
+    align-items: flex-start; /* Keeps SVG anchored to top */
+}
+
+.align-left {
+    justify-content: flex-start;
+}
+
+.align-right {
+    justify-content: flex-end;
+}
+
+.chart-container svg, .chart-container canvas {
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+/* Uniform max-height caps across side-by-side charts */
+.map-chart svg, .map-chart canvas,
+.left-chart svg, .left-chart canvas,
+.right-chart svg, .right-chart canvas {
+    max-height: 320px !important;
+    width: auto !important;
+}

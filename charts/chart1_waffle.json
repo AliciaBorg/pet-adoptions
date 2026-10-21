@@ -81,7 +81,11 @@
       }
     },
     "tooltip": [
-      {"field": "Category", "type": "nominal", "title": "Acquisition Type:"},
+      {
+        "field": "Category", 
+        "type": "nominal", 
+        "title": "Acquisition Type:"
+      },
       {
         "field": "Percentage",
         "type": "quantitative",
