@@ -9,13 +9,13 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css">
 
-  <!-- YOUR EXTERNAL CSS FILE -->
-  <link rel="stylesheet" href="style.css">
-  
+  <!-- External CSS file -->
+  <link rel="stylesheet" href="styles.css">
+
   <!-- Vega & Vega-Lite JavaScript Libraries -->
-  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>          <!-- Core visualization rendering engine -->
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>     <!-- Grammar of graphics compiler layer -->
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>    <!-- Utility to render charts into HTML elements -->
 
   
 </head>
@@ -172,6 +172,7 @@
   <script type="text/javascript">
     const embedOpts = { renderer: "svg", actions: false };
 
+    // Embed each visualization
     vegaEmbed('#vis1', 'charts/chart1_waffle.json', embedOpts).catch(console.error);
     vegaEmbed('#vis2', 'charts/chart2_choropleth.json', embedOpts).catch(console.error);
     vegaEmbed('#vis3', 'charts/chart3_prop_symbol.json', embedOpts).catch(console.error);
