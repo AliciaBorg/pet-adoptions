@@ -118,9 +118,9 @@ main { padding: 0 clamp(22px, 5vw, 82px); }
 .map-container { flex: 1; min-height: 520px; margin: 0 -4px; align-items: center; overflow: hidden; }
 .map-container .vega-embed { display: flex; justify-content: center; width: 100%; background: var(--card); }
 .map-container svg { width: min(100%, 500px) !important; height: auto !important; }
-.map-card:first-child .map-container svg { transform: scale(1.08); transform-origin: center center; }
 .map-card .takeaway { margin: auto 4px 0; padding: 18px 20px; border-top: 0; border-left: 3px solid var(--gold); background: #eee9df; }
 .map-card .takeaway strong { max-width: none; }
+.map-card .takeaway p { margin: 8px 0 0; color: var(--muted); font-size: .86rem; line-height: 1.45; }
 .takeaway { margin-top: 15px; padding-top: 12px; border-top: 1px solid var(--line); }
 .chart-card--dark .takeaway { border-color: rgba(255,255,255,.18); }
 .takeaway span { display: block; margin-bottom: 3px; color: var(--coral); }

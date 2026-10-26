@@ -69,7 +69,15 @@
           "legend": {
             "title": "Adoptions / 100k Pop.",
             "format": ",d",
-            "values": [0, 100, 200, 300, 400]
+            "values": [0, 100, 200, 300, 400],
+            "orient": "right",
+            "offset": 4,
+            "gradientLength": 150,
+            "gradientThickness": 14,
+            "labelFont": "DM Sans",
+            "labelFontSize": 11,
+            "titleFont": "DM Sans",
+            "titleFontSize": 11
           }
         },
         "tooltip": [
