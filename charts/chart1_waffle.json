@@ -3,9 +3,11 @@
   "width": 300,
   "height": 300,
   "title": {
-    "text": "Most Australian Pets Aren't Actually 'Adopted'",
-    "subtitle": "How Australians Acquired Their Pets, 2024",
+    "text": "Only 36 in 100 pet acquisitions are formal adoptions",
+    "font": "DM Sans",
     "fontSize": 15,
+    "fontWeight": 700,
+    "color": "#1d2925",
     "offset": 15
   },
   "data": {
@@ -78,7 +80,7 @@
           "Not Formally Adopted (Breeder or Pet Shop)",
           "Formally Adopted (Shelter or Adoption Agency)"
         ],
-        "range": ["#8c8c8c", "#2ca02c"]
+        "range": ["#d9d7d0", "#2f5d50"]
       },
       "legend": {
         "title": "Acquisition Type",
