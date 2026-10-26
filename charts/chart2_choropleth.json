@@ -1,13 +1,19 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "#fffdf9",
   "width": 650,
   "height": 550,
   "title": {
-    "text": "Victoria Leads the Nation in PetRescue Adoptions",
-    "subtitle": "PetRescue Adoptions per 100,000 Resident Population by State & Territory, 2025",
+    "text": "Victoria leads the nation in adoption rate",
+    "subtitle": "PetRescue adoptions per 100,000 residents, 2025",
+    "font": "DM Sans",
     "fontSize": 16,
-    "subtitleFontSize": 13,
-    "subtitleColor": "#4b5563",
+    "fontWeight": 700,
+    "color": "#1d2925",
+    "subtitleFont": "DM Sans",
+    "subtitleFontSize": 12,
+    "subtitleColor": "#64716c",
+    "anchor": "middle",
     "offset": 14
   },
   "data": {

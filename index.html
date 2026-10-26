@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=14">
+  <link rel="stylesheet" href="styles.css?v=20">
 
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
@@ -43,28 +43,19 @@
       </section>
 
       <section class="story-section" aria-labelledby="scale-title">
-        <div class="section-heading">
+        <div class="section-heading geography-heading">
           <h2 id="scale-title">Where is adoption happening in Australia?</h2>
-          <p>Once adoption is separated from other forms of pet acquisition, the next question is access. Adoption activity is not evenly distributed across the country, and neither is the network of organisations that makes rescue possible.</p>
         </div>
 
-        <div class="feature-grid">
-          <article class="chart-card">
-            <div class="card-copy">
-              <h3>Adoption rates vary by state.</h3>
-              <p>Adoptions normalised by resident population make states comparable.</p>
-              <div class="takeaway"><span>Key takeaway</span><strong>Victoria has the highest adoption rate per 100,000 people.</strong></div>
-            </div>
-            <div id="vis2" class="chart-container"></div>
+        <div class="feature-grid geography-grid">
+          <article class="chart-card map-card">
+            <div id="vis2" class="chart-container map-container"></div>
+            <div class="takeaway"><strong>Victoria has the highest adoption rate per 100,000 people.</strong></div>
           </article>
 
-          <article class="chart-card">
-            <div class="card-copy">
-              <h3>The rescue network is concentrated.</h3>
-              <p>Active PetRescue member organisations by state.</p>
-              <div class="takeaway"><span>Key takeaway</span><strong>NSW, Victoria and Queensland have the deepest rescue networks.</strong></div>
-            </div>
-            <div id="vis3" class="chart-container"></div>
+          <article class="chart-card map-card">
+            <div id="vis3" class="chart-container map-container"></div>
+            <div class="takeaway"><strong>NSW, Victoria and Queensland have the deepest rescue networks.</strong></div>
           </article>
         </div>
       </section>

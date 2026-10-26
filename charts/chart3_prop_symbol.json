@@ -1,14 +1,20 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "#fffdf9",
   "width": 650,
   "height": 550,
   "view": {"stroke": null},
   "title": {
-    "text": "Where the Rescues Are Happening",
-    "subtitle": "Active PetRescue Member Organisations by State, 2025",
+    "text": "Rescue organisations cluster in the east",
+    "subtitle": "Active PetRescue member organisations by state, 2025",
+    "font": "DM Sans",
     "fontSize": 16,
-    "subtitleFontSize": 13,
-    "subtitleColor": "#4b5563",
+    "fontWeight": 700,
+    "color": "#1d2925",
+    "subtitleFont": "DM Sans",
+    "subtitleFontSize": 12,
+    "subtitleColor": "#64716c",
+    "anchor": "middle",
     "offset": 15
   },
   "data": {
