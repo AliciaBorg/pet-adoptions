@@ -1,0 +1,224 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "A Second Chance at Home",
+    "subtitle": "Outcomes for Dogs and Cats Listed for Adoption, 2024",
+    "fontSize": 16,
+    "offset": 15,
+    "anchor": "middle"
+  },
+  "data": {
+    "values": [
+      {"category": "Dogs", "outcome": "Currently in Care", "count": 1672},
+      {"category": "Dogs", "outcome": "Reclaimed", "count": 3203},
+      {"category": "Dogs", "outcome": "Returned", "count": 727},
+      {"category": "Dogs", "outcome": "Rehomed", "count": 6839},
+      {"category": "Dogs", "outcome": "Transferred", "count": 529},
+      {"category": "Dogs", "outcome": "Euthanased", "count": 2768},
+      {"category": "Dogs", "outcome": "Other", "count": 114},
+
+      {"category": "Cats", "outcome": "Currently in Care", "count": 2128},
+      {"category": "Cats", "outcome": "Reclaimed", "count": 979},
+      {"category": "Cats", "outcome": "Returned", "count": 381},
+      {"category": "Cats", "outcome": "Rehomed", "count": 16445},
+      {"category": "Cats", "outcome": "Transferred", "count": 298},
+      {"category": "Cats", "outcome": "Euthanased", "count": 5089},
+      {"category": "Cats", "outcome": "Other", "count": 319}
+    ]
+  },
+  "transform": [
+    {
+      "joinaggregate": [
+        {"op": "sum", "field": "count", "as": "total_category_count"}
+      ],
+      "groupby": ["category"]
+    },
+    {
+      "calculate": "(datum.count / datum.total_category_count) * 100",
+      "as": "percentage"
+    }
+  ],
+  "spacing": 0,
+  "hconcat": [
+    {
+      "title": "Dogs",
+      "width": 180,
+      "height": 260,
+      "transform": [{"filter": "datum.category == 'Dogs'"}],
+      "layer": [
+        {
+          "mark": {"type": "bar", "cornerRadiusEnd": 0},
+          "encoding": {
+            "y": {
+              "field": "outcome",
+              "type": "nominal",
+              "title": null,
+              "axis": null,
+              "sort": [
+                "Rehomed",
+                "Reclaimed",
+                "Euthanased",
+                "Currently in Care",
+                "Returned",
+                "Transferred",
+                "Other"
+              ]
+            },
+            "x": {
+              "field": "percentage",
+              "type": "quantitative",
+              "title": "Share of Category (%)",
+              "sort": "descending",
+              "scale": {"domain": [0, 70]},
+              "axis": {"grid": true}
+            },
+            "color": {"value": "#2b5c8f"},
+            "tooltip": [
+              {"field": "outcome", "type": "nominal", "title": "Outcome:"},
+              {"field": "percentage", "type": "quantitative", "title": "Dogs (%):", "format": ".1f"},
+              {"field": "count", "type": "quantitative", "title": "Dogs Count:", "format": ","}
+            ]
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "align": "right",
+            "dx": -6,
+            "fontSize": 11,
+            "fontWeight": "bold",
+            "fill": "#334155"
+          },
+          "encoding": {
+            "y": {
+              "field": "outcome",
+              "type": "nominal",
+              "sort": [
+                "Rehomed",
+                "Reclaimed",
+                "Euthanased",
+                "Currently in Care",
+                "Returned",
+                "Transferred",
+                "Other"
+              ]
+            },
+            "x": {
+              "field": "percentage",
+              "type": "quantitative",
+              "sort": "descending"
+            },
+            "text": {
+              "field": "percentage",
+              "type": "quantitative",
+              "format": ".0f"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "width": 110,
+      "height": 260,
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "fontSize": 12,
+        "fill": "#334155"
+      },
+      "encoding": {
+        "y": {
+          "field": "outcome",
+          "type": "nominal",
+          "title": null,
+          "axis": null,
+          "sort": [
+            "Rehomed",
+            "Reclaimed",
+            "Euthanased",
+            "Currently in Care",
+            "Returned",
+            "Transferred",
+            "Other"
+          ]
+        },
+        "text": {"field": "outcome", "type": "nominal"}
+      }
+    },
+    {
+      "title": "Cats",
+      "width": 180,
+      "height": 260,
+      "transform": [{"filter": "datum.category == 'Cats'"}],
+      "layer": [
+        {
+          "mark": {"type": "bar", "cornerRadiusEnd": 0},
+          "encoding": {
+            "y": {
+              "field": "outcome",
+              "type": "nominal",
+              "title": null,
+              "axis": null,
+              "sort": [
+                "Rehomed",
+                "Reclaimed",
+                "Euthanased",
+                "Currently in Care",
+                "Returned",
+                "Transferred",
+                "Other"
+              ]
+            },
+            "x": {
+              "field": "percentage",
+              "type": "quantitative",
+              "title": "Share of Category (%)",
+              "scale": {"domain": [0, 70]},
+              "axis": {"grid": true}
+            },
+            "color": {"value": "#d95f02"},
+            "tooltip": [
+              {"field": "outcome", "type": "nominal", "title": "Outcome:"},
+              {"field": "percentage", "type": "quantitative", "title": "Cats (%):", "format": ".1f"},
+              {"field": "count", "type": "quantitative", "title": "Cats Count:", "format": ","}
+            ]
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "dx": 6,
+            "fontSize": 11,
+            "fontWeight": "bold",
+            "fill": "#334155"
+          },
+          "encoding": {
+            "y": {
+              "field": "outcome",
+              "type": "nominal",
+              "sort": [
+                "Rehomed",
+                "Reclaimed",
+                "Euthanased",
+                "Currently in Care",
+                "Returned",
+                "Transferred",
+                "Other"
+              ]
+            },
+            "x": {
+              "field": "percentage",
+              "type": "quantitative"
+            },
+            "text": {
+              "field": "percentage",
+              "type": "quantitative",
+              "format": ".0f"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

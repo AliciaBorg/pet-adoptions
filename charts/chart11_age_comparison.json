@@ -1,0 +1,100 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 420,
+  "height": 240,
+  "title": {
+    "text": "Adoption Speed by Age: Dogs vs. Cats",
+    "subtitle": "Comparing median days to adoption across life stages",
+    "fontSize": 15,
+    "offset": 15,
+    "anchor": "middle"
+  },
+  "data": {
+    "values": [
+      {"age_stage": "Puppy / Kitten", "animal": "Dogs", "median_tta": 17},
+      {"age_stage": "Puppy / Kitten", "animal": "Cats", "median_tta": 7},
+      {"age_stage": "Adolescent / Adult", "animal": "Dogs", "median_tta": 20},
+      {"age_stage": "Adolescent / Adult", "animal": "Cats", "median_tta": 10},
+      {"age_stage": "Senior", "animal": "Dogs", "median_tta": 35},
+      {"age_stage": "Senior", "animal": "Cats", "median_tta": 28}
+    ]
+  },
+  "encoding": {
+    "y": {
+      "field": "age_stage",
+      "type": "nominal",
+      "title": null,
+      "sort": ["Puppy / Kitten", "Adolescent / Adult", "Senior"],
+      "axis": {"labelFontSize": 12, "labelPadding": 8}
+    }
+  },
+  "layer": [
+    {
+      "transform": [
+        {
+          "pivot": "animal",
+          "value": "median_tta",
+          "groupby": ["age_stage"]
+        }
+      ],
+      "mark": {"type": "rule", "color": "#cbd5e1", "strokeWidth": 3},
+      "encoding": {
+        "x": {"field": "Dogs", "type": "quantitative"},
+        "x2": {"field": "Cats"}
+      }
+    },
+    {
+      "mark": {"type": "point", "filled": true, "size": 160},
+      "encoding": {
+        "x": {
+          "field": "median_tta",
+          "type": "quantitative",
+          "title": "Median Time to Adoption (Days)",
+          "scale": {"domain": [0, 40]},
+          "axis": {"grid": true}
+        },
+        "color": {
+          "field": "animal",
+          "type": "nominal",
+          "scale": {
+            "domain": ["Dogs", "Cats"],
+            "range": ["#2b5c8f", "#d95f02"]
+          },
+          "legend": {
+            "title": "Pet Type",
+            "orient": "top-right",
+            "fillColor": "#ffffff",
+            "strokeColor": "#e2e8f0",
+            "padding": 6,
+            "cornerRadius": 4
+          }
+        },
+        "tooltip": [
+          {"field": "age_stage", "type": "nominal", "title": "Life Stage:"},
+          {"field": "animal", "type": "nominal", "title": "Species:"},
+          {"field": "median_tta", "type": "quantitative", "title": "Median Days:"}
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "dy": -12,
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "fill": "#334155"
+      },
+      "encoding": {
+        "x": {
+          "field": "median_tta",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "median_tta",
+          "type": "quantitative",
+          "format": "d"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 550,
+  "height": 450,
+  "padding": {"left": 130, "right": 130, "top": 40, "bottom": 50},
+  "config": {
+    "view": {"stroke": null},
+    "axis": {"grid": false}
+  },
+  "title": {
+    "text": "PetRescue Adoption Rate Slope Chart (2023 vs 2025)",
+    "subtitle": "*Rates represent adoptions as a percentage of monthly listings.",
+    "fontSize": 15,
+    "subtitleFontSize": 11,
+    "subtitleColor": "#4b5563",
+    "offset": 14
+  },
+  "data": {
+    "values": [
+      {"animal": "Dog", "year": "2023", "rate": 92.9},
+      {"animal": "Dog", "year": "2025", "rate": 62.6},
+      
+      {"animal": "Cat", "year": "2023", "rate": 94.4},
+      {"animal": "Cat", "year": "2025", "rate": 54.4}
+    ]
+  },
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "nominal",
+      "axis": {
+        "title": null,
+        "labelFontSize": 14,
+        "labelFontWeight": "bold",
+        "ticks": false,
+        "domain": false,
+        "orient": "top",
+        "labelAngle": 0
+      },
+      "sort": ["2023", "2025"]
+    },
+    "y": {
+      "field": "rate",
+      "type": "quantitative",
+      "axis": null,
+      "scale": {"domain": [45, 100]}
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "rule",
+        "color": "#9ca3af",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "x": {"field": "year", "type": "nominal"},
+        "y": {"datum": 48},
+        "y2": {"datum": 98}
+      }
+    },
+    {
+      "mark": {
+        "type": "line",
+        "strokeWidth": 3
+      },
+      "encoding": {
+        "color": {
+          "field": "animal",
+          "type": "nominal",
+          "scale": {
+            "domain": ["Dog", "Cat"],
+            "range": ["#2563eb", "#f97316"]
+          },
+          "legend": null
+        },
+        "detail": {"field": "animal"}
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 130
+      },
+      "encoding": {
+        "color": {
+          "field": "animal",
+          "type": "nominal",
+          "scale": {
+            "domain": ["Dog", "Cat"],
+            "range": ["#2563eb", "#f97316"]
+          }
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "dx": -12,
+        "fontSize": 12,
+        "fontWeight": "bold"
+      },
+      "transform": [
+        {"filter": "datum.year == '2023'"}
+      ],
+      "encoding": {
+        "text": {"field": "label_left"},
+        "color": {
+          "field": "animal",
+          "scale": {
+            "domain": ["Dog", "Cat"],
+            "range": ["#2563eb", "#f97316"]
+          }
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 12,
+        "fontSize": 12,
+        "fontWeight": "bold"
+      },
+      "transform": [
+        {"filter": "datum.year == '2025'"}
+      ],
+      "encoding": {
+        "text": {"field": "label_right"},
+        "color": {
+          "field": "animal",
+          "scale": {
+            "domain": ["Dog", "Cat"],
+            "range": ["#2563eb", "#f97316"]
+          }
+        }
+      }
+    }
+  ],
+  "transform": [
+    {
+      "calculate": "datum.animal + ' ' + datum.rate + '%'",
+      "as": "label_left"
+    },
+    {
+      "calculate": "datum.rate + '% ' + datum.animal",
+      "as": "label_right"
+    }
+  ]
+}

@@ -4,7 +4,7 @@
   "height": 380,
   "title": {
     "text": "Dogs and Cats Dominate the Adoption Picture",
-    "subtitle": "Proportion of Pet Adoptions by Species, 2025",
+    "subtitle": "Proportion of PetRescue Adoptions by Species, 2025",
     "fontSize": 16,
     "offset": 15
   },
@@ -15,29 +15,82 @@
       {"species": "Other pets", "count": 2281}
     ]
   },
-  "mark": {
-    "type": "arc",
-    "innerRadius": 100,
-    "stroke": "#ffffff",
-    "strokeWidth": 2
-  },
-  "encoding": {
-    "theta": {
-      "field": "count",
-      "type": "quantitative"
+  "transform": [
+    {
+      "joinaggregate": [
+        {
+          "op": "sum",
+          "field": "count",
+          "as": "total_count"
+        }
+      ]
     },
-    "color": {
-      "field": "species",
-      "type": "nominal",
-      "title": "Species",
-      "scale": {
-        "domain": ["Dogs", "Cats", "Other pets"],
-        "range": ["#2563eb", "#ea580c", "#16a34a"]
+    {
+      "calculate": "datum.count / datum.total_count",
+      "as": "percent"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "arc",
+        "innerRadius": 90,
+        "outerRadius": 160,
+        "stroke": "#ffffff",
+        "strokeWidth": 2
+      },
+      "encoding": {
+        "theta": {
+          "field": "count",
+          "type": "quantitative",
+          "stack": true
+        },
+        "color": {
+          "field": "species",
+          "type": "nominal",
+          "title": "Species",
+          "scale": {
+            "domain": ["Dogs", "Cats", "Other pets"],
+            "range": ["#2563eb", "#ea580c", "#16a34a"]
+          }
+        },
+        "order": {
+          "field": "count",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "tooltip": [
+          {"field": "species", "type": "nominal", "title": "Species"},
+          {"field": "count", "type": "quantitative", "title": "Adoptions", "format": ","},
+          {"field": "percent", "type": "quantitative", "title": "Share", "format": ".1%"}
+        ]
       }
     },
-    "tooltip": [
-      {"field": "species", "type": "nominal", "title": "Species"},
-      {"field": "count", "type": "quantitative", "title": "Adoptions", "format": ","}
-    ]
-  }
+    {
+      "mark": {
+        "type": "text",
+        "radius": 125,
+        "fontSize": 13,
+        "fontWeight": "bold",
+        "fill": "#ffffff"
+      },
+      "encoding": {
+        "theta": {
+          "field": "count",
+          "type": "quantitative",
+          "stack": true
+        },
+        "order": {
+          "field": "count",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "text": {
+          "field": "percent",
+          "type": "quantitative",
+          "format": ".0%"
+        }
+      }
+    }
+  ]
 }

@@ -1,0 +1,127 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 650,
+  "height": 550,
+  "title": {
+    "text": "PetRescue Adoption Trends (2023 vs 2024)",
+    "subtitle": "Year-over-Year % Change (*Note: Tas & ACT excluded due to small sample sizes & platform coverage gaps)",
+    "fontSize": 16,
+    "subtitleFontSize": 11,
+    "subtitleColor": "#4b5563",
+    "offset": 14
+  },
+  "params": [
+    {
+      "name": "animal_type",
+      "value": "Dogs",
+      "bind": {
+        "input": "radio",
+        "options": ["Dogs", "Cats", "Other"],
+        "name": "Select Animal: "
+      }
+    }
+  ],
+  "data": {
+    "values": [
+      {"state": "Western Australia", "animal": "Dogs", "adoptions": 2135, "change_pct": 10.6, "lat": -26.0, "lon": 122.0},
+      {"state": "Western Australia", "animal": "Cats", "adoptions": 4081, "change_pct": 4.8, "lat": -26.0, "lon": 122.0},
+      {"state": "Western Australia", "animal": "Other", "adoptions": 236, "change_pct": 3.1, "lat": -26.0, "lon": 122.0},
+      
+      {"state": "Northern Territory", "animal": "Dogs", "adoptions": 229, "change_pct": -15.9, "lat": -21.0, "lon": 133.5},
+      {"state": "Northern Territory", "animal": "Cats", "adoptions": 207, "change_pct": -21.3, "lat": -21.0, "lon": 133.5},
+      {"state": "Northern Territory", "animal": "Other", "adoptions": 0, "change_pct": 0.0, "lat": -21.0, "lon": 133.5},
+      
+      {"state": "Queensland", "animal": "Dogs", "adoptions": 6308, "change_pct": 9.0, "lat": -23.5, "lon": 144.5},
+      {"state": "Queensland", "animal": "Cats", "adoptions": 6639, "change_pct": -13.0, "lat": -23.5, "lon": 144.5},
+      {"state": "Queensland", "animal": "Other", "adoptions": 566, "change_pct": -0.2, "lat": -23.5, "lon": 144.5},
+      
+      {"state": "South Australia", "animal": "Dogs", "adoptions": 195, "change_pct": 4.8, "lat": -30.0, "lon": 135.0},
+      {"state": "South Australia", "animal": "Cats", "adoptions": 1138, "change_pct": 12.7, "lat": -30.0, "lon": 135.0},
+      {"state": "South Australia", "animal": "Other", "adoptions": 4, "change_pct": 4.0, "lat": -30.0, "lon": 135.0},
+      
+      {"state": "New South Wales", "animal": "Dogs", "adoptions": 6778, "change_pct": 12.0, "lat": -32.5, "lon": 147.0},
+      {"state": "New South Wales", "animal": "Cats", "adoptions": 7100, "change_pct": -4.1, "lat": -32.5, "lon": 147.0},
+      {"state": "New South Wales", "animal": "Other", "adoptions": 373, "change_pct": -9.2, "lat": -32.5, "lon": 147.0},
+      
+      {"state": "Victoria", "animal": "Dogs", "adoptions": 7806, "change_pct": 18.4, "lat": -36.8, "lon": 144.0},
+      {"state": "Victoria", "animal": "Cats", "adoptions": 17006, "change_pct": 1.1, "lat": -36.8, "lon": 144.0},
+      {"state": "Victoria", "animal": "Other", "adoptions": 975, "change_pct": -9.8, "lat": -36.8, "lon": 144.0}
+    ]
+  },
+  "transform": [
+    {
+      "filter": "datum.animal == animal_type"
+    }
+  ],
+  "layer": [
+    {
+      "transform": [
+        {
+          "lookup": "state",
+          "from": {
+            "data": {
+              "url": "https://raw.githubusercontent.com/rowanhogan/australian-states/master/states.geojson",
+              "format": {"type": "json", "property": "features"}
+            },
+            "key": "properties.STATE_NAME"
+          },
+          "as": "geo"
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "stroke": "#ffffff",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "shape": {
+          "field": "geo",
+          "type": "geojson"
+        },
+        "color": {
+          "field": "change_pct",
+          "type": "quantitative",
+          "scale": {
+            "type": "linear",
+            "domain": [-25, -12.5, 0, 12.5, 25],
+            "range": ["#8c510a", "#dfc27d", "#f5f5f5", "#a6dba0", "#006837"],
+            "clamp": true
+          },
+          "legend": {
+            "title": "YoY Change (%)",
+            "format": "+.1f"
+          }
+        },
+        "tooltip": [
+          {"field": "state", "type": "nominal", "title": "State/Territory:"},
+          {"field": "animal", "type": "nominal", "title": "Animal Type:"},
+          {"field": "change_pct", "type": "quantitative", "title": "Change (%):", "format": "+.1f"},
+          {"field": "adoptions", "type": "quantitative", "title": "Adoptions:", "format": ","}
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "fontWeight": "bold",
+        "fontSize": 12
+      },
+      "encoding": {
+        "longitude": {"field": "lon", "type": "quantitative"},
+        "latitude": {"field": "lat", "type": "quantitative"},
+        "text": {
+          "field": "change_pct",
+          "type": "quantitative",
+          "format": "+.1f"
+        },
+        "color": {
+          "condition": {
+            "test": "datum.change_pct < -15 || datum.change_pct > 15",
+            "value": "#ffffff"
+          },
+          "value": "#111827"
+        }
+      }
+    }
+  ]
+}

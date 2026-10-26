@@ -3,68 +3,68 @@
   "width": 500,
   "height": 320,
   "title": {
-    "text":"At Every Age, We All Just Want Simple Companionship",
+    "text": "At Every Age, We All Just Want Simple Companionship",
     "subtitle": "Selected Reasons for Pet Adoption by Age, 2024",
     "fontSize": 16,
     "offset": 15
   },
   "data": {
     "values": [
-      {"Reason": "Companionship", "Age": "18–27", "Percentage": 0.715},
-      {"Reason": "Companionship", "Age": "28–37", "Percentage": 0.717},
-      {"Reason": "Companionship", "Age": "38–47", "Percentage": 0.704},
-      {"Reason": "Companionship", "Age": "48–57", "Percentage": 0.678},
-      {"Reason": "Companionship", "Age": "58–67", "Percentage": 0.730},
-      {"Reason": "Companionship", "Age": "68–75", "Percentage": 0.680},
+      {"Reason": "Companionship", "Age": "18-27", "Percentage": 0.715},
+      {"Reason": "Companionship", "Age": "28-37", "Percentage": 0.717},
+      {"Reason": "Companionship", "Age": "38-47", "Percentage": 0.704},
+      {"Reason": "Companionship", "Age": "48-57", "Percentage": 0.678},
+      {"Reason": "Companionship", "Age": "58-67", "Percentage": 0.730},
+      {"Reason": "Companionship", "Age": "68-75", "Percentage": 0.680},
 
-      {"Reason": "Mental health", "Age": "18–27", "Percentage": 0.266},
-      {"Reason": "Mental health", "Age": "28–37", "Percentage": 0.387},
-      {"Reason": "Mental health", "Age": "38–47", "Percentage": 0.270},
-      {"Reason": "Mental health", "Age": "48–57", "Percentage": 0.322},
-      {"Reason": "Mental health", "Age": "58–67", "Percentage": 0.239},
-      {"Reason": "Mental health", "Age": "68–75", "Percentage": 0.194},
+      {"Reason": "Mental health", "Age": "18-27", "Percentage": 0.266},
+      {"Reason": "Mental health", "Age": "28-37", "Percentage": 0.387},
+      {"Reason": "Mental health", "Age": "38-47", "Percentage": 0.270},
+      {"Reason": "Mental health", "Age": "48-57", "Percentage": 0.322},
+      {"Reason": "Mental health", "Age": "58-67", "Percentage": 0.239},
+      {"Reason": "Mental health", "Age": "68-75", "Percentage": 0.194},
 
-      {"Reason": "Good temperament", "Age": "18–27", "Percentage": 0.260},
-      {"Reason": "Good temperament", "Age": "28–37", "Percentage": 0.283},
-      {"Reason": "Good temperament", "Age": "38–47", "Percentage": 0.225},
-      {"Reason": "Good temperament", "Age": "48–57", "Percentage": 0.311},
-      {"Reason": "Good temperament", "Age": "58–67", "Percentage": 0.264},
-      {"Reason": "Good temperament", "Age": "68–75", "Percentage": 0.233},
+      {"Reason": "Suitable size or low maintenance", "Age": "18-27", "Percentage": 0.260},
+      {"Reason": "Suitable size or low maintenance", "Age": "28-37", "Percentage": 0.217},
+      {"Reason": "Suitable size or low maintenance", "Age": "38-47", "Percentage": 0.199},
+      {"Reason": "Suitable size or low maintenance", "Age": "48-57", "Percentage": 0.192},
+      {"Reason": "Suitable size or low maintenance", "Age": "58-67", "Percentage": 0.195},
+      {"Reason": "Suitable size or low maintenance", "Age": "68-75", "Percentage": 0.126},
 
-      {"Reason": "Rescue animal", "Age": "18–27", "Percentage": 0.215},
-      {"Reason": "Rescue animal", "Age": "28–37", "Percentage": 0.217},
-      {"Reason": "Rescue animal", "Age": "38–47", "Percentage": 0.189},
-      {"Reason": "Rescue animal", "Age": "48–57", "Percentage": 0.283},
-      {"Reason": "Rescue animal", "Age": "58–67", "Percentage": 0.315},
-      {"Reason": "Rescue animal", "Age": "68–75", "Percentage": 0.272},
+      {"Reason": "Good temperament", "Age": "18-27", "Percentage": 0.260},
+      {"Reason": "Good temperament", "Age": "28-37", "Percentage": 0.283},
+      {"Reason": "Good temperament", "Age": "38-47", "Percentage": 0.225},
+      {"Reason": "Good temperament", "Age": "48-57", "Percentage": 0.311},
+      {"Reason": "Good temperament", "Age": "58-67", "Percentage": 0.264},
+      {"Reason": "Good temperament", "Age": "68-75", "Percentage": 0.233},
 
-      {"Reason": "Suitable size or low maintenance", "Age": "18–27", "Percentage": 0.260},
-      {"Reason": "Suitable size or low maintenance", "Age": "28–37", "Percentage": 0.217},
-      {"Reason": "Suitable size or low maintenance", "Age": "38–47", "Percentage": 0.199},
-      {"Reason": "Suitable size or low maintenance", "Age": "48–57", "Percentage": 0.192},
-      {"Reason": "Suitable size or low maintenance", "Age": "58–67", "Percentage": 0.195},
-      {"Reason": "Suitable size or low maintenance", "Age": "68–75", "Percentage": 0.126},
+      {"Reason": "Rescue animal", "Age": "18-27", "Percentage": 0.215},
+      {"Reason": "Rescue animal", "Age": "28-37", "Percentage": 0.217},
+      {"Reason": "Rescue animal", "Age": "38-47", "Percentage": 0.189},
+      {"Reason": "Rescue animal", "Age": "48-57", "Percentage": 0.283},
+      {"Reason": "Rescue animal", "Age": "58-67", "Percentage": 0.315},
+      {"Reason": "Rescue animal", "Age": "68-75", "Percentage": 0.272},
 
-      {"Reason": "Support animal/s", "Age": "18–27", "Percentage": 0.177},
-      {"Reason": "Support animal/s", "Age": "28–37", "Percentage": 0.127},
-      {"Reason": "Support animal/s", "Age": "38–47", "Percentage": 0.148},
-      {"Reason": "Support animal/s", "Age": "48–57", "Percentage": 0.124},
-      {"Reason": "Support animal/s", "Age": "58–67", "Percentage": 0.107},
-      {"Reason": "Support animal/s", "Age": "68–75", "Percentage": 0.107},
+      {"Reason": "Support animal/s", "Age": "18-27", "Percentage": 0.177},
+      {"Reason": "Support animal/s", "Age": "28-37", "Percentage": 0.127},
+      {"Reason": "Support animal/s", "Age": "38-47", "Percentage": 0.148},
+      {"Reason": "Support animal/s", "Age": "48-57", "Percentage": 0.124},
+      {"Reason": "Support animal/s", "Age": "58-67", "Percentage": 0.107},
+      {"Reason": "Support animal/s", "Age": "68-75", "Percentage": 0.107},
 
-      {"Reason": "Given/left to me", "Age": "18–27", "Percentage": 0.095},
-      {"Reason": "Given/left to me", "Age": "28–37", "Percentage": 0.066},
-      {"Reason": "Given/left to me", "Age": "38–47", "Percentage": 0.061},
-      {"Reason": "Given/left to me", "Age": "48–57", "Percentage": 0.085},
-      {"Reason": "Given/left to me", "Age": "58–67", "Percentage": 0.170},
-      {"Reason": "Given/left to me", "Age": "68–75", "Percentage": 0.155},
+      {"Reason": "Given/left to me", "Age": "18-27", "Percentage": 0.095},
+      {"Reason": "Given/left to me", "Age": "28-37", "Percentage": 0.066},
+      {"Reason": "Given/left to me", "Age": "38-47", "Percentage": 0.061},
+      {"Reason": "Given/left to me", "Age": "48-57", "Percentage": 0.085},
+      {"Reason": "Given/left to me", "Age": "58-67", "Percentage": 0.170},
+      {"Reason": "Given/left to me", "Age": "68-75", "Percentage": 0.155},
 
-      {"Reason": "Other", "Age": "18–27", "Percentage": 0.019},
-      {"Reason": "Other", "Age": "28–37", "Percentage": 0.014},
-      {"Reason": "Other", "Age": "38–47", "Percentage": 0.026},
-      {"Reason": "Other", "Age": "48–57", "Percentage": 0.034},
-      {"Reason": "Other", "Age": "58–67", "Percentage": 0.025},
-      {"Reason": "Other", "Age": "68–75", "Percentage": 0.029}
+      {"Reason": "Other", "Age": "18-27", "Percentage": 0.019},
+      {"Reason": "Other", "Age": "28-37", "Percentage": 0.014},
+      {"Reason": "Other", "Age": "38-47", "Percentage": 0.026},
+      {"Reason": "Other", "Age": "48-57", "Percentage": 0.034},
+      {"Reason": "Other", "Age": "58-67", "Percentage": 0.025},
+      {"Reason": "Other", "Age": "68-75", "Percentage": 0.029}
     ]
   },
   "layer": [
@@ -75,7 +75,7 @@
           "field": "Age",
           "type": "nominal",
           "title": "Age Bracket",
-          "sort": ["18–27", "28–37", "38–47", "48–57", "58–67", "68–75"]
+          "sort": ["18-27", "28-37", "38-47", "48-57", "58-67", "68-75"]
         },
         "y": {
           "field": "Reason",
@@ -84,9 +84,9 @@
           "sort": [
             "Companionship",
             "Mental health",
+            "Suitable size or low maintenance",
             "Good temperament",
             "Rescue animal",
-            "Suitable size or low maintenance",
             "Support animal/s",
             "Given/left to me",
             "Other"
@@ -96,12 +96,12 @@
           "field": "Percentage",
           "type": "quantitative",
           "scale": {
-            "scheme": "blues",
+            "scheme": "greens",
             "domain": [0, 0.75]
           },
           "legend": {
             "title": "% Selecting Reason",
-            "format": ".0%"
+            "format": ".1%"
           }
         },
         "tooltip": [
@@ -115,14 +115,14 @@
       "mark": {
         "type": "text",
         "baseline": "middle",
-        "fontSize": 10,
+        "fontSize": 13,
         "fontWeight": "bold"
       },
       "encoding": {
         "x": {
           "field": "Age",
           "type": "nominal",
-          "sort": ["18–27", "28–37", "38–47", "48–57", "58–67", "68–75"]
+          "sort": ["18-27", "28-37", "38-47", "48-57", "58-67", "68-75"]
         },
         "y": {
           "field": "Reason",
@@ -130,15 +130,15 @@
           "sort": [
             "Companionship",
             "Mental health",
+            "Suitable size or low maintenance",
             "Good temperament",
             "Rescue animal",
-            "Suitable size or low maintenance",
             "Support animal/s",
             "Given/left to me",
             "Other"
           ]
         },
-        "text": {"field": "Percentage", "type": "quantitative", "format": ".0%"},
+        "text": {"field": "Percentage", "type": "quantitative", "format": ".1%"},
         "color": {
           "condition": {
             "test": "datum.Percentage > 0.40",

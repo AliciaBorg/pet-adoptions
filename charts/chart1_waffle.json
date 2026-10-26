@@ -78,7 +78,7 @@
           "Not Formally Adopted (Breeder or Pet Shop)",
           "Formally Adopted (Shelter or Adoption Agency)"
         ],
-        "range": ["#2b5c8f", "#d95f02"]
+        "range": ["#8c8c8c", "#2ca02c"]
       },
       "legend": {
         "title": "Acquisition Type",

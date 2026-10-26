@@ -3,10 +3,12 @@
   "width": 650,
   "height": 550,
   "title": {
-    "text": "Victoria Leads the Nation in Pet Adoptions",
-    "subtitle": "Pet Adoptions per 100,000 Resident Population by State & Territory, 2025",
+    "text": "Victoria Leads the Nation in PetRescue Adoptions",
+    "subtitle": "PetRescue Adoptions per 100,000 Resident Population by State & Territory, 2025",
     "fontSize": 16,
-    "offset": 15
+    "subtitleFontSize": 13,
+    "subtitleColor": "#4b5563",
+    "offset": 14
   },
   "data": {
     "values": [
@@ -68,15 +70,18 @@
           {"field": "state", "type": "nominal", "title": "State/Territory:"},
           {"field": "adoptions_per_100k", "type": "quantitative", "title": "Adoptions per 100k:", "format": ","},
           {"field": "adoptions", "type": "quantitative", "title": "Total Adoptions:", "format": ","},
-          {"field": "population", "type": "quantitative", "title": "Dec 2025 Population:", "format": ","}
+          {"field": "population", "type": "quantitative", "title": "Population:", "format": ","}
         ]
       }
     },
     {
+      "transform": [
+        {"filter": "datum.state != 'Australian Capital Territory'"}
+      ],
       "mark": {
         "type": "text",
         "fontWeight": "bold",
-        "fontSize": 11
+        "fontSize": 13
       },
       "encoding": {
         "longitude": {"field": "lon", "type": "quantitative"},
@@ -89,6 +94,40 @@
           },
           "value": "#111827"
         }
+      }
+    },
+    {
+      "transform": [
+        {"filter": "datum.state == 'Australian Capital Territory'"}
+      ],
+      "mark": {
+        "type": "rule",
+        "color": "#111827",
+        "strokeWidth": 1.2
+      },
+      "encoding": {
+        "longitude": {"field": "lon", "type": "quantitative"},
+        "latitude": {"field": "lat", "type": "quantitative"},
+        "longitude2": {"datum": 154.5},
+        "latitude2": {"datum": -35.3}
+      }
+    },
+    {
+      "transform": [
+        {"filter": "datum.state == 'Australian Capital Territory'"}
+      ],
+      "mark": {
+        "type": "text",
+        "fontWeight": "bold",
+        "fontSize": 13,
+        "align": "left",
+        "dx": 6
+      },
+      "encoding": {
+        "longitude": {"datum": 154.5},
+        "latitude": {"datum": -35.3},
+        "text": {"field": "adoptions_per_100k", "type": "quantitative"},
+        "color": {"value": "#111827"}
       }
     }
   ]

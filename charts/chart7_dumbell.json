@@ -3,8 +3,8 @@
   "width": 380,
   "height": 380,
   "title": {
-    "text": "Reasons for Not Considering Adopting a Rescue Pet",
-    "subtitle": "Comparison between Dogs and Cats",
+    "text": "Reasons Australians Don't Consider Rescuing a Dog or Cat",
+    "subtitle": "Key deterrents compared between dogs and cats, 2025",
     "fontSize": 15,
     "offset": 15
   },
@@ -12,22 +12,22 @@
     "values": [
       {"reason": "I was looking for a particular breed", "animal": "Dogs", "percentage": 38},
       {"reason": "I was looking for a particular breed", "animal": "Cats", "percentage": 38},
-      {"reason": "I would prefer a young kitten/puppy", "animal": "Dogs", "percentage": 39},
-      {"reason": "I would prefer a young kitten/puppy", "animal": "Cats", "percentage": 32},
+      {"reason": "I would prefer a young puppy/kitten", "animal": "Dogs", "percentage": 39},
+      {"reason": "I would prefer a young puppy/kitten", "animal": "Cats", "percentage": 32},
       {"reason": "I just didn't think to do so", "animal": "Dogs", "percentage": 20},
       {"reason": "I just didn't think to do so", "animal": "Cats", "percentage": 23},
+      {"reason": "No particular reason", "animal": "Dogs", "percentage": 12},
+      {"reason": "No particular reason", "animal": "Cats", "percentage": 17},
       {"reason": "Concerns about potential behavioural issues", "animal": "Dogs", "percentage": 17},
       {"reason": "Concerns about potential behavioural issues", "animal": "Cats", "percentage": 12},
       {"reason": "Concerns about potential health issues", "animal": "Dogs", "percentage": 9},
       {"reason": "Concerns about potential health issues", "animal": "Cats", "percentage": 11},
-      {"reason": "I've had negative experiences with rescue pets", "animal": "Dogs", "percentage": 4},
-      {"reason": "I've had negative experiences with rescue pets", "animal": "Cats", "percentage": 8},
       {"reason": "There are no rescue shelters near me", "animal": "Dogs", "percentage": 10},
       {"reason": "There are no rescue shelters near me", "animal": "Cats", "percentage": 7},
+      {"reason": "I've had negative experiences with a dog/cat", "animal": "Dogs", "percentage": 4},
+      {"reason": "I've had negative experiences with a dog/cat", "animal": "Cats", "percentage": 8},
       {"reason": "Another reason", "animal": "Dogs", "percentage": 7},
-      {"reason": "Another reason", "animal": "Cats", "percentage": 4},
-      {"reason": "No particular reason", "animal": "Dogs", "percentage": 12},
-      {"reason": "No particular reason", "animal": "Cats", "percentage": 17}
+      {"reason": "Another reason", "animal": "Cats", "percentage": 4}
     ]
   },
   "encoding": {
@@ -37,13 +37,13 @@
       "title": null,
       "sort": [
         "I was looking for a particular breed",
-        "I would prefer a young kitten/puppy",
+        "I would prefer a young puppy/kitten",
         "I just didn't think to do so",
-        "Concerns about potential behavioural issues",
         "No particular reason",
+        "Concerns about potential behavioural issues",
         "Concerns about potential health issues",
         "There are no rescue shelters near me",
-        "I've had negative experiences with rescue pets",
+        "I've had negative experiences with a dog/cat",
         "Another reason"
       ],
       "axis": {
@@ -74,7 +74,7 @@
           "field": "percentage",
           "type": "quantitative",
           "title": "Share of Respondents (%)",
-          "scale": {"domain": [0, 45]}
+          "scale": {"domain": [0, 48]}
         },
         "color": {
           "field": "animal",
@@ -83,13 +83,44 @@
             "domain": ["Dogs", "Cats"],
             "range": ["#2b5c8f", "#d95f02"]
           },
-          "legend": {"title": "Pet Type", "orient": "bottom"}
+          "legend": {
+            "title": "Pet Type",
+            "titleFontSize": 13,
+            "labelFontSize": 12,
+            "orient": "none",
+            "legendX": 265,
+            "legendY": 255,
+            "direction": "vertical",
+            "fillColor": "#ffffff",
+            "strokeColor": "#e2e8f0",
+            "padding": 8,
+            "cornerRadius": 4
+          }
         },
         "tooltip": [
           {"field": "reason", "type": "nominal", "title": "Reason:"},
           {"field": "animal", "type": "nominal", "title": "Pet Type:"},
           {"field": "percentage", "type": "quantitative", "title": "Share (%):"}
         ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.reason == 'I was looking for a particular breed' && datum.animal == 'Cats'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 10,
+        "fontSize": 11,
+        "fontStyle": "italic",
+        "color": "#64748b"
+      },
+      "encoding": {
+        "x": {"field": "percentage", "type": "quantitative"},
+        "text": {"value": "(Dogs & Cats equal)"}
       }
     }
   ]

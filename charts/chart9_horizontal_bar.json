@@ -1,0 +1,109 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 400,
+  "height": 260,
+  "title": {
+    "text": "Shelters Offter the Fastest Path to Adoption",
+    "subtitle": "Median days to adoption for Dogs and Cats Across PetRescue Member Orgnisations, 2025",
+    "fontSize": 15,
+    "offset": 15
+  },
+  "data": {
+    "values": [
+      {"organisation": "Shelter", "animal": "Dogs", "median_tta": 4, "adoption_rate": 87},
+      {"organisation": "Shelter", "animal": "Cats", "median_tta": 3, "adoption_rate": 92},
+      {"organisation": "Council", "animal": "Dogs", "median_tta": 10, "adoption_rate": 84},
+      {"organisation": "Council", "animal": "Cats", "median_tta": 9, "adoption_rate": 90},
+      {"organisation": "Vet", "animal": "Dogs", "median_tta": 17, "adoption_rate": 87},
+      {"organisation": "Vet", "animal": "Cats", "median_tta": 16, "adoption_rate": 78},
+      {"organisation": "Rescue group", "animal": "Dogs", "median_tta": 23, "adoption_rate": 76},
+      {"organisation": "Rescue group", "animal": "Cats", "median_tta": 20, "adoption_rate": 77}
+    ]
+  },
+  "encoding": {
+    "y": {
+      "field": "organisation",
+      "type": "nominal",
+      "title": null,
+      "sort": ["Shelter", "Council", "Vet", "Rescue group"],
+      "axis": {
+        "labelFontSize": 12,
+        "labelPadding": 8
+      }
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "cornerRadiusEnd": 0
+      },
+      "encoding": {
+        "yOffset": {
+          "field": "animal",
+          "sort": ["Dogs", "Cats"]
+        },
+        "x": {
+          "field": "median_tta",
+          "type": "quantitative",
+          "title": "Median Time to Adoption (Days)",
+          "axis": {"grid": true}
+        },
+        "color": {
+          "field": "animal",
+          "type": "nominal",
+          "scale": {
+            "domain": ["Dogs", "Cats"],
+            "range": ["#2b5c8f", "#d95f02"]
+          },
+          "legend": {
+            "title": "Pet Type",
+            "titleFontSize": 13,
+            "labelFontSize": 12,
+            "orient": "none",
+            "legendX": 270,
+            "legendY": 10,
+            "direction": "vertical",
+            "fillColor": "#ffffff",
+            "strokeColor": "#e2e8f0",
+            "padding": 8,
+            "cornerRadius": 4
+          }
+        },
+        "tooltip": [
+          {"field": "organisation", "type": "nominal", "title": "Organisation:"},
+          {"field": "animal", "type": "nominal", "title": "Pet:"},
+          {"field": "median_tta", "type": "quantitative", "title": "Median TTA (Days):"},
+          {"field": "adoption_rate", "type": "quantitative", "title": "Adoption Rate (%):"}
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 5,
+        "fontSize": 11,
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "yOffset": {
+          "field": "animal",
+          "sort": ["Dogs", "Cats"]
+        },
+        "x": {
+          "field": "median_tta",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "median_tta",
+          "type": "quantitative",
+          "format": "d"
+        },
+        "color": {
+          "value": "#334155"
+        }
+      }
+    }
+  ]
+}
