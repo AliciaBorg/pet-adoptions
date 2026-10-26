@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=22">
+  <link rel="stylesheet" href="styles.css?v=26">
 
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
@@ -51,7 +51,6 @@
           <article class="chart-card map-card">
             <div id="vis2" class="chart-container map-container"></div>
             <div class="takeaway">
-              <span>Key takeaway</span>
               <strong>Victoria has the highest adoption rate per 100,000 people.</strong>
               <p>That lead makes access the next part of the story: are the places with more adoptions also the places with more rescue organisations?</p>
             </div>
@@ -60,7 +59,6 @@
           <article class="chart-card map-card">
             <div id="vis3" class="chart-container map-container"></div>
             <div class="takeaway">
-              <span>Key takeaway</span>
               <strong>NSW, Victoria and Queensland have the deepest rescue networks.</strong>
               <p>The concentration of organisations overlaps with the states recording the most adoption activity, suggesting that local rescue capacity helps shape where adoption can happen.</p>
             </div>
@@ -68,107 +66,78 @@
         </div>
       </section>
 
-      <section class="story-section" aria-labelledby="speed-title">
+      <section class="story-section story-section--tint" aria-labelledby="who-title">
         <div class="section-heading">
-          <h2 id="speed-title">What influences how long pets wait?</h2>
-          <p>Geography determines where adoption can happen. But once a pet is listed, age, size and the type of organisation presenting it can shape how quickly it finds a home.</p>
+          <h2 id="who-title">Who is being adopted?</h2>
+          <p>Before looking at why some pets wait longer, it helps to see who makes up the adoption picture. Dogs and cats account for most recorded PetRescue adoptions, but their paths through the system are not identical.</p>
         </div>
 
-        <div class="feature-grid feature-grid--three">
+        <div class="feature-grid">
           <article class="chart-card">
-            <div class="card-copy">
-              <h3>Senior pets wait longest.</h3>
-              <p>Median days to adoption by life stage.</p>
-              <div class="takeaway"><span>Key takeaway</span><strong>Senior dogs have the longest median wait.</strong></div>
-            </div>
-            <div id="vis8" class="chart-container"></div>
+            <div id="vis5" class="chart-container"></div>
+            <div class="takeaway"><strong>Cats account for the largest share of recorded adoptions.</strong><p>The species mix gives us the scale of the system; the next chart shows what happens after dogs and cats enter it.</p></div>
           </article>
           <article class="chart-card">
-            <div class="card-copy">
-              <h3>Size matters more for dogs.</h3>
-              <p>Median days to adoption by size tier.</p>
-              <div class="takeaway"><span>Key takeaway</span><strong>Larger dogs take longer to find a home; cats move faster at every tier.</strong></div>
-            </div>
-            <div id="vis9" class="chart-container"></div>
-          </article>
-          <article class="chart-card">
-            <div class="card-copy">
-              <h3>Where a pet is listed matters.</h3>
-              <p>Median time to adoption across organisation types.</p>
-              <div class="takeaway"><span>Key takeaway</span><strong>Shelters show the fastest median pathway for both species.</strong></div>
-            </div>
-            <div id="vis10" class="chart-container"></div>
+            <div id="vis4" class="chart-container"></div>
+            <div class="takeaway"><strong>Rehoming is the leading outcome, while a meaningful share is reclaimed.</strong><p>This is the bridge from who is listed to how long they may wait: a successful outcome is not always an immediate one.</p></div>
           </article>
         </div>
       </section>
 
-      <section class="story-section story-section--tint" aria-labelledby="outcomes-title">
+      <section class="story-section" aria-labelledby="speed-title">
         <div class="section-heading">
-          <h2 id="outcomes-title">The animals may arrive differently. Their outcomes do too.</h2>
-          <p>With the main influences on waiting time established, we can look at what happens once pets enter the adoption system. Dogs and cats dominate the listings, but their routes to a new home are not identical.</p>
+          <h2 id="speed-title">What influences how long pets wait?</h2>
+          <p>Now that we know who makes up the adoption picture, we can look at the practical differences that shape time to home. Age, size and the type of organisation presenting a pet all matter.</p>
+        </div>
+
+        <div class="feature-grid feature-grid--three">
+          <article class="chart-card">
+            <div id="vis8" class="chart-container"></div>
+            <div class="takeaway"><strong>Senior dogs have the longest median wait.</strong></div>
+          </article>
+          <article class="chart-card">
+            <div id="vis9" class="chart-container"></div>
+            <div class="takeaway"><strong>Larger dogs take longer to find a home; cats move faster at every tier.</strong></div>
+          </article>
+          <article class="chart-card">
+            <div id="vis10" class="chart-container"></div>
+            <div class="takeaway"><strong>Shelters show the fastest median pathway for both species.</strong></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="story-section" aria-labelledby="motivation-title">
+        <div class="section-heading">
+          <h2 id="motivation-title">What shapes adopter decisions?</h2>
+          <p>The waiting-time patterns point towards a human explanation. What people hope to find, and what they hesitate to consider, can influence which animals are seen first.</p>
         </div>
 
         <div class="feature-grid">
-          <article class="chart-card chart-card--wide">
-            <div class="card-copy">
-              <h3>A second chance is the most common story.</h3>
-              <p>Outcomes for dogs and cats listed for adoption in 2024.</p>
-              <div class="takeaway"><span>Key takeaway</span><strong>Rehoming is the leading outcome, while a meaningful share is reclaimed.</strong></div>
-            </div>
-            <div id="vis4" class="chart-container"></div>
-          </article>
-
           <article class="chart-card">
-            <div class="card-copy">
-              <h3>Dogs and cats dominate the flow.</h3>
-              <p>Share of PetRescue adoptions by species in 2025.</p>
-              <div class="takeaway"><span>Key takeaway</span><strong>Cats account for the largest share of recorded adoptions.</strong></div>
-            </div>
-            <div id="vis5" class="chart-container"></div>
-          </article>
-
-          <article class="chart-card">
-            <div class="card-copy">
-              <h3>Companionship crosses generations.</h3>
-              <p>Selected reasons for considering adoption by age.</p>
-              <div class="takeaway"><span>Key takeaway</span><strong>Companionship stays close to 70% across every age bracket.</strong></div>
-            </div>
             <div id="vis6" class="chart-container"></div>
+            <div class="takeaway"><strong>Companionship stays close to 70% across every age bracket.</strong><p>The desire for connection is shared across generations, creating a broad foundation for adoption.</p></div>
           </article>
-
-          <article class="chart-card chart-card--wide">
-            <div class="card-copy">
-              <h3>Preference can become a barrier.</h3>
-              <p>Why Australians say they do not consider rescuing a dog or cat.</p>
-              <div class="takeaway"><span>Key takeaway</span><strong>Wanting a particular breed or a very young pet is the clearest hesitation.</strong></div>
-            </div>
+          <article class="chart-card">
             <div id="vis7" class="chart-container"></div>
+            <div class="takeaway"><strong>Wanting a particular breed or a very young pet is the clearest hesitation.</strong><p>These preferences can help explain why older, larger or less conventional pets face longer waits.</p></div>
           </article>
         </div>
       </section>
 
       <section class="story-section story-section--tint" aria-labelledby="change-title">
         <div class="section-heading">
-          <h2 id="change-title">The pathway is getting harder.</h2>
-          <p>We have seen where adoption capacity sits and which animals face the longest waits. The final piece is time: adoption rates were high for several years, but the latest comparisons suggest that the rescue sector is now navigating a more difficult environment.</p>
+          <h2 id="change-title">The adoption landscape is changing.</h2>
+          <p>We have followed the pathway from access, to the animals being adopted, to the preferences that shape waiting time. The final question is whether the overall environment is becoming easier or harder for rescue organisations.</p>
         </div>
 
         <div class="feature-grid">
-          <article class="chart-card chart-card--wide">
-            <div class="card-copy">
-              <h3>The drop is broad-based.</h3>
-              <p>Comparing adoption rates across 2023 and 2025.</p>
-              <div class="takeaway"><span>Key takeaway</span><strong>Every category sits lower in 2025 than in 2023.</strong></div>
-            </div>
+          <article class="chart-card">
             <div id="vis11" class="chart-container"></div>
+            <div class="takeaway"><strong>Every category sits lower in 2025 than in 2023.</strong><p>The broad decline suggests the challenge is not limited to one species or one type of listing.</p></div>
           </article>
           <article class="chart-card">
-            <div class="card-copy">
-              <h3>Place changes the picture.</h3>
-              <p>Year-on-year change by state and animal type.</p>
-              <div class="takeaway"><span>Key takeaway</span><strong>State-level shifts are uneven, so a national average hides local stories.</strong></div>
-            </div>
             <div id="vis12" class="chart-container"></div>
+            <div class="takeaway"><strong>State-level shifts are uneven, so a national average hides local stories.</strong><p>Local conditions matter, which brings the story back to the importance of place and rescue capacity.</p></div>
           </article>
         </div>
       </section>

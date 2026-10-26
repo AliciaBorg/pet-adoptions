@@ -41,17 +41,6 @@ body {
   background-image: radial-gradient(circle at 85% 22%, rgba(225, 121, 95, .25) 0 105px, transparent 106px), radial-gradient(circle at 91% 26%, rgba(211, 167, 79, .18) 0 220px, transparent 221px);
 }
 
-.hero::after {
-  content: "✦";
-  position: absolute;
-  right: 8%;
-  bottom: 40px;
-  color: var(--coral);
-  font-size: 13rem;
-  line-height: 1;
-  opacity: .14;
-}
-
 .hero-topline, .section-label, .takeaway span {
   font-size: .71rem;
   font-weight: 700;
@@ -101,7 +90,7 @@ main { padding: 0 clamp(22px, 5vw, 82px); }
 .geography-heading h2 { white-space: nowrap; }
 .feature-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
 .feature-grid--three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-.chart-card { min-width: 0; padding: 28px 28px 24px; border: 1px solid var(--line); border-radius: 3px; background: var(--card); box-shadow: 0 8px 26px rgba(37, 46, 40, .045); }
+.chart-card { min-width: 0; padding: 24px 24px 22px; border: 1px solid var(--line); border-radius: 18px; background: var(--card); box-shadow: 0 16px 38px rgba(37, 46, 40, .08); }
 .chart-card--wide {
   display: grid;
   grid-template-columns: minmax(230px, .7fr) minmax(0, 1.3fr);
@@ -118,14 +107,18 @@ main { padding: 0 clamp(22px, 5vw, 82px); }
 .map-container { flex: 1; min-height: 520px; margin: 0 -4px; align-items: center; overflow: hidden; }
 .map-container .vega-embed { display: flex; justify-content: center; width: 100%; background: var(--card); }
 .map-container svg { width: min(100%, 500px) !important; height: auto !important; }
-.map-card .takeaway { margin: auto 4px 0; padding: 18px 20px; border-top: 0; border-left: 3px solid var(--gold); background: #eee9df; }
+.map-card .takeaway { margin: auto 4px 0; padding: 18px 20px; }
 .map-card .takeaway strong { max-width: none; }
 .map-card .takeaway p { margin: 8px 0 0; color: var(--muted); font-size: .86rem; line-height: 1.45; }
-.takeaway { margin-top: 15px; padding-top: 12px; border-top: 1px solid var(--line); }
+.takeaway { margin-top: 15px; padding: 18px 20px; border-left: 3px solid var(--gold); background: #eee9df; }
+.story-section .chart-card:not(.map-card) { display: flex; flex-direction: column; }
+.story-section .chart-card:not(.map-card) .chart-container { flex: 1; }
+.story-section .chart-card:not(.map-card) .takeaway { margin-top: auto; }
 .chart-card--dark .takeaway { border-color: rgba(255,255,255,.18); }
-.takeaway span { display: block; margin-bottom: 3px; color: var(--coral); }
-.takeaway strong { display: block; max-width: 480px; font-size: .91rem; line-height: 1.35; }
-.chart-container { display: flex; justify-content: center; min-width: 0; min-height: 180px; margin: 16px -10px 0; overflow-x: auto; }
+.takeaway span { display: none; }
+.takeaway strong { display: block; max-width: 480px; font-size: .98rem; line-height: 1.35; }
+.takeaway p { margin: 8px 0 0; color: var(--muted); font-size: .86rem; line-height: 1.45; }
+.chart-container { display: flex; justify-content: center; min-width: 0; min-height: 180px; margin: 0 -8px; overflow-x: auto; background: var(--card); }
 .chart-card--wide .chart-container { margin-top: 0; }
 .chart-container .vega-embed { width: auto; max-width: 100%; }
 .chart-container svg { max-width: 100%; height: auto; }
