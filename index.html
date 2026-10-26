@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=5">
+  <link rel="stylesheet" href="styles.css?v=14">
 
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
@@ -24,17 +24,20 @@
 
     <main>
       <section class="intro-band" aria-labelledby="intro-title">
-        <div class="section-label">Introduction</div>
         <div class="intro-grid">
           <div class="intro-copy">
-            <h2 id="intro-title">What is adoption?</h2>
-            <p>Adoption means giving a pet from a shelter or rescue organisation a new home. It is not the same as buying a pet from a commercial breeder, pet shop or online broker, even though these are all ways Australians acquire companion animals.</p>
-            <p>That distinction matters: formal adoption is one specific pathway within the wider pet market, and it remains a minority pathway for people who own pets.</p>
-            <p class="bridge">The waffle chart makes that difference visible: of every 100 pets acquired in 2024, only 36 came through a shelter or adoption agency.</p>
+            <div class="section-label">Introduction</div>
+            <h2 id="intro-title">What “adoption” actually means</h2>
+            <p>Buying a pet from a commercial breeder, pet shop or online broker is often casually described as adoption. But in this story, adoption has a more specific meaning: giving a pet from a shelter or rescue organisation a new home.</p>
+            <p><strong>Not formally adopted</strong> means a pet was acquired through a breeder, pet shop or other commercial source. <strong>Formally adopted</strong> means a pet came through a shelter or adoption agency.</p>
+            <p class="bridge">That distinction matters. Of every 100 pets acquired in 2024, only 36 came through a shelter or adoption agency.</p>
           </div>
           <div class="waffle-card">
             <div id="vis1" class="chart-container intro-chart"></div>
-            <p class="waffle-caption">Share of Australians' pet acquisitions, 2024</p>
+            <div class="waffle-legend" aria-label="Waffle chart legend">
+              <span><i class="legend-swatch legend-swatch--formal"></i>Formally Adopted</span>
+              <span><i class="legend-swatch legend-swatch--not-formal"></i>Not Formally Adopted</span>
+            </div>
           </div>
         </div>
       </section>
