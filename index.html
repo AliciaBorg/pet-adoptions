@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=3">
+  <link rel="stylesheet" href="styles.css?v=4">
 
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
@@ -18,44 +18,37 @@
 <body>
   <div class="page-shell">
     <header class="hero">
-      <div class="hero-topline"><span class="eyebrow">Data story · Australia · 2021–2025</span><span class="paw-mark" aria-hidden="true">✦</span></div>
-      <p class="kicker">Pet Adoptions in Australia</p>
-      <h1>Finding pets<br><em>a home.</em></h1>
+      <h1>Pet Adoptions<br><em>in Australia</em></h1>
       <p class="hero-deck">A visual story about where adoptions happen, which animals find homes fastest, and how the rescue landscape is changing.</p>
     </header>
 
     <main>
       <section class="intro-band" aria-labelledby="intro-title">
-        <div class="section-label">The starting point</div>
+        <div class="section-label">Introduction</div>
         <div class="intro-grid">
-          <h2 id="intro-title">Adoption is more than a happy ending.</h2>
+          <div class="intro-copy">
+            <h2 id="intro-title">What is adoption?</h2>
+            <p>Adoption means giving a pet from a shelter or rescue organisation a new home. It is not the same as buying a pet from a commercial breeder, pet shop or online broker, even though these are all ways Australians acquire companion animals.</p>
+            <p>That distinction matters: formal adoption is one specific pathway within the wider pet market, and it remains a minority pathway for people who own pets.</p>
+            <p class="bridge">The waffle chart makes that difference visible: of every 100 pets acquired in 2024, only 36 came through a shelter or adoption agency.</p>
+          </div>
           <div>
-            <p>Every successful adoption sits at the intersection of supply, access and preference. This story follows that journey from the national picture, into the rescue network, and finally to the individual traits that can shape time to adoption.</p>
-            <p class="bridge">To understand the outcome, we first need to look at the pathway: how many people adopt, where rescue capacity sits, and which animals are visible to potential adopters.</p>
+            <div id="vis1" class="chart-container intro-chart"></div>
           </div>
         </div>
       </section>
 
       <section class="story-section" aria-labelledby="scale-title">
         <div class="section-heading">
-          <div class="section-label">Scale &amp; access</div>
-          <h2 id="scale-title">The pathway to adoption starts with access.</h2>
-          <p>Formal adoption is still a minority pathway for Australian pet owners. But the rescue organisations behind that pathway are not evenly distributed, and neither are adoption rates.</p>
+          <div class="section-label">Where adoption happens</div>
+          <h2 id="scale-title">Where is adoption happening in Australia?</h2>
+          <p>Once adoption is separated from other forms of pet acquisition, the next question is access. Adoption activity is not evenly distributed across the country, and neither is the network of organisations that makes rescue possible.</p>
         </div>
 
         <div class="feature-grid">
-          <article class="chart-card chart-card--dark chart-card--wide">
-            <div class="card-copy">
-              <h3>Adoption is not yet the default.</h3>
-              <p>How Australians acquired their pets in 2024.</p>
-              <div class="takeaway"><span>Key takeaway</span><strong>Only 36.3% of acquisitions were formal adoptions.</strong></div>
-            </div>
-            <div id="vis1" class="chart-container"></div>
-          </article>
-
           <article class="chart-card">
             <div class="card-copy">
-              <h3>Victoria sets the pace.</h3>
+              <h3>Adoption rates vary by state.</h3>
               <p>Adoptions normalised by resident population make states comparable.</p>
               <div class="takeaway"><span>Key takeaway</span><strong>Victoria has the highest adoption rate per 100,000 people.</strong></div>
             </div>
@@ -64,7 +57,7 @@
 
           <article class="chart-card">
             <div class="card-copy">
-              <h3>Rescue capacity follows population.</h3>
+              <h3>The rescue network is concentrated.</h3>
               <p>Active PetRescue member organisations by state.</p>
               <div class="takeaway"><span>Key takeaway</span><strong>NSW, Victoria and Queensland have the deepest rescue networks.</strong></div>
             </div>
@@ -73,11 +66,46 @@
         </div>
       </section>
 
+      <section class="story-section" aria-labelledby="speed-title">
+        <div class="section-heading">
+          <div class="section-label">The time to home</div>
+          <h2 id="speed-title">What influences how long pets wait?</h2>
+          <p>Geography determines where adoption can happen. But once a pet is listed, age, size and the type of organisation presenting it can shape how quickly it finds a home.</p>
+        </div>
+
+        <div class="feature-grid feature-grid--three">
+          <article class="chart-card">
+            <div class="card-copy">
+              <h3>Senior pets wait longest.</h3>
+              <p>Median days to adoption by life stage.</p>
+              <div class="takeaway"><span>Key takeaway</span><strong>Senior dogs have the longest median wait.</strong></div>
+            </div>
+            <div id="vis8" class="chart-container"></div>
+          </article>
+          <article class="chart-card">
+            <div class="card-copy">
+              <h3>Size matters more for dogs.</h3>
+              <p>Median days to adoption by size tier.</p>
+              <div class="takeaway"><span>Key takeaway</span><strong>Larger dogs take longer to find a home; cats move faster at every tier.</strong></div>
+            </div>
+            <div id="vis9" class="chart-container"></div>
+          </article>
+          <article class="chart-card">
+            <div class="card-copy">
+              <h3>Where a pet is listed matters.</h3>
+              <p>Median time to adoption across organisation types.</p>
+              <div class="takeaway"><span>Key takeaway</span><strong>Shelters show the fastest median pathway for both species.</strong></div>
+            </div>
+            <div id="vis10" class="chart-container"></div>
+          </article>
+        </div>
+      </section>
+
       <section class="story-section story-section--tint" aria-labelledby="outcomes-title">
         <div class="section-heading">
           <div class="section-label">Who gets home?</div>
           <h2 id="outcomes-title">The animals may arrive differently. Their outcomes do too.</h2>
-          <p>Dogs and cats dominate the dataset, but the route from listing to a new home is not one-size-fits-all. Looking at outcomes and motivations reveals both momentum and friction.</p>
+          <p>With the main influences on waiting time established, we can look at what happens once pets enter the adoption system. Dogs and cats dominate the listings, but their routes to a new home are not identical.</p>
         </div>
 
         <div class="feature-grid">
@@ -115,41 +143,6 @@
               <div class="takeaway"><span>Key takeaway</span><strong>Wanting a particular breed or a very young pet is the clearest hesitation.</strong></div>
             </div>
             <div id="vis7" class="chart-container"></div>
-          </article>
-        </div>
-      </section>
-
-      <section class="story-section" aria-labelledby="speed-title">
-        <div class="section-heading">
-          <div class="section-label">The time to home</div>
-          <h2 id="speed-title">Small differences can add up to a long wait.</h2>
-          <p>Time to adoption gives us a practical measure of success. Comparing age, size and organisation type shows where the biggest gaps appear.</p>
-        </div>
-
-        <div class="feature-grid feature-grid--three">
-          <article class="chart-card">
-            <div class="card-copy">
-              <h3>Senior pets wait longest.</h3>
-              <p>Median days to adoption by life stage.</p>
-              <div class="takeaway"><span>Key takeaway</span><strong>Senior dogs have the longest median wait.</strong></div>
-            </div>
-            <div id="vis8" class="chart-container"></div>
-          </article>
-          <article class="chart-card">
-            <div class="card-copy">
-              <h3>Size matters more for dogs.</h3>
-              <p>Median days to adoption by size tier.</p>
-              <div class="takeaway"><span>Key takeaway</span><strong>Larger dogs take longer to find a home; cats move faster at every tier.</strong></div>
-            </div>
-            <div id="vis9" class="chart-container"></div>
-          </article>
-          <article class="chart-card">
-            <div class="card-copy">
-              <h3>Where a pet is listed matters.</h3>
-              <p>Median time to adoption across organisation types.</p>
-              <div class="takeaway"><span>Key takeaway</span><strong>Shelters show the fastest median pathway for both species.</strong></div>
-            </div>
-            <div id="vis10" class="chart-container"></div>
           </article>
         </div>
       </section>

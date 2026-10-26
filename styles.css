@@ -72,6 +72,8 @@ main { padding: 0 clamp(22px, 5vw, 82px); }
 .intro-band { padding: 72px 0 80px; border-bottom: 1px solid var(--line); }
 .section-label { margin-bottom: 18px; color: var(--coral); }
 .intro-grid { display: grid; grid-template-columns: minmax(240px, .85fr) minmax(300px, 1fr); gap: clamp(30px, 8vw, 130px); }
+.intro-copy { min-width: 0; }
+.intro-chart { align-items: center; min-height: 300px; margin-top: 0; }
 .intro-grid h2, .section-heading h2, .closing-note h2 { margin-bottom: 18px; font-family: var(--serif); font-size: clamp(2.4rem, 4vw, 4rem); font-weight: 400; line-height: 1.03; letter-spacing: -.025em; }
 .intro-grid p, .section-heading p { max-width: 650px; color: var(--muted); font-size: 1.02rem; }
 .bridge { margin-top: 26px; padding: 18px 20px; border-left: 3px solid var(--gold); color: var(--ink) !important; background: #eee9df; }
