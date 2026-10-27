@@ -3,7 +3,7 @@
   "width": 750,
   "height": 500,
   "title": {
-    "text": ["Victoria's Rescue Organisations", "Cluster Around Metropolitan Melbourne"],
+    "text": ["Victoria's Rescue Locations", "Cluster Around Metropolitan Melbourne"],
     "font": "DM Sans",
     "fontSize": 24,
     "fontWeight": 700,
