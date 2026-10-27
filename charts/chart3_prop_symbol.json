@@ -5,7 +5,7 @@
   "height": 420,
   "view": {"stroke": null},
   "title": {
-    "text": "Rescue organisations cluster in the east",
+    "text": "Rescue Organisations Cluster in the East",
     "font": "DM Sans",
     "fontSize": 24,
     "fontWeight": 700,
@@ -184,30 +184,6 @@
         "longitude": {"field": "lon", "type": "quantitative"},
         "latitude": {"field": "lat", "type": "quantitative"},
         "text": {"field": "total_orgs", "type": "quantitative", "format": ","}
-      }
-    },
-    {
-      "data": {
-        "values": [{}]
-      },
-      "mark": {
-        "type": "text",
-        "align": "center",
-        "baseline": "top",
-        "fontSize": 13,
-        "fontStyle": "italic",
-        "color": "#6b7280",
-        "lineHeight": 14
-      },
-      "encoding": {
-        "x": {"value": 210},
-        "y": {"value": 440},
-        "text": {
-          "value": [
-            "* Member organisations include: Rescue Groups,",
-            "Shelters, Local Councils & Vet Clinics."
-          ]
-        }
       }
     }
   ]
