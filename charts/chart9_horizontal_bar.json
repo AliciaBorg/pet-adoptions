@@ -4,15 +4,11 @@
   "width": 400,
   "height": 260,
   "title": {
-    "text": "Shelters Offer the Fastest Path to Adoption",
-    "subtitle": "Median days to adoption across organisation types",
+    "text": "Median Days to Adoption Across Organisation Types",
     "font": "DM Sans",
     "fontSize": 20,
     "fontWeight": 700,
     "color": "#1d2925",
-    "subtitleFont": "DM Sans",
-    "subtitleFontSize": 14,
-    "subtitleColor": "#4f5d57",
     "offset": 15
   },
   "data": {
@@ -66,16 +62,10 @@
           "legend": {
             "title": null,
             "labelFontSize": 14,
-            "titleFontSize": 13,
-            "labelFontSize": 12,
-            "orient": "none",
-            "legendX": 270,
-            "legendY": 10,
+            "symbolSize": 180,
+            "orient": "top-right",
             "direction": "vertical",
-            "fillColor": "#ffffff",
-            "strokeColor": "#e2e8f0",
-            "padding": 8,
-            "cornerRadius": 4
+            "padding": 0
           }
         },
         "tooltip": [
@@ -91,7 +81,7 @@
         "type": "text",
         "align": "left",
         "dx": 5,
-        "fontSize": 13,
+        "fontSize": 15,
         "fontWeight": "bold"
       },
       "encoding": {
