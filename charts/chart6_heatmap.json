@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "background": "#fffdf9",
   "width": 500,
-  "height": 320,
+  "height": 430,
   "title": {
     "text": "At Every Age, We All Just Want Simple Companionship",
     "fontSize": 20,

@@ -199,12 +199,12 @@
       ["#vis3", "charts/chart3_prop_symbol.json?v=59"],
       ["#vis14", "charts/chart14_zoom_victoria.json?v=4"],
       ["#vis5", "charts/chart4_donut.json?v=15"],
-      ["#vis6", "charts/chart6_heatmap.json?v=4"],
-      ["#vis7", "charts/chart7_dumbell.json?v=30"],
+      ["#vis6", "charts/chart6_heatmap.json?v=5"],
+      ["#vis7", "charts/chart7_dumbell.json?v=32"],
       ["#vis8", "charts/chart11_age_comparison.json?v=10"],
       ["#vis9", "charts/chart10_size_comparison.json?v=11"],
       ["#vis10", "charts/chart9_horizontal_bar.json?v=15"],
-      ["#vis11", "charts/chart12_slope_chart.json?v=27"]
+      ["#vis11", "charts/chart12_slope_chart.json?v=28"]
     ];
     charts.forEach(([target, spec]) => vegaEmbed(target, spec, embedOpts).catch(error => {
       document.querySelector(target).innerHTML = '<p class="chart-error">This chart could not be loaded.</p>';

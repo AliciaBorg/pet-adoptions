@@ -21,12 +21,12 @@
   },
   "data": {
     "values": [
-      {"animal": "Dogs", "month": "Jan 2025", "rate": 91.9},
-      {"animal": "Dogs", "month": "Dec 2025", "rate": 54.4},
-      {"animal": "Cats", "month": "Jan 2025", "rate": 93.3},
-      {"animal": "Cats", "month": "Dec 2025", "rate": 62.6},
-      {"animal": "All pets", "month": "Jan 2025", "rate": 92.4},
-      {"animal": "All pets", "month": "Dec 2025", "rate": 60.2}
+      {"animal": "Dogs", "month": "January", "rate": 91.9},
+      {"animal": "Dogs", "month": "December", "rate": 54.4},
+      {"animal": "Cats", "month": "January", "rate": 93.3},
+      {"animal": "Cats", "month": "December", "rate": 62.6},
+      {"animal": "All pets", "month": "January", "rate": 92.4},
+      {"animal": "All pets", "month": "December", "rate": 60.2}
     ]
   },
   "encoding": {
@@ -34,11 +34,10 @@
       "field": "month",
       "type": "nominal",
       "sort": null,
-      "scale": {"domain": ["Jan 2025", "Dec 2025"], "padding": 0.1},
+      "scale": {"domain": ["January", "December"], "padding": 0.1},
       "axis": {
         "title": null,
         "labels": true,
-        "labelExpr": "datum.label === 'Jan 2025' ? 'January' : 'December'",
         "labelFontSize": 16,
         "labelFontWeight": "bold",
         "ticks": false,
@@ -122,7 +121,7 @@
         "fontSize": 18,
         "fontWeight": "bold"
       },
-      "transform": [{"filter": "datum.month == 'Jan 2025' && datum.animal == 'All pets'"}],
+      "transform": [{"filter": "datum.month == 'January' && datum.animal == 'All pets'"}],
       "encoding": {
         "text": {"field": "rate", "type": "quantitative", "format": ".1f"},
         "color": {
@@ -145,7 +144,7 @@
         "fontSize": 18,
         "fontWeight": "bold"
       },
-      "transform": [{"filter": "datum.month == 'Jan 2025' && datum.animal == 'Cats'"}],
+      "transform": [{"filter": "datum.month == 'January' && datum.animal == 'Cats'"}],
       "encoding": {
         "text": {"field": "rate", "type": "quantitative", "format": ".1f"},
         "color": {
@@ -168,7 +167,7 @@
         "fontSize": 18,
         "fontWeight": "bold"
       },
-      "transform": [{"filter": "datum.month == 'Jan 2025' && datum.animal == 'Dogs'"}],
+      "transform": [{"filter": "datum.month == 'January' && datum.animal == 'Dogs'"}],
       "encoding": {
         "text": {"field": "rate", "type": "quantitative", "format": ".1f"},
         "color": {
@@ -190,7 +189,7 @@
         "fontSize": 18,
         "fontWeight": "bold"
       },
-      "transform": [{"filter": "datum.month == 'Dec 2025'"}],
+      "transform": [{"filter": "datum.month == 'December'"}],
       "encoding": {
         "text": {"field": "rate", "type": "quantitative", "format": ".1f"},
         "color": {

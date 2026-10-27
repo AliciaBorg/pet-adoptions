@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "background": "#fffdf9",
   "width": 500,
-  "height": 320,
+  "height": 520,
   "title": {
     "text": "Selected Reasons Australians Don't Consider Adopting a Dog or Cat",
     "fontSize": 20,
@@ -95,7 +95,7 @@
             "labelFontSize": 15,
             "orient": "none",
             "legendX": 425,
-            "legendY": 190,
+            "legendY": 290,
             "fillColor": "#fffdf9",
             "strokeColor": "#d9ddd7",
             "padding": 6,
