@@ -148,8 +148,8 @@
       "mark": {
         "type": "point",
         "filled": true,
-        "fill": "#4a4b4d",
-        "stroke": "#020202",
+        "fill": "#2f5d50",
+        "stroke": "#193b36",
         "strokeWidth": 1,
         "opacity": 0.9,
         "size": 1

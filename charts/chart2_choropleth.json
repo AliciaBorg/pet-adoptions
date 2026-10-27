@@ -66,7 +66,7 @@
             "domain": [0, 400]
           },
           "legend": {
-            "title": "Adoptions /\n100k Pop.",
+            "title": ["Adoptions /", "100k Pop."],
             "format": ",d",
             "values": [0, 100, 200, 300, 400],
             "orient": "right",
@@ -76,7 +76,8 @@
             "labelFont": "DM Sans",
             "labelFontSize": 14,
             "titleFont": "DM Sans",
-            "titleFontSize": 13
+            "titleFontSize": 15,
+            "titlePadding": 10
           }
         },
         "tooltip": [
