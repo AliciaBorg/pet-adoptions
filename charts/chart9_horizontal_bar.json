@@ -9,7 +9,7 @@
     "fontSize": 20,
     "fontWeight": 700,
     "color": "#1d2925",
-    "offset": 15
+    "offset": 22
   },
   "data": {
     "values": [
@@ -38,8 +38,8 @@
   "layer": [
     {
       "mark": {
-        "type": "bar",
-        "cornerRadiusEnd": 0
+        "type": "rule",
+        "strokeWidth": 3
       },
       "encoding": {
         "yOffset": {
@@ -50,7 +50,47 @@
           "field": "median_tta",
           "type": "quantitative",
           "title": "Median Time to Adoption (Days)",
-          "axis": {"grid": true, "labelFontSize": 14, "titleFontSize": 14}
+          "scale": {"domain": [0, 26]},
+          "axis": {
+            "grid": true,
+            "labelFontSize": 14,
+            "titleFontSize": 14,
+            "labelPadding": 10,
+            "titlePadding": 14
+          }
+        },
+        "x2": {"value": 0},
+        "color": {
+          "field": "animal",
+          "type": "nominal",
+          "scale": {
+            "domain": ["Dogs", "Cats"],
+            "range": ["#2b5c8f", "#d95f02"]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {"field": "organisation", "type": "nominal", "title": "Organisation:"},
+          {"field": "animal", "type": "nominal", "title": "Pet:"},
+          {"field": "median_tta", "type": "quantitative", "title": "Median TTA (Days):"},
+          {"field": "adoption_rate", "type": "quantitative", "title": "Adoption Rate (%):"}
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 190
+      },
+      "encoding": {
+        "yOffset": {
+          "field": "animal",
+          "sort": ["Dogs", "Cats"]
+        },
+        "x": {
+          "field": "median_tta",
+          "type": "quantitative"
         },
         "color": {
           "field": "animal",
@@ -64,8 +104,10 @@
             "labelFontSize": 14,
             "symbolSize": 180,
             "orient": "top-right",
-            "direction": "vertical",
-            "padding": 0
+            "padding": 6,
+            "fillColor": "#fffdf9",
+            "strokeColor": "#d9ddd7",
+            "cornerRadius": 4
           }
         },
         "tooltip": [
@@ -80,7 +122,7 @@
       "mark": {
         "type": "text",
         "align": "left",
-        "dx": 5,
+        "dx": 12,
         "fontSize": 15,
         "fontWeight": "bold"
       },

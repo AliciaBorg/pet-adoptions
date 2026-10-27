@@ -9,7 +9,7 @@
     "fontSize": 20,
     "fontWeight": 700,
     "color": "#1d2925",
-    "offset": 15,
+    "offset": 22,
     "anchor": "middle"
   },
   "data": {
@@ -54,7 +54,13 @@
           "type": "quantitative",
           "title": "Median Time to Adoption (Days)",
           "scale": {"domain": [0, 30]},
-          "axis": {"grid": true, "labelFontSize": 14, "titleFontSize": 14}
+          "axis": {
+            "grid": true,
+            "labelFontSize": 14,
+            "titleFontSize": 14,
+            "labelPadding": 10,
+            "titlePadding": 14
+          }
         },
         "color": {
           "field": "animal",
@@ -68,7 +74,10 @@
             "labelFontSize": 14,
             "symbolSize": 180,
             "orient": "top-right",
-            "padding": 0
+            "padding": 6,
+            "fillColor": "#fffdf9",
+            "strokeColor": "#d9ddd7",
+            "cornerRadius": 4
           }
         },
         "tooltip": [
@@ -81,7 +90,7 @@
     {
       "mark": {
         "type": "text",
-        "dy": -12,
+        "dy": -18,
         "fontSize": 15,
         "fontWeight": "bold",
         "fill": "#334155"
