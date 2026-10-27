@@ -153,6 +153,15 @@ main { padding: 0 clamp(22px, 5vw, 82px); }
 .closing-note h2 { color: var(--green); }
 .closing-note > p:not(.source-note) { max-width: 680px; color: var(--muted); font-size: 1.08rem; }
 .source-note { margin-top: 38px; color: #8a918c; font-size: .75rem; }
+.sources-section { padding: 72px clamp(22px, 5vw, 82px) 86px; border-top: 1px solid var(--line); background: var(--paper); }
+.sources-inner { max-width: 1160px; margin-inline: auto; }
+.sources-section h2 { margin-bottom: 12px; color: var(--green); font-family: var(--serif); font-size: clamp(2.2rem, 3.5vw, 3.2rem); font-weight: 400; line-height: 1.05; }
+.sources-intro { max-width: 720px; margin-bottom: 30px; color: var(--muted); font-size: .95rem; }
+.source-list { margin: 0; padding-left: 22px; color: var(--muted); font-size: .86rem; }
+.source-list li { padding: 12px 0 12px 8px; border-top: 1px solid var(--line); }
+.source-list li::marker { color: var(--coral); font-weight: 700; }
+.source-list span { color: var(--ink); }
+.source-list a { color: var(--green); overflow-wrap: break-word; word-break: normal; text-decoration: underline; text-decoration-color: #b7c8bf; text-underline-offset: 3px; }
 
 @media (max-width: 900px) {
   .feature-grid--three { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -175,4 +184,5 @@ main { padding: 0 clamp(22px, 5vw, 82px); }
   .geography-chart-card { min-height: 0; }
   .waffle-legend { flex-direction: column; align-items: center; gap: 10px; }
   .story-section, .intro-band { padding-top: 58px; padding-bottom: 64px; }
+  .sources-section { padding-top: 58px; padding-bottom: 64px; }
 }
