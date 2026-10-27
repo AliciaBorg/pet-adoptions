@@ -2,10 +2,10 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "background": "#fffdf9",
   "width": 650,
-  "height": 420,
+  "height": 500,
   "view": {"stroke": null},
   "title": {
-    "text": "Rescue Organisations Cluster in the East",
+    "text": "PetRescue Member Organisations Cluster in the East",
     "font": "DM Sans",
     "fontSize": 24,
     "fontWeight": 700,

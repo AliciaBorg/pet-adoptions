@@ -2,23 +2,22 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "background": "#fffdf9",
   "width": 600,
-  "height": 500,
+  "height": 440,
   "padding": {"left": 60, "right": 60, "top": 45, "bottom": 55},
   "config": {
     "view": {"stroke": null},
     "axis": {"grid": false}
   },
   "title": {
-    "text": "PetRescue Adoption Rate Slope Chart (Jan vs Dec 2025)",
+    "text": [
+      "The Concerning Decline in PetRescue",
+      "Adoption Rates During 2025"
+    ],
     "font": "DM Sans",
     "fontWeight": 700,
     "color": "#1d2925",
-    "subtitle": "*Rates represent adoptions as a percentage of monthly listings.",
-    "subtitleFont": "DM Sans",
-    "fontSize": 15,
-    "subtitleFontSize": 11,
-    "subtitleColor": "#4b5563",
-    "offset": 14
+    "fontSize": 24,
+    "offset": 30
   },
   "data": {
     "values": [
@@ -34,22 +33,26 @@
     "x": {
       "field": "month",
       "type": "nominal",
-      "sort": ["Jan 2025", "Dec 2025"],
+      "sort": null,
+      "scale": {"domain": ["Jan 2025", "Dec 2025"], "padding": 0.1},
       "axis": {
         "title": null,
-        "labelFontSize": 14,
+        "labels": true,
+        "labelExpr": "datum.label === 'Jan 2025' ? 'January' : 'December'",
+        "labelFontSize": 16,
         "labelFontWeight": "bold",
         "ticks": false,
         "domain": false,
         "orient": "top",
-        "labelAngle": 0
+        "labelAngle": 0,
+        "labelPadding": 2
       }
     },
     "y": {
       "field": "rate",
       "type": "quantitative",
       "axis": null,
-      "scale": {"domain": [50, 95]}
+      "scale": {"domain": [48, 100]}
     }
   },
   "layer": [
@@ -68,6 +71,11 @@
     {
       "mark": {"type": "line", "strokeWidth": 3},
       "encoding": {
+        "tooltip": [
+          {"field": "animal", "type": "nominal", "title": "Species:"},
+          {"field": "month", "type": "nominal", "title": "Month:"},
+          {"field": "rate", "type": "quantitative", "title": "Adoption Rate (%):", "format": ".1f"}
+        ],
         "color": {
           "field": "animal",
           "type": "nominal",
@@ -78,15 +86,22 @@
           "legend": {
             "title": null,
             "orient": "top-right",
-            "labelFontSize": 12
+            "labelFontSize": 18,
+            "symbolType": "circle",
+            "symbolSize": 150
           }
         },
         "detail": {"field": "animal"}
       }
     },
     {
-      "mark": {"type": "point", "filled": true, "size": 130, "opacity": 0.7},
+      "mark": {"type": "point", "filled": true, "size": 170, "opacity": 0.7},
       "encoding": {
+        "tooltip": [
+          {"field": "animal", "type": "nominal", "title": "Species:"},
+          {"field": "month", "type": "nominal", "title": "Month:"},
+          {"field": "rate", "type": "quantitative", "title": "Adoption Rate (%):", "format": ".1f"}
+        ],
         "color": {
           "field": "animal",
           "type": "nominal",
@@ -104,7 +119,7 @@
         "align": "right",
         "dx": -12,
         "dy": 0,
-        "fontSize": 12,
+        "fontSize": 18,
         "fontWeight": "bold"
       },
       "transform": [{"filter": "datum.month == 'Jan 2025' && datum.animal == 'All pets'"}],
@@ -127,7 +142,7 @@
         "align": "right",
         "dx": -12,
         "dy": -14,
-        "fontSize": 12,
+        "fontSize": 18,
         "fontWeight": "bold"
       },
       "transform": [{"filter": "datum.month == 'Jan 2025' && datum.animal == 'Cats'"}],
@@ -150,7 +165,7 @@
         "align": "right",
         "dx": -12,
         "dy": 14,
-        "fontSize": 12,
+        "fontSize": 18,
         "fontWeight": "bold"
       },
       "transform": [{"filter": "datum.month == 'Jan 2025' && datum.animal == 'Dogs'"}],
@@ -172,7 +187,7 @@
         "type": "text",
         "align": "left",
         "dx": 12,
-        "fontSize": 12,
+        "fontSize": 18,
         "fontWeight": "bold"
       },
       "transform": [{"filter": "datum.month == 'Dec 2025'"}],

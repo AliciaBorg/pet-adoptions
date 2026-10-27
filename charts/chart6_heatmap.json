@@ -5,8 +5,7 @@
   "height": 320,
   "title": {
     "text": "At Every Age, We All Just Want Simple Companionship",
-    "subtitle": "Selected Reasons for Pet Adoption by Age, 2024",
-    "fontSize": 16,
+    "fontSize": 20,
     "offset": 15
   },
   "data": {
@@ -76,12 +75,18 @@
           "field": "Age",
           "type": "nominal",
           "title": "Age Bracket",
+          "axis": {
+            "labelFontSize": 15,
+            "titleFontSize": 15,
+            "titlePadding": 10
+          },
           "sort": ["18-27", "28-37", "38-47", "48-57", "58-67", "68-75"]
         },
         "y": {
           "field": "Reason",
           "type": "nominal",
           "title": null,
+          "axis": {"labelFontSize": 15},
           "sort": [
             "Companionship",
             "Mental health",
@@ -101,14 +106,16 @@
             "domain": [0, 0.75]
           },
           "legend": {
-            "title": "% Selecting Reason",
-            "format": ".1%"
+            "title": "Percent Selecting",
+            "format": ".0%",
+            "labelFontSize": 15,
+            "titleFontSize": 15
           }
         },
         "tooltip": [
           {"field": "Reason", "type": "nominal", "title": "Reason:"},
           {"field": "Age", "type": "nominal", "title": "Age Group:"},
-          {"field": "Percentage", "type": "quantitative", "title": "Percentage:", "format": ".1%"}
+          {"field": "Percentage", "type": "quantitative", "title": "Percent Selecting:", "format": ".1%"}
         ]
       }
     },
@@ -123,6 +130,11 @@
         "x": {
           "field": "Age",
           "type": "nominal",
+          "axis": {
+            "labelFontSize": 15,
+            "titleFontSize": 15,
+            "titlePadding": 10
+          },
           "sort": ["18-27", "28-37", "38-47", "48-57", "58-67", "68-75"]
         },
         "y": {

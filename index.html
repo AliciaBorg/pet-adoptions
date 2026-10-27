@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=72">
+  <link rel="stylesheet" href="styles.css?v=73">
 
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
@@ -20,7 +20,7 @@
     <header class="hero">
       <p class="hero-credit">Alicia Borg · October 2026</p>
       <h1>Pet Adoptions<br><em>in Australia</em></h1>
-      <p class="hero-deck">Explore where adoptions happen, which animals find homes fastest, and how the adoption landscape is changing.</p>
+      <p class="hero-deck">Explore where pet adoptions are happening across Australia, how outcomes differ between animals, and the factors that shape successful adoptions.</p>
     </header>
 
     <main>
@@ -28,8 +28,8 @@
         <div class="intro-grid">
           <div class="intro-copy">
             <h2 id="intro-title">What “Adoption” Actually Means</h2>
-            <p>A common misconception is that simply aquiring a pet counts as adoption, including buying from a commercial breeder or pet shop. But actually, adoption has a specific meaning: <strong>giving a surrendered or rescued animal a new home.</strong></p>
-            <p>In fact, formal adoptions account for only a minority of pet acquisitions. Survey results from 2024 show that just <strong>36.2%</strong> of pets were acquired through a shelter, rescue or adoption agency.</p>
+            <p>A common misconception is that simply aquiring a pet counts as adoption, including when buying from a commercial breeder or pet shop. But actually, adoption has a specific meaning: <strong>giving a surrendered or rescued animal a new home.</strong></p>
+            <p>In fact, formal adoptions typically represent a minority of pet acquisitions. Survey results from 2024 show that just <strong>36.2%</strong> of pets were formally adopted through a shelter, rescue or adoption agency.</p>
           </div>
           <div class="waffle-card">
             <div id="vis1" class="chart-container intro-chart"></div>
@@ -50,8 +50,8 @@
           <div class="geography-row">
             <div class="intro-copy geography-copy">
               <p>With formal adoptions accounting for a minority of pet acquisitions, where these adoptions are actually happening in Australia?</p>
-              <p>In 2025, <strong>Victoria recorded the highest PetRescue adoption rate, followed by Queensland and New South Wales</strong>. Rates are shown per 100,000 residents rather than as raw totals, so states with different population sizes can be compared fairly.</p>
-              <p>This begs the question: <strong>what's driving these geographical differences?</strong></p>
+              <p>In 2025, <strong>Victoria recorded the highest PetRescue adoption rate</strong>, followed by Queensland and New South Wales.</p>
+              <p><strong>This begs the question: what's driving these geographical differences?</strong></p>
             </div>
             <article class="chart-card map-card geography-chart-card">
               <div id="vis2" class="chart-container map-container"></div>
@@ -60,9 +60,9 @@
 
           <div class="geography-row">
             <div class="intro-copy geography-copy">
-              <p>In 2025, PetRescue member organisations—spanning rescue groups, shelters, councils and vet clinics—were <strong>heavily concentrated along Australia's eastern states</strong>, being Victoria, Queensland and New South Wales.</p>
-              <p>They are also the states with the highest adoption rates, suggesting that the distribution of rescue organisations may influence adoption rates, although other factors are likely to contribute as well.</p>
-              <p>But geographical patterns only tell part of the story. To better understand adoption in Australia, it is also important to look at which animals are finding homes, and whether some species are adopted more often than others.</p>
+              <p>In 2025, PetRescue member organisations are <strong>heavily concentrated along Australia's eastern states</strong>, being Victoria, Queensland and New South Wales.</p>
+              <p>They are also the states with the highest adoption rates, suggesting that rescue organisation distribution could play a role in adoption rates.</p>
+              <p>To understand these patterns more closely, let's zoom in on one state and see where these member organisations are located.</p>
             </div>
             <article class="chart-card map-card geography-chart-card">
               <div id="vis3" class="chart-container map-container"></div>
@@ -71,8 +71,8 @@
 
           <div class="geography-row">
             <div class="intro-copy geography-copy">
-              <p>Victoria has a substantial number of PetRescue member organisations, making it a useful example for exploring how rescue organisations are distributed within a state.</p>
-              <p>The map shows Victoria's 163 member organisations, with one dot representing each location, with many clustered around Melbourne and others spread across regional centres and towns. This reveals how rescue organisations are geographically distributed across metropolitan and regional areas.</p>
+              <p>Victoria's 163 PetRescue member organisation locations are <strong>heavily concentrated around metropolitan Melbourne</strong>, with others spread across regional centres and towns.</p>
+              <p>But geographical patterns only tell part of the story. To better understand adoption in Australia, it is also important to look at which animals are finding homes.</p>
             </div>
             <article class="chart-card map-card geography-chart-card">
               <div id="vis14" class="chart-container map-container"></div>
@@ -85,12 +85,17 @@
         <div class="geography-grid">
           <div class="geography-row">
             <div class="intro-copy geography-copy section-copy">
-              <h2 id="who-title">Who is being adopted?</h2>
-              <p>Before looking at why some pets wait longer, it helps to see who makes up the adoption picture. <strong>Dogs and cats account for most recorded PetRescue adoptions</strong>, while other species make up a much smaller share.</p>
-              <p>For this reason, the following sections will <strong>largely focus on dogs and cats</strong>.</p>
+              <h2 id="who-title">Who Is Being Adopted?</h2>
+              <p>In 2025, <strong>dogs and cats</strong> accounted for the vast majority of recorded PetRescue adoptions, while other species made up a much smaller share.</p>
+              <p>For this reason, the following sections will largely focus on dogs and cats, exploring what influences their waiting times and shapes adopter decisions.</p>
             </div>
             <article class="chart-card geography-chart-card">
               <div id="vis5" class="chart-container donut-container"></div>
+              <div class="donut-legend" aria-label="Donut chart legend">
+                <span><i class="donut-legend-swatch donut-legend-swatch--dogs"></i>Dogs</span>
+                <span><i class="donut-legend-swatch donut-legend-swatch--cats"></i>Cats</span>
+                <span><i class="donut-legend-swatch donut-legend-swatch--other"></i>Other pets</span>
+              </div>
             </article>
           </div>
         </div>
@@ -101,8 +106,8 @@
           <div class="geography-row">
             <div class="intro-copy geography-copy section-copy speed-copy">
               <h2 id="speed-title">Dogs and Cats: What Influences How Long They Wait?</h2>
-              <p>Now that we know dogs and cats make up the majority of the adoption picture, we can look at the differences that influence the time it takes for them to find a new home.</p>
-              <p>Type of organisation presenting, age and size all play a role in determining their time to adoption.</p>
+              <p>With dogs and cats accounting for the large majority of adoptions, what determines how quickly they find a home?</p>
+              <p>Several factors may shape how long dogs and cats wait for a home, from the type of organisation listing them to their age and size.</p>
             </div>
             <article class="chart-card geography-chart-card">
               <div id="vis10" class="chart-container"></div>
@@ -125,13 +130,14 @@
 
       <section class="story-section" aria-labelledby="motivation-title">
         <div class="section-heading geography-heading">
-          <h2 id="motivation-title">What shapes adopter decisions?</h2>
+          <h2 id="motivation-title">What Shapes Adopter Decisions?</h2>
         </div>
 
         <div class="geography-grid motivation-grid">
           <div class="geography-row">
             <div class="intro-copy geography-copy section-copy">
-              <p>The waiting-time patterns hint at a human explanation: what people hope to find, and what they hesitate to consider, shapes which animals are seen first. When Australians do not consider rescuing a dog or cat, the clearest reasons relate to wanting a particular breed or a very young puppy or kitten. These preferences narrow the animals people are willing to consider and can help explain why older, larger or less conventional pets face longer waits. Other barriers, such as not thinking of rescue, appear less often by comparison.</p>
+              <p>Waiting times reflect not only animal characteristics, but also adopter preferences. So, what makes people hesitate to adopt a pet?</p>
+              <p>A 2025 survey found that <strong>preferring a young puppy or kitten and wanting a specific breed were the most commonly reported barriers</strong> for both dogs and cats.</p>
             </div>
             <article class="chart-card geography-chart-card">
               <div id="vis7" class="chart-container"></div>
@@ -139,7 +145,8 @@
           </div>
           <div class="geography-row">
             <div class="intro-copy geography-copy section-copy">
-              <p>On the other hand, companionship is the strongest motivation for adoption, staying close to 70% across every age bracket. The desire for connection is shared across generations, creating a broad foundation for rescue. This consistency suggests that people of all ages are drawn to the everyday relationship a pet can bring, rather than one narrow type of adopter.</p>
+              <p>On the bright side, a 2024 survey found that around <strong>70% of respondents across all age groups cited companionship as a reason to adopt</strong>, highlighting the shared desire for connection with a pet across generations.</p>
+              <p>While companionship remains a strong motivation for adoption, are these intentions translating into successful outcomes?</p>
             </div>
             <article class="chart-card geography-chart-card">
               <div id="vis6" class="chart-container"></div>
@@ -150,14 +157,13 @@
 
       <section class="story-section story-section--tint" aria-labelledby="change-title">
         <div class="geography-grid">
-          <div class="geography-row">
+          <div class="geography-row slope-row">
             <div class="intro-copy geography-copy section-copy">
               <h2 id="change-title">Recent Rapid Changes in the Adoption Landscape.</h2>
-              <p>We have followed the pathway from where adoptions happen, to which animals find homes, to the preferences that shape how long they wait. Together, these patterns show how visibility, access and adopter expectations influence the rescue journey.</p>
-              <p>But the overall direction is concerning: <strong>PetRescue adoption rates declined across dogs, cats and all pets between January and December 2025.</strong> The fall is broad rather than limited to one species, suggesting that rescue organisations are operating in a more difficult adoption environment.</p>
-              <p>As adoption activity weakens, making the right pet easier to find becomes increasingly important for turning listings into lasting homes.</p>
+              <p>Between January and December 2025, the share of PetRescue listings resulting in adoption <strong>fell sharply across dogs, cats and all pets</strong>, suggesting a widespread decline in Australia.</p>
+              <p>With a smaller share of listed pets finding homes, understanding these trends is increasingly important to helping more rescue animals get adopted.</p>
             </div>
-            <article class="chart-card geography-chart-card">
+            <article class="chart-card geography-chart-card slope-card">
               <div id="vis11" class="chart-container"></div>
             </article>
           </div>
@@ -188,17 +194,17 @@
   <script>
     const embedOpts = { renderer: "svg", actions: false, tooltip: { theme: "light" } };
     const charts = [
-      ["#vis1", "charts/chart1_waffle.json"],
+      ["#vis1", "charts/chart1_waffle.json?v=8"],
       ["#vis2", "charts/chart2_choropleth.json?v=57"],
-      ["#vis3", "charts/chart3_prop_symbol.json?v=58"],
-      ["#vis14", "charts/chart14_zoom_victoria.json?v=1"],
-      ["#vis5", "charts/chart4_donut.json?v=9"],
-      ["#vis6", "charts/chart6_heatmap.json"],
-      ["#vis7", "charts/chart7_dumbell.json?v=26"],
+      ["#vis3", "charts/chart3_prop_symbol.json?v=59"],
+      ["#vis14", "charts/chart14_zoom_victoria.json?v=4"],
+      ["#vis5", "charts/chart4_donut.json?v=15"],
+      ["#vis6", "charts/chart6_heatmap.json?v=4"],
+      ["#vis7", "charts/chart7_dumbell.json?v=30"],
       ["#vis8", "charts/chart11_age_comparison.json?v=10"],
       ["#vis9", "charts/chart10_size_comparison.json?v=11"],
-      ["#vis10", "charts/chart9_horizontal_bar.json?v=13"],
-      ["#vis11", "charts/chart12_slope_chart.json?v=4"]
+      ["#vis10", "charts/chart9_horizontal_bar.json?v=15"],
+      ["#vis11", "charts/chart12_slope_chart.json?v=27"]
     ];
     charts.forEach(([target, spec]) => vegaEmbed(target, spec, embedOpts).catch(error => {
       document.querySelector(target).innerHTML = '<p class="chart-error">This chart could not be loaded.</p>';

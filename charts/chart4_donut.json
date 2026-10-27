@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "background": "#fffdf9",
-  "width": 500,
-  "height": 380,
+  "width": 520,
+  "height": 460,
   "title": {
     "text": "Dogs and Cats Dominate the Adoption Picture",
     "font": "DM Sans",
@@ -41,8 +41,8 @@
     {
       "mark": {
         "type": "arc",
-        "innerRadius": 90,
-        "outerRadius": 160,
+        "innerRadius": 115,
+        "outerRadius": 190,
         "stroke": "#ffffff",
         "strokeWidth": 2
       },
@@ -56,14 +56,7 @@
           "field": "species",
           "type": "nominal",
           "title": null,
-          "legend": {
-            "orient": "right",
-            "direction": "vertical",
-            "labelFontSize": 16,
-            "symbolSize": 180,
-            "padding": 24,
-            "offset": 0
-          },
+          "legend": null,
           "scale": {
             "domain": ["Dogs", "Cats", "Other pets"],
             "range": ["#2563eb", "#ea580c", "#16a34a"]
@@ -84,7 +77,7 @@
     {
       "mark": {
         "type": "text",
-        "radius": 125,
+        "radius": 150,
         "fontSize": 13,
         "fontWeight": "bold",
         "fill": "#ffffff"

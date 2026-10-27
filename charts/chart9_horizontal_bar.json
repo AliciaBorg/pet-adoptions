@@ -82,9 +82,8 @@
         },
         "tooltip": [
           {"field": "organisation", "type": "nominal", "title": "Organisation:"},
-          {"field": "animal", "type": "nominal", "title": "Pet:"},
-          {"field": "median_tta", "type": "quantitative", "title": "Median TTA (Days):"},
-          {"field": "adoption_rate", "type": "quantitative", "title": "Adoption Rate (%):"}
+          {"field": "animal", "type": "nominal", "title": "Species:"},
+          {"field": "median_tta", "type": "quantitative", "title": "Median Days:"}
         ]
       }
     },
@@ -115,9 +114,8 @@
         },
         "tooltip": [
           {"field": "organisation", "type": "nominal", "title": "Organisation:"},
-          {"field": "animal", "type": "nominal", "title": "Pet:"},
-          {"field": "median_tta", "type": "quantitative", "title": "Median TTA (Days):"},
-          {"field": "adoption_rate", "type": "quantitative", "title": "Adoption Rate (%):"}
+          {"field": "animal", "type": "nominal", "title": "Species:"},
+          {"field": "median_tta", "type": "quantitative", "title": "Median Days:"}
         ]
       }
     },

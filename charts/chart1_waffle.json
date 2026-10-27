@@ -1,12 +1,19 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "background": "#fffdf9",
-  "width": 360,
-  "height": 360,
+  "width": 400,
+  "height": 400,
+  "config": {
+    "style": {
+      "tooltip": {
+        "fontSize": 10
+      }
+    }
+  },
   "title": {
-    "text": "Formal vs. Informal Pet Adoptions",
+    "text": "Formal Adoption vs. Other Acquisition Sources",
     "font": "DM Sans",
-    "fontSize": 18,
+    "fontSize": 17,
     "fontWeight": 700,
     "color": "#1d2925",
     "subtitleFont": "DM Sans",
@@ -67,13 +74,13 @@
       "field": "col",
       "type": "ordinal",
       "axis": null,
-      "scale": {"step": 28}
+      "scale": {"step": 31}
     },
     "y": {
       "field": "row",
       "type": "ordinal",
       "axis": null,
-      "scale": {"step": 28},
+      "scale": {"step": 31},
       "sort": "ascending"
     },
     "color": {
@@ -97,7 +104,7 @@
       {
         "field": "Percentage",
         "type": "quantitative",
-        "title": "Share:",
+        "title": "Percentage of Pets:",
         "format": ".1%"
       }
     ]

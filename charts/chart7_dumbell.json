@@ -2,11 +2,11 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "background": "#fffdf9",
   "width": 500,
-  "height": 390,
+  "height": 320,
   "title": {
-    "text": "Selected Reasons Australians Don't Consider Rescuing a Dog or Cat",
-    "fontSize": 15,
-    "offset": 15,
+    "text": "Selected Reasons Australians Don't Consider Adopting a Dog or Cat",
+    "fontSize": 20,
+    "offset": 24,
     "anchor": "middle"
   },
   "config": {
@@ -60,7 +60,7 @@
       "axis": {
         "labelLimit": 350,
         "labelPadding": 14,
-        "labelFontSize": 11,
+        "labelFontSize": 13,
         "ticks": false
       }
     }
@@ -72,12 +72,12 @@
         "x": {
           "field": "signed_percentage",
           "type": "quantitative",
-          "title": "Share of Respondents (%)",
+          "title": "Percent Selecting (%)",
           "scale": {"domain": [-48, 48], "zero": true, "padding": 0},
           "axis": {
             "grid": true,
-            "labelFontSize": 11,
-            "titleFontSize": 12,
+            "labelFontSize": 13,
+            "titleFontSize": 14,
             "titlePadding": 18,
             "labelExpr": "abs(datum.value)"
           }
@@ -91,8 +91,8 @@
             "range": ["#2b5c8f", "#d95f02"]
           },
           "legend": {
-            "title": "Pet Type",
-            "labelFontSize": 12,
+            "title": null,
+            "labelFontSize": 15,
             "orient": "none",
             "legendX": 425,
             "legendY": 190,
@@ -105,14 +105,14 @@
         "tooltip": [
           {"field": "reason", "type": "nominal", "title": "Reason:"},
           {"field": "animal", "type": "nominal", "title": "Pet Type:"},
-          {"field": "percentage", "type": "quantitative", "title": "Share (%):"}
+          {"field": "percentage", "type": "quantitative", "title": "Percent Selecting (%):"}
         ]
       }
     },
     {
       "mark": {
         "type": "text",
-        "fontSize": 11,
+        "fontSize": 13,
         "fontWeight": "bold",
         "color": "#334155",
         "dx": {"expr": "datum.animal == 'Dogs' ? -6 : 6"},
