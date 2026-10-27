@@ -148,28 +148,19 @@
       </section>
 
       <section class="story-section story-section--tint" aria-labelledby="change-title">
-        <div class="section-heading">
-          <h2 id="change-title">The adoption landscape is changing.</h2>
-          <p>We have followed the pathway from access, to the animals being adopted, to the preferences that shape waiting time. The final question is whether the overall environment is becoming easier or harder for rescue organisations.</p>
+        <div class="geography-grid">
+          <div class="geography-row">
+            <div class="intro-copy geography-copy section-copy">
+              <h2 id="change-title">The adoption landscape is changing.</h2>
+              <p>We have followed the pathway from where adoptions happen, to which animals find homes, to the preferences that shape how long they wait. Together, these patterns show how visibility, access and adopter expectations influence the rescue journey.</p>
+              <p>But the overall direction is concerning: <strong>PetRescue adoption rates declined across dogs, cats and all pets between January and December 2025.</strong> The fall is broad rather than limited to one species, suggesting that rescue organisations are operating in a more difficult adoption environment.</p>
+              <p>As adoption activity weakens, making the right pet easier to find becomes increasingly important for turning listings into lasting homes.</p>
+            </div>
+            <article class="chart-card geography-chart-card">
+              <div id="vis11" class="chart-container"></div>
+            </article>
+          </div>
         </div>
-
-        <div class="feature-grid">
-          <article class="chart-card">
-            <div id="vis11" class="chart-container"></div>
-            <div class="takeaway"><strong>Every category sits lower in 2025 than in 2023.</strong><p>The broad decline suggests the challenge is not limited to one species or one type of listing.</p></div>
-          </article>
-          <article class="chart-card">
-            <div id="vis12" class="chart-container"></div>
-            <div class="takeaway"><strong>State-level shifts are uneven, so a national average hides local stories.</strong><p>Local conditions matter, which brings the story back to the importance of place and rescue capacity.</p></div>
-          </article>
-        </div>
-      </section>
-
-      <section class="closing-note" aria-labelledby="closing-title">
-        <div class="section-label">The thread</div>
-        <h2 id="closing-title">Make the right pet easier to find.</h2>
-        <p>Adoption outcomes reflect more than animal characteristics. They also reflect visibility, local rescue capacity and the expectations people bring to the search. Better matching, broader storytelling about older and larger animals, and stronger support for rescue organisations could help turn more listings into lasting homes.</p>
-        <p class="source-note">Data shown is based on the supplied PetRescue and publicly available Australian datasets. Rates and counts describe the periods noted on each chart and should not be interpreted as a complete census of every Australian rescue organisation.</p>
       </section>
     </main>
   </div>
@@ -187,8 +178,7 @@
       ["#vis8", "charts/chart11_age_comparison.json?v=10"],
       ["#vis9", "charts/chart10_size_comparison.json?v=11"],
       ["#vis10", "charts/chart9_horizontal_bar.json?v=13"],
-      ["#vis11", "charts/chart12_slope_chart.json?v=2"],
-      ["#vis12", "charts/chart13_state_trends.json"]
+      ["#vis11", "charts/chart12_slope_chart.json?v=2"]
     ];
     charts.forEach(([target, spec]) => vegaEmbed(target, spec, embedOpts).catch(error => {
       document.querySelector(target).innerHTML = '<p class="chart-error">This chart could not be loaded.</p>';

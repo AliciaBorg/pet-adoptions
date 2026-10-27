@@ -3,7 +3,7 @@
   "width": 750,
   "height": 500,
   "title": {
-    "text": "Zooming in on Victoria's Rescue Organisations",
+    "text": "Zooming in on Victoria's Adoption Locations",
     "subtitle": "Mapping 163 PetRescue member organisations across Victoria"
   },
   "projection": {
@@ -201,21 +201,36 @@
           {"town": "Brunswick", "lat": -37.7667, "lon": 144.9667}
         ]
       },
-      "mark": {
-        "type": "circle",
-        "size": 35,
-        "color": "#e65100",
-        "opacity": 0.65,
-        "stroke": "#ffffff",
-        "strokeWidth": 0.5
-      },
-      "encoding": {
-        "longitude": {"field": "lon", "type": "quantitative"},
-        "latitude": {"field": "lat", "type": "quantitative"},
-        "tooltip": [
-          {"field": "town", "type": "nominal", "title": "Suburb / Town"}
-        ]
-      }
+      "layer": [
+        {
+          "mark": {
+            "type": "circle",
+            "size": 35,
+            "color": "#e65100",
+            "opacity": 0.65,
+            "stroke": "#ffffff",
+            "strokeWidth": 0.5
+          },
+          "encoding": {
+            "longitude": {"field": "lon", "type": "quantitative"},
+            "latitude": {"field": "lat", "type": "quantitative"}
+          }
+        },
+        {
+          "mark": {
+            "type": "circle",
+            "size": 400,
+            "opacity": 0
+          },
+          "encoding": {
+            "longitude": {"field": "lon", "type": "quantitative"},
+            "latitude": {"field": "lat", "type": "quantitative"},
+            "tooltip": [
+              {"field": "town", "type": "nominal", "title": "Suburb / Town"}
+            ]
+          }
+        }
+      ]
     }
   ]
 }
