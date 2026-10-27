@@ -56,7 +56,8 @@
             "labelFontSize": 14,
             "titleFontSize": 14,
             "labelPadding": 10,
-            "titlePadding": 14
+            "titlePadding": 14,
+            "values": [0, 5, 10, 15, 20, 25]
           }
         },
         "x2": {"value": 0},
@@ -91,7 +92,8 @@
       "mark": {
         "type": "point",
         "filled": true,
-        "size": 190
+        "size": 190,
+        "opacity": 1
       },
       "encoding": {
         "yOffset": {

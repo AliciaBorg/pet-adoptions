@@ -1,39 +1,38 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "background": "#fffdf9",
-  "config": {
-    "view": {"stroke": null},
-    "axis": {
-      "domain": false,
-      "grid": false
-    }
-  },
+  "width": 500,
+  "height": 390,
   "title": {
     "text": "Selected Reasons Australians Don't Consider Rescuing a Dog or Cat",
     "fontSize": 15,
     "offset": 15,
     "anchor": "middle"
   },
+  "config": {
+    "view": {"stroke": null},
+    "axis": {"domain": false}
+  },
   "data": {
     "values": [
-      {"reason": "I was looking for a particular breed", "animal": "Dogs", "percentage": 38},
-      {"reason": "I was looking for a particular breed", "animal": "Cats", "percentage": 38},
       {"reason": "I would prefer a young puppy/kitten", "animal": "Dogs", "percentage": 39},
       {"reason": "I would prefer a young puppy/kitten", "animal": "Cats", "percentage": 32},
+      {"reason": "I was looking for a particular breed", "animal": "Dogs", "percentage": 38},
+      {"reason": "I was looking for a particular breed", "animal": "Cats", "percentage": 38},
       {"reason": "I just didn't think to do so", "animal": "Dogs", "percentage": 20},
       {"reason": "I just didn't think to do so", "animal": "Cats", "percentage": 23},
-      {"reason": "No particular reason", "animal": "Dogs", "percentage": 12},
-      {"reason": "No particular reason", "animal": "Cats", "percentage": 17},
       {"reason": "Concerns about potential behavioural issues", "animal": "Dogs", "percentage": 17},
       {"reason": "Concerns about potential behavioural issues", "animal": "Cats", "percentage": 12},
-      {"reason": "Concerns about potential health issues", "animal": "Dogs", "percentage": 9},
-      {"reason": "Concerns about potential health issues", "animal": "Cats", "percentage": 11},
+      {"reason": "No particular reason", "animal": "Dogs", "percentage": 12},
+      {"reason": "No particular reason", "animal": "Cats", "percentage": 17},
       {"reason": "There are no rescue shelters near me", "animal": "Dogs", "percentage": 10},
       {"reason": "There are no rescue shelters near me", "animal": "Cats", "percentage": 7},
-      {"reason": "I've had negative experiences with a dog/cat", "animal": "Dogs", "percentage": 4},
-      {"reason": "I've had negative experiences with a dog/cat", "animal": "Cats", "percentage": 8},
+      {"reason": "Concerns about potential health issues", "animal": "Dogs", "percentage": 9},
+      {"reason": "Concerns about potential health issues", "animal": "Cats", "percentage": 11},
       {"reason": "Another reason", "animal": "Dogs", "percentage": 7},
-      {"reason": "Another reason", "animal": "Cats", "percentage": 4}
+      {"reason": "Another reason", "animal": "Cats", "percentage": 4},
+      {"reason": "I've had negative experiences with a dog/cat", "animal": "Dogs", "percentage": 4},
+      {"reason": "I've had negative experiences with a dog/cat", "animal": "Cats", "percentage": 8}
     ]
   },
   "transform": [
@@ -42,168 +41,87 @@
       "as": "signed_percentage"
     }
   ],
-  "spacing": 0,
-  "hconcat": [
-    {
-      "width": 48,
-      "height": 390,
-      "mark": {"type": "text", "align": "right", "fontSize": 11, "color": "#334155"},
-      "encoding": {
-        "y": {
-          "field": "reason",
-          "type": "nominal",
-          "sort": [
-            "I would prefer a young puppy/kitten",
-            "I was looking for a particular breed",
-            "I just didn't think to do so",
-            "Concerns about potential behavioural issues",
-            "No particular reason",
-            "There are no rescue shelters near me",
-            "Concerns about potential health issues",
-            "Another reason",
-            "I've had negative experiences with a dog/cat"
-          ],
-          "axis": null
-        },
-        "text": {"field": "reason", "type": "nominal"}
+  "encoding": {
+    "y": {
+      "field": "reason",
+      "type": "nominal",
+      "title": null,
+      "sort": [
+        "I would prefer a young puppy/kitten",
+        "I was looking for a particular breed",
+        "I just didn't think to do so",
+        "Concerns about potential behavioural issues",
+        "No particular reason",
+        "There are no rescue shelters near me",
+        "Concerns about potential health issues",
+        "Another reason",
+        "I've had negative experiences with a dog/cat"
+      ],
+      "axis": {
+        "labelLimit": 350,
+        "labelPadding": 14,
+        "labelFontSize": 11,
+        "ticks": false
       }
-    },
+    }
+  },
+  "layer": [
     {
-      "width": 185,
-      "height": 390,
-      "transform": [{"filter": "datum.animal == 'Dogs'"}],
-      "layer": [
-        {
-          "mark": {"type": "bar", "size": 15, "color": "#2b5c8f"},
-          "encoding": {
-        "y": {
-          "field": "reason",
-          "type": "nominal",
-          "sort": [
-            "I would prefer a young puppy/kitten",
-            "I was looking for a particular breed",
-            "I just didn't think to do so",
-            "Concerns about potential behavioural issues",
-            "No particular reason",
-            "There are no rescue shelters near me",
-            "Concerns about potential health issues",
-            "Another reason",
-            "I've had negative experiences with a dog/cat"
-          ],
-          "axis": null
-        },
+      "mark": {"type": "bar", "size": 15, "opacity": 1},
+      "encoding": {
         "x": {
           "field": "signed_percentage",
           "type": "quantitative",
-          "title": "Dogs (%)",
-          "scale": {"domain": [-48, 0]},
+          "title": "Share of Respondents (%)",
+          "scale": {"domain": [-48, 48], "zero": true, "padding": 0},
           "axis": {
             "grid": true,
             "labelFontSize": 11,
             "titleFontSize": 12,
             "titlePadding": 18,
-            "labelExpr": "datum.value === 0 ? '' : abs(datum.value)"
+            "labelExpr": "abs(datum.value)"
           }
         },
         "x2": {"value": 0},
-        "tooltip": [
-          {"field": "reason", "type": "nominal", "title": "Reason:"},
-          {"field": "percentage", "type": "quantitative", "title": "Dogs (%):"}
-        ]
+        "color": {
+          "field": "animal",
+          "type": "nominal",
+          "scale": {
+            "domain": ["Dogs", "Cats"],
+            "range": ["#2b5c8f", "#d95f02"]
+          },
+          "legend": {
+            "title": "Pet Type",
+            "labelFontSize": 12,
+            "orient": "none",
+            "legendX": 425,
+            "legendY": 190,
+            "fillColor": "#fffdf9",
+            "strokeColor": "#d9ddd7",
+            "padding": 6,
+            "cornerRadius": 4
           }
         },
-        {
-          "mark": {"type": "text", "align": "right", "dx": -6, "fontSize": 11, "fontWeight": "bold", "color": "#334155"},
-          "encoding": {
-            "y": {
-              "field": "reason",
-              "type": "nominal",
-              "sort": [
-                "I would prefer a young puppy/kitten",
-                "I was looking for a particular breed",
-                "I just didn't think to do so",
-                "Concerns about potential behavioural issues",
-                "No particular reason",
-                "There are no rescue shelters near me",
-                "Concerns about potential health issues",
-                "Another reason",
-                "I've had negative experiences with a dog/cat"
-              ],
-              "axis": null
-            },
-            "x": {"field": "signed_percentage", "type": "quantitative"},
-            "text": {"field": "percentage", "type": "quantitative", "format": "d"}
-          }
-        }
-      ]
+        "tooltip": [
+          {"field": "reason", "type": "nominal", "title": "Reason:"},
+          {"field": "animal", "type": "nominal", "title": "Pet Type:"},
+          {"field": "percentage", "type": "quantitative", "title": "Share (%):"}
+        ]
+      }
     },
     {
-      "width": 185,
-      "height": 390,
-      "transform": [{"filter": "datum.animal == 'Cats'"}],
-      "layer": [
-        {
-          "mark": {"type": "bar", "size": 15, "color": "#d95f02"},
-          "encoding": {
-        "y": {
-          "field": "reason",
-          "type": "nominal",
-          "sort": [
-            "I would prefer a young puppy/kitten",
-            "I was looking for a particular breed",
-            "I just didn't think to do so",
-            "Concerns about potential behavioural issues",
-            "No particular reason",
-            "There are no rescue shelters near me",
-            "Concerns about potential health issues",
-            "Another reason",
-            "I've had negative experiences with a dog/cat"
-          ],
-          "axis": null
-        },
-        "x": {
-          "field": "percentage",
-          "type": "quantitative",
-          "title": "Cats (%)",
-          "scale": {"domain": [0, 48]},
-          "axis": {
-            "grid": true,
-            "labelFontSize": 11,
-            "titleFontSize": 12,
-            "titlePadding": 18
-          }
-        },
-        "x2": {"value": 0},
-        "tooltip": [
-          {"field": "reason", "type": "nominal", "title": "Reason:"},
-          {"field": "percentage", "type": "quantitative", "title": "Cats (%):"}
-        ]
-          }
-        },
-        {
-          "mark": {"type": "text", "align": "left", "dx": 6, "fontSize": 11, "fontWeight": "bold", "color": "#334155"},
-          "encoding": {
-            "y": {
-              "field": "reason",
-              "type": "nominal",
-              "sort": [
-                "I would prefer a young puppy/kitten",
-                "I was looking for a particular breed",
-                "I just didn't think to do so",
-                "Concerns about potential behavioural issues",
-                "No particular reason",
-                "There are no rescue shelters near me",
-                "Concerns about potential health issues",
-                "Another reason",
-                "I've had negative experiences with a dog/cat"
-              ],
-              "axis": null
-            },
-            "x": {"field": "percentage", "type": "quantitative"},
-            "text": {"field": "percentage", "type": "quantitative", "format": "d"}
-          }
-        }
-      ]
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "color": "#334155",
+        "dx": {"expr": "datum.animal == 'Dogs' ? -6 : 6"},
+        "align": {"expr": "datum.animal == 'Dogs' ? 'right' : 'left'"}
+      },
+      "encoding": {
+        "x": {"field": "signed_percentage", "type": "quantitative"},
+        "text": {"field": "percentage", "type": "quantitative", "format": "d"}
+      }
     }
   ]
 }

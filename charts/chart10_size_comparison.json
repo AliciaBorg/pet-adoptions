@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "background": "#fffdf9",
-  "width": 420,
-  "height": 240,
+  "width": 470,
+  "height": 280,
   "title": {
     "text": "Median Days to Adoption Across Sizes",
     "font": "DM Sans",
@@ -47,7 +47,7 @@
       }
     },
     {
-      "mark": {"type": "point", "filled": true, "size": 190},
+      "mark": {"type": "point", "filled": true, "size": 190, "opacity": 1},
       "encoding": {
         "x": {
           "field": "median_tta",
@@ -59,7 +59,8 @@
             "labelFontSize": 14,
             "titleFontSize": 14,
             "labelPadding": 10,
-            "titlePadding": 14
+            "titlePadding": 14,
+            "tickCount": 7
           }
         },
         "color": {

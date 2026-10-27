@@ -9,7 +9,7 @@
     "axis": {"grid": false}
   },
   "title": {
-    "text": "PetRescue Adoption Rate Slope Chart (2023 vs 2025)",
+    "text": "PetRescue Adoption Rate Slope Chart (Jan vs Dec 2025)",
     "subtitle": "*Rates represent adoptions as a percentage of monthly listings.",
     "fontSize": 15,
     "subtitleFontSize": 11,
@@ -18,17 +18,19 @@
   },
   "data": {
     "values": [
-      {"animal": "Dog", "year": "2023", "rate": 92.9},
-      {"animal": "Dog", "year": "2025", "rate": 62.6},
-      
-      {"animal": "Cat", "year": "2023", "rate": 94.4},
-      {"animal": "Cat", "year": "2025", "rate": 54.4}
+      {"animal": "Dogs", "month": "Jan 2025", "rate": 91.9},
+      {"animal": "Dogs", "month": "Dec 2025", "rate": 54.4},
+      {"animal": "Cats", "month": "Jan 2025", "rate": 93.3},
+      {"animal": "Cats", "month": "Dec 2025", "rate": 62.6},
+      {"animal": "All pets", "month": "Jan 2025", "rate": 92.4},
+      {"animal": "All pets", "month": "Dec 2025", "rate": 60.2}
     ]
   },
   "encoding": {
     "x": {
-      "field": "year",
+      "field": "month",
       "type": "nominal",
+      "sort": ["Jan 2025", "Dec 2025"],
       "axis": {
         "title": null,
         "labelFontSize": 14,
@@ -37,14 +39,13 @@
         "domain": false,
         "orient": "top",
         "labelAngle": 0
-      },
-      "sort": ["2023", "2025"]
+      }
     },
     "y": {
       "field": "rate",
       "type": "quantitative",
       "axis": null,
-      "scale": {"domain": [45, 100]}
+      "scale": {"domain": [50, 95]}
     }
   },
   "layer": [
@@ -55,43 +56,41 @@
         "strokeWidth": 1.5
       },
       "encoding": {
-        "x": {"field": "year", "type": "nominal"},
+        "x": {"field": "month", "type": "nominal"},
         "y": {"datum": 48},
         "y2": {"datum": 98}
       }
     },
     {
-      "mark": {
-        "type": "line",
-        "strokeWidth": 3
-      },
+      "mark": {"type": "line", "strokeWidth": 3},
       "encoding": {
         "color": {
           "field": "animal",
           "type": "nominal",
           "scale": {
-            "domain": ["Dog", "Cat"],
-            "range": ["#2563eb", "#f97316"]
+            "domain": ["Dogs", "Cats", "All pets"],
+            "range": ["#2563eb", "#f97316", "#2f5d50"]
           },
-          "legend": null
+          "legend": {
+            "title": null,
+            "orient": "top-right",
+            "labelFontSize": 12
+          }
         },
         "detail": {"field": "animal"}
       }
     },
     {
-      "mark": {
-        "type": "point",
-        "filled": true,
-        "size": 130
-      },
+      "mark": {"type": "point", "filled": true, "size": 130, "opacity": 0.7},
       "encoding": {
         "color": {
           "field": "animal",
           "type": "nominal",
           "scale": {
-            "domain": ["Dog", "Cat"],
-            "range": ["#2563eb", "#f97316"]
-          }
+            "domain": ["Dogs", "Cats", "All pets"],
+            "range": ["#2563eb", "#f97316", "#2f5d50"]
+          },
+          "legend": null
         }
       }
     },
@@ -100,20 +99,67 @@
         "type": "text",
         "align": "right",
         "dx": -12,
+        "dy": 0,
         "fontSize": 12,
         "fontWeight": "bold"
       },
-      "transform": [
-        {"filter": "datum.year == '2023'"}
-      ],
+      "transform": [{"filter": "datum.month == 'Jan 2025' && datum.animal == 'All pets'"}],
       "encoding": {
-        "text": {"field": "label_left"},
+        "text": {"field": "rate", "type": "quantitative", "format": ".1f"},
         "color": {
           "field": "animal",
+          "type": "nominal",
           "scale": {
-            "domain": ["Dog", "Cat"],
-            "range": ["#2563eb", "#f97316"]
-          }
+            "domain": ["Dogs", "Cats", "All pets"],
+            "range": ["#2563eb", "#f97316", "#2f5d50"]
+          },
+          "legend": null
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "dx": -12,
+        "dy": -14,
+        "fontSize": 12,
+        "fontWeight": "bold"
+      },
+      "transform": [{"filter": "datum.month == 'Jan 2025' && datum.animal == 'Cats'"}],
+      "encoding": {
+        "text": {"field": "rate", "type": "quantitative", "format": ".1f"},
+        "color": {
+          "field": "animal",
+          "type": "nominal",
+          "scale": {
+            "domain": ["Dogs", "Cats", "All pets"],
+            "range": ["#2563eb", "#f97316", "#2f5d50"]
+          },
+          "legend": null
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "dx": -12,
+        "dy": 14,
+        "fontSize": 12,
+        "fontWeight": "bold"
+      },
+      "transform": [{"filter": "datum.month == 'Jan 2025' && datum.animal == 'Dogs'"}],
+      "encoding": {
+        "text": {"field": "rate", "type": "quantitative", "format": ".1f"},
+        "color": {
+          "field": "animal",
+          "type": "nominal",
+          "scale": {
+            "domain": ["Dogs", "Cats", "All pets"],
+            "range": ["#2563eb", "#f97316", "#2f5d50"]
+          },
+          "legend": null
         }
       }
     },
@@ -125,29 +171,19 @@
         "fontSize": 12,
         "fontWeight": "bold"
       },
-      "transform": [
-        {"filter": "datum.year == '2025'"}
-      ],
+      "transform": [{"filter": "datum.month == 'Dec 2025'"}],
       "encoding": {
-        "text": {"field": "label_right"},
+        "text": {"field": "rate", "type": "quantitative", "format": ".1f"},
         "color": {
           "field": "animal",
+          "type": "nominal",
           "scale": {
-            "domain": ["Dog", "Cat"],
-            "range": ["#2563eb", "#f97316"]
-          }
+            "domain": ["Dogs", "Cats", "All pets"],
+            "range": ["#2563eb", "#f97316", "#2f5d50"]
+          },
+          "legend": null
         }
       }
-    }
-  ],
-  "transform": [
-    {
-      "calculate": "datum.animal + ' ' + datum.rate + '%'",
-      "as": "label_left"
-    },
-    {
-      "calculate": "datum.rate + '% ' + datum.animal",
-      "as": "label_right"
     }
   ]
 }

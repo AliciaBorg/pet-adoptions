@@ -67,6 +67,16 @@
               <div id="vis3" class="chart-container map-container"></div>
             </article>
           </div>
+
+          <div class="geography-row">
+            <div class="intro-copy geography-copy">
+              <p>Victoria has a substantial number of PetRescue member organisations, making it a useful example for exploring how rescue organisations are distributed within a state.</p>
+              <p>The map shows Victoria's 163 member organisations, with one dot representing each location, with many clustered around Melbourne and others spread across regional centres and towns. This reveals how rescue organisations are geographically distributed across metropolitan and regional areas.</p>
+            </div>
+            <article class="chart-card map-card geography-chart-card">
+              <div id="vis14" class="chart-container map-container"></div>
+            </article>
+          </div>
         </div>
       </section>
 
@@ -137,24 +147,6 @@
         </div>
       </section>
 
-      <section class="story-section" aria-labelledby="outcomes-title">
-        <div class="section-heading">
-          <h2 id="outcomes-title">What happens after pets are listed?</h2>
-        </div>
-
-        <div class="geography-grid">
-          <div class="geography-row">
-            <div class="intro-copy geography-copy">
-              <p>Once dogs and cats enter the adoption system, their journeys can end in several ways. <strong>Rehoming is the leading outcome for both species</strong>, while others are reclaimed, returned, transferred or remain in care.</p>
-              <p>This outcome picture shows why adoption is more than a single pathway: a listing may lead to a new home, a return to an existing one, or a longer period of support.</p>
-            </div>
-            <article class="chart-card geography-chart-card">
-              <div id="vis4" class="chart-container"></div>
-            </article>
-          </div>
-        </div>
-      </section>
-
       <section class="story-section story-section--tint" aria-labelledby="change-title">
         <div class="section-heading">
           <h2 id="change-title">The adoption landscape is changing.</h2>
@@ -188,14 +180,14 @@
       ["#vis1", "charts/chart1_waffle.json"],
       ["#vis2", "charts/chart2_choropleth.json?v=57"],
       ["#vis3", "charts/chart3_prop_symbol.json?v=58"],
-      ["#vis4", "charts/chart5_butterfly_chart.json"],
+      ["#vis14", "charts/chart14_zoom_victoria.json?v=1"],
       ["#vis5", "charts/chart4_donut.json?v=9"],
       ["#vis6", "charts/chart6_heatmap.json"],
-      ["#vis7", "charts/chart7_dumbell.json?v=16"],
-      ["#vis8", "charts/chart11_age_comparison.json?v=8"],
-      ["#vis9", "charts/chart10_size_comparison.json?v=8"],
-      ["#vis10", "charts/chart9_horizontal_bar.json?v=11"],
-      ["#vis11", "charts/chart12_slope_chart.json"],
+      ["#vis7", "charts/chart7_dumbell.json?v=26"],
+      ["#vis8", "charts/chart11_age_comparison.json?v=10"],
+      ["#vis9", "charts/chart10_size_comparison.json?v=11"],
+      ["#vis10", "charts/chart9_horizontal_bar.json?v=13"],
+      ["#vis11", "charts/chart12_slope_chart.json?v=2"],
       ["#vis12", "charts/chart13_state_trends.json"]
     ];
     charts.forEach(([target, spec]) => vegaEmbed(target, spec, embedOpts).catch(error => {
