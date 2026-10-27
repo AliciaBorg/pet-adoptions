@@ -23,7 +23,7 @@ body {
 }
 
 .page-shell {
-  max-width: 1280px;
+  max-width: 1080px;
   margin: 0 auto;
   background: var(--paper);
   overflow: hidden;
@@ -78,7 +78,7 @@ main { padding: 0 clamp(22px, 5vw, 82px); }
 @media (min-width: 681px) {
   .intro-chart svg { transform: translateX(10px); }
 }
-.intro-grid h2, .section-heading h2, .closing-note h2 { margin-bottom: 18px; font-family: var(--serif); font-size: clamp(2.4rem, 4vw, 4rem); font-weight: 400; line-height: 1.03; letter-spacing: -.025em; }
+.intro-grid h2, .section-heading h2, .closing-note h2 { margin-bottom: 18px; font-family: var(--serif); font-size: clamp(1.8rem, 2.8vw, 2.8rem); font-weight: 400; line-height: 1.03; letter-spacing: -.025em; }
 .intro-grid h2, .geography-heading h2 { padding-bottom: 22px; border-bottom: 1px solid var(--green-dark); }
 .intro-grid h2 { margin-bottom: 30px; }
 .intro-grid p, .section-heading p { max-width: 650px; color: var(--muted); font-size: 1.02rem; }
@@ -86,7 +86,7 @@ main { padding: 0 clamp(22px, 5vw, 82px); }
 .story-section { padding: 78px 0 86px; }
 .story-section--tint { margin-left: calc(clamp(22px, 5vw, 82px) * -1); margin-right: calc(clamp(22px, 5vw, 82px) * -1); padding-left: clamp(22px, 5vw, 82px); padding-right: clamp(22px, 5vw, 82px); background: #ebe8df; }
 .section-heading { max-width: 740px; margin-bottom: 42px; }
-.section-heading h2 { font-size: clamp(2.4rem, 4vw, 3.8rem); }
+.section-heading h2 { font-size: clamp(1.8rem, 2.8vw, 2.8rem); }
 .section-heading p { margin-bottom: 0; }
 .speed-grid { gap: 78px; }
 .speed-copy p { max-width: 650px; }
@@ -102,7 +102,7 @@ main { padding: 0 clamp(22px, 5vw, 82px); }
 .geography-row + .geography-row { margin-top: 18px; }
 .motivation-grid .chart-card { min-height: 438px; }
 .geography-copy { margin-bottom: 0; }
-.section-copy h2 { margin-bottom: 30px; padding-bottom: 22px; border-bottom: 1px solid var(--green-dark); font-family: var(--serif); font-size: clamp(2.4rem, 4vw, 3.8rem); font-weight: 400; line-height: 1.03; letter-spacing: -.025em; }
+.section-copy h2 { margin-bottom: 30px; padding-bottom: 22px; border-bottom: 1px solid var(--green-dark); font-family: var(--serif); font-size: clamp(1.8rem, 2.8vw, 2.8rem); font-weight: 400; line-height: 1.03; letter-spacing: -.025em; }
 .section-copy h3 { margin-bottom: 22px; padding-bottom: 18px; border-bottom: 1px solid var(--green-dark); font-family: var(--serif); font-size: clamp(1.8rem, 2.8vw, 2.5rem); font-weight: 400; line-height: 1.08; letter-spacing: -.02em; }
 .section-copy #who-title { white-space: nowrap; }
 .geography-copy p { max-width: 650px; color: var(--muted); font-size: 1.27rem; }
