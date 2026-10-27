@@ -4,7 +4,7 @@
   "width": 360,
   "height": 360,
   "title": {
-    "text": "Only 36 in every 100 pet acquisitions are formal adoptions",
+    "text": "Formal vs. Informal Pet Adoptions",
     "font": "DM Sans",
     "fontSize": 15,
     "fontWeight": 700,
@@ -18,13 +18,13 @@
     "values": [
       {
         "Category": "Formally Adopted",
-        "Percentage": 0.363,
+        "Percentage": 0.362,
         "Count": 36,
         "order": 1
       },
       {
         "Category": "Not Formally Adopted",
-        "Percentage": 0.637,
+        "Percentage": 0.638,
         "Count": 64,
         "order": 2
       }

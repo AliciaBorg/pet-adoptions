@@ -66,11 +66,11 @@ main { padding: 0 clamp(22px, 5vw, 82px); }
 .intro-copy > .section-label { font-size: 1rem; }
 .intro-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(34px, 6vw, 90px); align-items: stretch; max-width: 1160px; }
 .intro-copy { display: flex; flex-direction: column; min-width: 0; padding: 0; margin-bottom: -16px; }
-.waffle-card { min-width: 0; padding: 24px 24px 0; border: 1px solid var(--line); border-radius: 18px; background: var(--card); box-shadow: 0 16px 38px rgba(37, 46, 40, .08); }
-.intro-chart { align-items: center; min-height: 360px; margin: 0; }
+.waffle-card { min-width: 0; padding: 24px 24px 0; border: 1px solid var(--line); border-radius: 18px; background: var(--card); box-shadow: 0 16px 38px rgba(37, 46, 40, .08); overflow: hidden; }
+.intro-chart { align-items: center; min-height: 360px; margin: 0; overflow-x: hidden; }
 .intro-chart.vega-embed { display: flex; justify-content: center; width: 100%; }
-.intro-chart svg { display: block; width: min(100%, 390px) !important; height: auto !important; margin: 0 auto; }
-.waffle-legend { display: flex; justify-content: center; gap: 28px; padding: 13px 0 26px; border-top: 1px solid var(--line); color: var(--ink); font-size: .88rem; line-height: 1.2; text-align: center; }
+.intro-chart svg { display: block; width: min(100%, 370px) !important; height: auto !important; margin: 0 auto; }
+.waffle-legend { display: flex; justify-content: center; gap: 28px; padding: 13px 0 26px; border-top: 1px solid var(--line); color: var(--ink); font-size: .98rem; line-height: 1.2; text-align: center; }
 .waffle-legend span { display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; }
 .legend-swatch { display: inline-block; width: 13px; height: 13px; border-radius: 2px; }
 .legend-swatch--formal { background: #2f5d50; }
@@ -124,6 +124,7 @@ main { padding: 0 clamp(22px, 5vw, 82px); }
 .chart-container .vega-embed { width: auto; max-width: 100%; }
 .chart-container svg { max-width: 100%; height: auto; }
 .chart-error { padding: 30px; color: var(--coral) !important; }
+.vg-tooltip { font-size: 1.05rem !important; line-height: 1.4 !important; }
 .closing-note { max-width: 860px; padding: 80px 0 100px; border-top: 1px solid var(--line); }
 .closing-note h2 { color: var(--green); }
 .closing-note > p:not(.source-note) { max-width: 680px; color: var(--muted); font-size: 1.08rem; }
