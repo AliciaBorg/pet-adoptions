@@ -67,7 +67,17 @@
             "domain": ["Dogs", "Cats"],
             "range": ["#2b5c8f", "#d95f02"]
           },
-          "legend": null
+          "legend": {
+            "title": null,
+            "labelFontSize": 14,
+            "symbolSize": 180,
+            "orient": "top-right",
+            "padding": 6,
+            "fillColor": "#fffdf9",
+            "strokeColor": "#d9ddd7",
+            "cornerRadius": 4,
+            "symbolType": "circle"
+          }
         },
         "tooltip": [
           {"field": "organisation", "type": "nominal", "title": "Organisation:"},
@@ -99,16 +109,7 @@
             "domain": ["Dogs", "Cats"],
             "range": ["#2b5c8f", "#d95f02"]
           },
-          "legend": {
-            "title": null,
-            "labelFontSize": 14,
-            "symbolSize": 180,
-            "orient": "top-right",
-            "padding": 6,
-            "fillColor": "#fffdf9",
-            "strokeColor": "#d9ddd7",
-            "cornerRadius": 4
-          }
+          "legend": null
         },
         "tooltip": [
           {"field": "organisation", "type": "nominal", "title": "Organisation:"},
