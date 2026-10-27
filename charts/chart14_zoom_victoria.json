@@ -3,8 +3,13 @@
   "width": 750,
   "height": 500,
   "title": {
-    "text": "Zooming in on Victoria's Adoption Locations",
-    "subtitle": "Mapping 163 PetRescue member organisations across Victoria"
+    "text": ["Victoria's Rescue Organisations", "Cluster Around Metropolitan Melbourne"],
+    "font": "DM Sans",
+    "fontSize": 24,
+    "fontWeight": 700,
+    "color": "#1d2925",
+    "anchor": "middle",
+    "offset": 15
   },
   "projection": {
     "type": "mercator",

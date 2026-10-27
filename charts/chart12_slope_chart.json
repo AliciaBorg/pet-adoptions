@@ -1,16 +1,20 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "background": "#fffdf9",
-  "width": 550,
-  "height": 450,
-  "padding": {"left": 130, "right": 130, "top": 40, "bottom": 50},
+  "width": 600,
+  "height": 500,
+  "padding": {"left": 60, "right": 60, "top": 45, "bottom": 55},
   "config": {
     "view": {"stroke": null},
     "axis": {"grid": false}
   },
   "title": {
     "text": "PetRescue Adoption Rate Slope Chart (Jan vs Dec 2025)",
+    "font": "DM Sans",
+    "fontWeight": 700,
+    "color": "#1d2925",
     "subtitle": "*Rates represent adoptions as a percentage of monthly listings.",
+    "subtitleFont": "DM Sans",
     "fontSize": 15,
     "subtitleFontSize": 11,
     "subtitleColor": "#4b5563",
