@@ -79,6 +79,7 @@ main { padding: 0 clamp(22px, 5vw, 82px); }
   .intro-chart svg { transform: translateX(10px); }
 }
 .intro-grid h2, .section-heading h2, .closing-note h2 { margin-bottom: 18px; font-family: var(--serif); font-size: clamp(2.4rem, 4vw, 4rem); font-weight: 400; line-height: 1.03; letter-spacing: -.025em; }
+.intro-grid h2, .geography-heading h2 { padding-bottom: 22px; border-bottom: 1px solid var(--line); }
 .intro-grid h2 { margin-bottom: 30px; }
 .intro-grid p, .section-heading p { max-width: 650px; color: var(--muted); font-size: 1.02rem; }
 .intro-grid p { font-size: 1.27rem; }
@@ -87,10 +88,16 @@ main { padding: 0 clamp(22px, 5vw, 82px); }
 .section-heading { max-width: 740px; margin-bottom: 42px; }
 .section-heading h2 { font-size: clamp(2.4rem, 4vw, 3.8rem); }
 .section-heading p { margin-bottom: 0; }
-.geography-heading { max-width: 100%; text-align: center; }
+.geography-heading { max-width: 100%; text-align: left; }
+.geography-heading > .section-label { font-size: 1rem; }
 .geography-heading h2 { white-space: nowrap; }
 .feature-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
 .feature-grid--three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.geography-grid { display: grid; gap: 78px; max-width: 1160px; }
+.geography-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(34px, 6vw, 90px); align-items: stretch; }
+.geography-copy { margin-bottom: -16px; }
+.geography-copy p { max-width: 650px; margin-bottom: 0; color: var(--muted); font-size: 1.27rem; }
+.geography-copy strong { color: var(--ink); }
 .chart-card { min-width: 0; padding: 24px 24px 22px; border: 1px solid var(--line); border-radius: 18px; background: var(--card); box-shadow: 0 16px 38px rgba(37, 46, 40, .08); }
 .chart-card--wide {
   display: grid;
@@ -105,9 +112,10 @@ main { padding: 0 clamp(22px, 5vw, 82px); }
 .chart-card p { margin-bottom: 15px; color: var(--muted); font-size: .9rem; }
 .chart-card--dark p { color: #b9cbc2; }
 .map-card { display: flex; flex-direction: column; padding: 24px; border-radius: 18px; }
-.map-container { flex: 1; min-height: 520px; margin: 0 -4px; align-items: center; overflow: hidden; }
+.map-container { flex: 1; min-height: 0; margin: 0 -4px; align-items: center; overflow: hidden; }
 .map-container .vega-embed { display: flex; justify-content: center; width: 100%; background: var(--card); }
 .map-container svg { width: min(100%, 500px) !important; height: auto !important; }
+.geography-chart-card { min-height: 0; }
 .map-card .takeaway { margin: auto 4px 0; padding: 18px 20px; }
 .map-card .takeaway strong { max-width: none; }
 .map-card .takeaway p { margin: 8px 0 0; color: var(--muted); font-size: .86rem; line-height: 1.45; }
@@ -139,11 +147,13 @@ main { padding: 0 clamp(22px, 5vw, 82px); }
   .hero { min-height: 520px; }
   .kicker { margin-top: 90px; }
   h1 { font-size: clamp(3.5rem, 17vw, 5.5rem); }
-  .intro-grid, .feature-grid, .feature-grid--three, .chart-card--wide { grid-template-columns: 1fr; }
+  .intro-grid, .feature-grid, .feature-grid--three, .chart-card--wide, .geography-row { grid-template-columns: 1fr; }
   .chart-card--wide, .feature-grid--three .chart-card:last-child { grid-column: auto; }
   .chart-card { padding: 22px 18px 18px; }
   .chart-container { margin-left: -4px; margin-right: -4px; }
   .geography-heading h2 { white-space: normal; }
+  .geography-grid { gap: 58px; }
+  .geography-chart-card { min-height: 0; }
   .waffle-legend { flex-direction: column; align-items: center; gap: 10px; }
   .story-section, .intro-band { padding-top: 58px; padding-bottom: 64px; }
 }
