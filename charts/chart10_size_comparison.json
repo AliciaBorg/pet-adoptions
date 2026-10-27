@@ -4,9 +4,15 @@
   "width": 420,
   "height": 240,
   "title": {
-    "text": "Median Days to Adoption by Size: Dogs vs. Cats",
-    "subtitle": "Comparing adoption speed across animal size tiers",
-    "fontSize": 15,
+    "text": "Larger Dogs Take Longer to Find a Home",
+    "subtitle": "Median days to adoption across animal size tiers",
+    "font": "DM Sans",
+    "fontSize": 20,
+    "fontWeight": 700,
+    "color": "#1d2925",
+    "subtitleFont": "DM Sans",
+    "subtitleFontSize": 14,
+    "subtitleColor": "#4f5d57",
     "offset": 15,
     "anchor": "middle"
   },
@@ -26,7 +32,7 @@
       "type": "nominal",
       "title": null,
       "sort": ["Small", "Medium", "Large"],
-      "axis": {"labelFontSize": 12, "labelPadding": 8}
+      "axis": {"labelFontSize": 14, "labelPadding": 8}
     }
   },
   "layer": [
@@ -45,14 +51,14 @@
       }
     },
     {
-      "mark": {"type": "point", "filled": true, "size": 160},
+      "mark": {"type": "point", "filled": true, "size": 190},
       "encoding": {
         "x": {
           "field": "median_tta",
           "type": "quantitative",
           "title": "Median Time to Adoption (Days)",
           "scale": {"domain": [0, 30]},
-          "axis": {"grid": true}
+          "axis": {"grid": true, "labelFontSize": 14, "titleFontSize": 14}
         },
         "color": {
           "field": "animal",
@@ -62,7 +68,8 @@
             "range": ["#2b5c8f", "#d95f02"]
           },
           "legend": {
-            "title": "Pet Type",
+            "title": null,
+            "labelFontSize": 14,
             "orient": "top-right",
             "fillColor": "#ffffff",
             "strokeColor": "#e2e8f0",
@@ -81,7 +88,7 @@
       "mark": {
         "type": "text",
         "dy": -12,
-        "fontSize": 11,
+        "fontSize": 13,
         "fontWeight": "bold",
         "fill": "#334155"
       },

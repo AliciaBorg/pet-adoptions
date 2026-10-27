@@ -4,9 +4,15 @@
   "width": 400,
   "height": 260,
   "title": {
-    "text": "Shelters Offter the Fastest Path to Adoption",
-    "subtitle": "Median days to adoption for Dogs and Cats Across PetRescue Member Orgnisations, 2025",
-    "fontSize": 15,
+    "text": "Shelters Offer the Fastest Path to Adoption",
+    "subtitle": "Median days to adoption across organisation types",
+    "font": "DM Sans",
+    "fontSize": 20,
+    "fontWeight": 700,
+    "color": "#1d2925",
+    "subtitleFont": "DM Sans",
+    "subtitleFontSize": 14,
+    "subtitleColor": "#4f5d57",
     "offset": 15
   },
   "data": {
@@ -28,7 +34,7 @@
       "title": null,
       "sort": ["Shelter", "Council", "Vet", "Rescue group"],
       "axis": {
-        "labelFontSize": 12,
+        "labelFontSize": 14,
         "labelPadding": 8
       }
     }
@@ -48,7 +54,7 @@
           "field": "median_tta",
           "type": "quantitative",
           "title": "Median Time to Adoption (Days)",
-          "axis": {"grid": true}
+          "axis": {"grid": true, "labelFontSize": 14, "titleFontSize": 14}
         },
         "color": {
           "field": "animal",
@@ -58,7 +64,8 @@
             "range": ["#2b5c8f", "#d95f02"]
           },
           "legend": {
-            "title": "Pet Type",
+            "title": null,
+            "labelFontSize": 14,
             "titleFontSize": 13,
             "labelFontSize": 12,
             "orient": "none",
@@ -84,7 +91,7 @@
         "type": "text",
         "align": "left",
         "dx": 5,
-        "fontSize": 11,
+        "fontSize": 13,
         "fontWeight": "bold"
       },
       "encoding": {
