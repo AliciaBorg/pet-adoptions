@@ -2,8 +2,8 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "background": "#fffdf9",
   "width": 600,
-  "height": 440,
-  "padding": {"left": 60, "right": 60, "top": 45, "bottom": 55},
+  "height": 650,
+  "padding": {"left": 60, "right": 60, "top": 45, "bottom": 45},
   "config": {
     "view": {"stroke": null},
     "axis": {"grid": false}
