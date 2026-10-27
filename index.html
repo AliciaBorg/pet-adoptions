@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=45">
+  <link rel="stylesheet" href="styles.css?v=49">
 
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
@@ -50,7 +50,9 @@
         <div class="geography-grid">
           <div class="geography-row">
             <div class="intro-copy geography-copy">
-              <p><strong>With formal adoption making up just 36.2% of pet acquisitions, the next question is where these adoptions are happening.</strong> Victoria records the highest adoption rate per 100,000 people, followed by Queensland and New South Wales. This suggests that adoption activity is not evenly distributed across Australia, and that access to local rescue services may help shape where animals find new homes.</p>
+              <p>With formal adoptions accounting for a minority of pet acquisitions, where these adoptions are actually happening in Australia?</p>
+              <p>In 2025, <strong>Victoria recorded the highest PetRescue adoption rate</strong>, followed by <strong>Queensland</strong> and <strong>New South Wales</strong>. Rates are shown per 100,000 residents rather than as raw totals, so states with different population sizes can be compared fairly.</p>
+              <p>This begs the question: <strong>what drives these geographical differences?</strong></p>
             </div>
             <article class="chart-card map-card geography-chart-card">
               <div id="vis2" class="chart-container map-container"></div>
@@ -157,7 +159,7 @@
     const embedOpts = { renderer: "svg", actions: false, tooltip: { theme: "light" } };
     const charts = [
       ["#vis1", "charts/chart1_waffle.json"],
-      ["#vis2", "charts/chart2_choropleth.json?v=45"],
+      ["#vis2", "charts/chart2_choropleth.json?v=51"],
       ["#vis3", "charts/chart3_prop_symbol.json?v=45"],
       ["#vis4", "charts/chart5_butterfly_chart.json"],
       ["#vis5", "charts/chart4_donut.json"],

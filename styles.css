@@ -95,9 +95,14 @@ main { padding: 0 clamp(22px, 5vw, 82px); }
 .feature-grid--three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .geography-grid { display: grid; gap: 78px; max-width: 1160px; }
 .geography-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(34px, 6vw, 90px); align-items: stretch; }
-.geography-copy { margin-bottom: -16px; }
-.geography-copy p { max-width: 650px; margin-bottom: 0; color: var(--muted); font-size: 1.27rem; }
+.geography-row + .geography-row { margin-top: 18px; }
+.geography-copy { margin-bottom: 0; }
+.geography-copy p { max-width: 650px; color: var(--muted); font-size: 1.27rem; }
+.geography-copy p + p { margin-top: 0; }
 .geography-copy strong { color: var(--ink); }
+.question-box { margin-top: auto; padding: 18px 20px; border-left: 3px solid var(--gold); background: #eee9df; }
+.question-box span { display: block; margin-bottom: 8px; color: var(--coral); font-size: 1.27rem; font-weight: 400; letter-spacing: normal; }
+.question-box p { margin: 0; color: var(--muted); font-size: 1.15rem; line-height: 1.6; }
 .chart-card { min-width: 0; padding: 24px 24px 22px; border: 1px solid var(--line); border-radius: 18px; background: var(--card); box-shadow: 0 16px 38px rgba(37, 46, 40, .08); }
 .chart-card--wide {
   display: grid;
@@ -114,7 +119,7 @@ main { padding: 0 clamp(22px, 5vw, 82px); }
 .map-card { display: flex; flex-direction: column; padding: 24px; border-radius: 18px; }
 .map-container { flex: 1; min-height: 0; margin: 0 -4px; align-items: center; overflow: hidden; }
 .map-container .vega-embed { display: flex; justify-content: center; width: 100%; background: var(--card); }
-.map-container svg { width: min(100%, 500px) !important; height: auto !important; }
+.map-container svg { width: min(100%, 560px) !important; height: auto !important; }
 .geography-chart-card { min-height: 0; }
 .map-card .takeaway { margin: auto 4px 0; padding: 18px 20px; }
 .map-card .takeaway strong { max-width: none; }
