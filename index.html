@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=50">
+  <link rel="stylesheet" href="styles.css?v=52">
 
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
@@ -41,7 +41,7 @@
         </div>
       </section>
 
-      <section class="story-section" aria-labelledby="scale-title">
+      <section class="story-section story-section--tint" aria-labelledby="scale-title">
         <div class="section-heading geography-heading">
           <div class="section-label">PART 1</div>
           <h2 id="scale-title">Where Adoptions Are Happening in Australia</h2>
@@ -63,6 +63,7 @@
             <div class="intro-copy geography-copy">
               <p>In 2025, PetRescue member organisations—spanning rescue groups, shelters, councils and vet clinics—were <strong>heavily concentrated along Australia's eastern states</strong>, being Victoria, Queensland and New South Wales.</p>
               <p>They are also the states with the highest adoption rates, suggesting that the distribution of rescue organisations may influence adoption rates, although other factors are likely to contribute as well.</p>
+              <p>But geographical patterns only tell part of the story. To better understand adoption in Australia, it is also important to look at which animals are finding homes, and whether some species are adopted more often than others.</p>
             </div>
             <article class="chart-card map-card geography-chart-card">
               <div id="vis3" class="chart-container map-container"></div>
@@ -71,21 +72,36 @@
         </div>
       </section>
 
-      <section class="story-section story-section--tint" aria-labelledby="who-title">
+      <section class="story-section" aria-labelledby="who-title">
+        <div class="geography-grid">
+          <div class="geography-row">
+            <div class="intro-copy geography-copy section-copy">
+              <h2 id="who-title">Who is being adopted?</h2>
+              <p>Before looking at why some pets wait longer, it helps to see who makes up the adoption picture. <strong>Dogs and cats account for most recorded PetRescue adoptions</strong>, while other species make up a much smaller share.</p>
+              <p>For this reason, the following sections will largely focus on dogs and cats, with the next section exploring what influences their chances of finding a new home.</p>
+            </div>
+            <article class="chart-card geography-chart-card">
+              <div id="vis5" class="chart-container"></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="story-section" aria-labelledby="outcomes-title">
         <div class="section-heading">
-          <h2 id="who-title">Who is being adopted?</h2>
-          <p>Before looking at why some pets wait longer, it helps to see who makes up the adoption picture. Dogs and cats account for most recorded PetRescue adoptions, but their paths through the system are not identical.</p>
+          <h2 id="outcomes-title">What happens after pets are listed?</h2>
         </div>
 
-        <div class="feature-grid">
-          <article class="chart-card">
-            <div id="vis5" class="chart-container"></div>
-            <div class="takeaway"><strong>Cats account for the largest share of recorded adoptions.</strong><p>The species mix gives us the scale of the system; the next chart shows what happens after dogs and cats enter it.</p></div>
-          </article>
-          <article class="chart-card">
-            <div id="vis4" class="chart-container"></div>
-            <div class="takeaway"><strong>Rehoming is the leading outcome, while a meaningful share is reclaimed.</strong><p>This is the bridge from who is listed to how long they may wait: a successful outcome is not always an immediate one.</p></div>
-          </article>
+        <div class="geography-grid">
+          <div class="geography-row">
+            <div class="intro-copy geography-copy">
+              <p>Once dogs and cats enter the adoption system, their journeys can end in several ways. <strong>Rehoming is the leading outcome for both species</strong>, while others are reclaimed, returned, transferred or remain in care.</p>
+              <p>This outcome picture shows why adoption is more than a single pathway: a listing may lead to a new home, a return to an existing one, or a longer period of support.</p>
+            </div>
+            <article class="chart-card geography-chart-card">
+              <div id="vis4" class="chart-container"></div>
+            </article>
+          </div>
         </div>
       </section>
 
@@ -163,7 +179,7 @@
       ["#vis2", "charts/chart2_choropleth.json?v=57"],
       ["#vis3", "charts/chart3_prop_symbol.json?v=58"],
       ["#vis4", "charts/chart5_butterfly_chart.json"],
-      ["#vis5", "charts/chart4_donut.json"],
+      ["#vis5", "charts/chart4_donut.json?v=9"],
       ["#vis6", "charts/chart6_heatmap.json"],
       ["#vis7", "charts/chart7_dumbell.json"],
       ["#vis8", "charts/chart11_age_comparison.json"],

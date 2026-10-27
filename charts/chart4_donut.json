@@ -5,8 +5,14 @@
   "height": 380,
   "title": {
     "text": "Dogs and Cats Dominate the Adoption Picture",
-    "subtitle": "Proportion of PetRescue Adoptions by Species, 2025",
-    "fontSize": 16,
+    "font": "DM Sans",
+    "fontSize": 20,
+    "fontWeight": 700,
+    "color": "#1d2925",
+    "subtitleFont": "DM Sans",
+    "subtitleFontSize": 12,
+    "subtitleColor": "#64716c",
+    "anchor": "middle",
     "offset": 15
   },
   "data": {
@@ -49,7 +55,15 @@
         "color": {
           "field": "species",
           "type": "nominal",
-          "title": "Species",
+          "title": null,
+          "legend": {
+            "orient": "right",
+            "direction": "vertical",
+            "labelFontSize": 16,
+            "symbolSize": 180,
+            "padding": 24,
+            "offset": 0
+          },
           "scale": {
             "domain": ["Dogs", "Cats", "Other pets"],
             "range": ["#2563eb", "#ea580c", "#16a34a"]

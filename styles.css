@@ -79,7 +79,7 @@ main { padding: 0 clamp(22px, 5vw, 82px); }
   .intro-chart svg { transform: translateX(10px); }
 }
 .intro-grid h2, .section-heading h2, .closing-note h2 { margin-bottom: 18px; font-family: var(--serif); font-size: clamp(2.4rem, 4vw, 4rem); font-weight: 400; line-height: 1.03; letter-spacing: -.025em; }
-.intro-grid h2, .geography-heading h2 { padding-bottom: 22px; border-bottom: 2px solid var(--green-dark); }
+.intro-grid h2, .geography-heading h2 { padding-bottom: 22px; border-bottom: 1px solid var(--green-dark); }
 .intro-grid h2 { margin-bottom: 30px; }
 .intro-grid p, .section-heading p { max-width: 650px; color: var(--muted); font-size: 1.02rem; }
 .intro-grid p { font-size: 1.27rem; }
@@ -97,6 +97,8 @@ main { padding: 0 clamp(22px, 5vw, 82px); }
 .geography-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(34px, 6vw, 90px); align-items: stretch; }
 .geography-row + .geography-row { margin-top: 18px; }
 .geography-copy { margin-bottom: 0; }
+.section-copy h2 { margin-bottom: 30px; font-family: var(--serif); font-size: clamp(2.4rem, 4vw, 3.8rem); font-weight: 400; line-height: 1.03; letter-spacing: -.025em; }
+.section-copy #who-title { white-space: nowrap; }
 .geography-copy p { max-width: 650px; color: var(--muted); font-size: 1.27rem; }
 .geography-copy p + p { margin-top: 0; }
 .geography-copy strong { color: var(--muted); }
@@ -160,6 +162,7 @@ main { padding: 0 clamp(22px, 5vw, 82px); }
   .chart-card { padding: 22px 18px 18px; }
   .chart-container { margin-left: -4px; margin-right: -4px; }
   .geography-heading h2 { white-space: normal; }
+  .section-copy #who-title { white-space: normal; }
   .geography-grid { gap: 58px; }
   .geography-chart-card { min-height: 0; }
   .waffle-legend { flex-direction: column; align-items: center; gap: 10px; }
